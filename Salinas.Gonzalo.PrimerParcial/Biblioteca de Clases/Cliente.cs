@@ -4,13 +4,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Biblioteca_de_Clases
+namespace Cliente
 {
-    public class Cliente : Usuario
+    public abstract class Cliente 
     {
+        private string nombre;
+        private string dni;
         private string apellido;
         private string edad;
-
         public Cliente(string nombre, string apellido, string dni, string edad)
         {
             this.Nombre = nombre;
@@ -19,7 +20,7 @@ namespace Biblioteca_de_Clases
             this.edad = edad;
         }
 
-        public override string Nombre
+        public string Nombre
         {
             get { return this.nombre; }
             set 
@@ -31,7 +32,7 @@ namespace Biblioteca_de_Clases
             }
     
         }
-        public override string Dni
+        public string Dni
         {
             get { return this.dni; }
             set
@@ -43,12 +44,6 @@ namespace Biblioteca_de_Clases
             }
 
         }
-
-        
-
-
-
-
         public string mostrar()
         {
             return $"{this.nombre} {this.apellido} {this.dni} {this.edad}";

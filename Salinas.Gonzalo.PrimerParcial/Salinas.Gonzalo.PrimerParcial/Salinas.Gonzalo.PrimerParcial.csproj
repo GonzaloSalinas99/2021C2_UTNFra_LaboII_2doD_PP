@@ -7,7 +7,9 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Biblioteca de Clases\Biblioteca de Clases.csproj" />
+    <ProjectReference Include="..\Biblioteca de Clases\Cliente.csproj" />
+    <ProjectReference Include="..\Puesto\Puesto.csproj" />
+    <ProjectReference Include="..\Sesion\Sesion.csproj" />
   </ItemGroup>
 
 </Project>

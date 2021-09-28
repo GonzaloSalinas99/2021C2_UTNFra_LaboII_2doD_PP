@@ -7,7 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Biblioteca_de_Clases;
+using Cliente;
+using Puesto;
 
 namespace Salinas.Gonzalo.PrimerParcial
 {
@@ -20,6 +21,7 @@ namespace Salinas.Gonzalo.PrimerParcial
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -49,7 +51,7 @@ namespace Salinas.Gonzalo.PrimerParcial
 
 
 
-            Computadora compu = new Computadora("C01");
+            Computadora compu = new Computadora("C01",true);
 
             foreach (Control c in groupBox1.Controls)
             {
@@ -87,14 +89,14 @@ namespace Salinas.Gonzalo.PrimerParcial
 
     
 
-            Computadora aux = new Computadora("C01");
+            Computadora aux = new Computadora("C01",true);
             aux.CargarHadware("PLACA VIDEO", "INTERNET", "RAM");
             aux.CargarSoftware("MESSENGER", "ARES", "");
             aux.CargarJuegos("AGE OF EMPIRES", "COUNTER STRIKE", "MU");
             aux.CargarPerifericos("cAMARA", "MICROFONO", "");
             listaComputadoras.Add(aux);
 
-            Computadora aux2 = new Computadora("C02");
+            Computadora aux2 = new Computadora("C02",true);
             aux2.CargarHadware("", "", "RAM");
             aux2.CargarSoftware("MESSENGER", "", "");
             aux2.CargarJuegos("AGE OF EMPIRES", "DIABLO II", "MU");
@@ -110,6 +112,11 @@ namespace Salinas.Gonzalo.PrimerParcial
                 }
             }
 
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            label2.Text = DateTime.Now.ToLongTimeString();
         }
     }
 }

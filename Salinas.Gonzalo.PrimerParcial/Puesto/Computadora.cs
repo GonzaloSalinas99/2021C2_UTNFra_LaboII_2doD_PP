@@ -2,17 +2,17 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Biblioteca_de_Clases
+namespace Puesto
 {
-    public class Computadora
+    public class Computadora : Puesto
     {
         private List<string> hadware;
         private List<string> software;
         private List<string> perifericos;
         private List<string> juegos;
-        private string identificador;
 
-        private Computadora()
+
+        public Computadora(string identificador,bool enUso,string dniCliente):base(identificador,enUso,dniCliente)
         {
             this.hadware = new List<string>();
             this.software = new List<string>();
@@ -20,15 +20,7 @@ namespace Biblioteca_de_Clases
             this.juegos = new List<string>();
         }
 
-        public Computadora (string identificador):this()
-        {
-            this.Identificador = identificador;
-        }
-
-
-
-
-        public string Identificador
+        public override string Identificador
         {
             get { return this.identificador; }
             set 
@@ -51,6 +43,19 @@ namespace Biblioteca_de_Clases
                     }
                 }
             }
+        }
+
+        public override bool EnUso
+        {
+            get { return this.enUso; }
+            set { this.enUso = value; }
+        }
+
+
+        public override string DniCliente
+        {
+            get { return this.dniCliente; }
+            set { this.dniCliente = value; }
         }
 
         public string Hadware
@@ -130,7 +135,7 @@ namespace Biblioteca_de_Clases
             }
             set
             {
-                if (value is not null && String.IsNullOrEmpty(value))
+                if (value is not null)
                 {
                     this.perifericos.Add(value);
                 }
