@@ -11,11 +11,7 @@ namespace Sesion
         protected DateTime tiempoInicio;
         protected DateTime tiempoFinal;
 
-        public Sesion(DateTime tiempoInicio, DateTime tiempoFinal)
-        {
-            this.tiempoInicio = tiempoInicio;
-            this.tiempoFinal = tiempoFinal;
-        }
+
 
         public abstract DateTime TiempoInicio { get; set;}
         public abstract DateTime TiempoFinal { get; set;}
