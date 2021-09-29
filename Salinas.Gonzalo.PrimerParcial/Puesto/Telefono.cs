@@ -3,79 +3,45 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+using Enumerados;
+using Sesion;
 namespace Puesto
 {
-    public enum TipoLlamada
-    {
-        disco,teclado
-    }
 
     public class Telefono : Puesto
     {
-        private string numeroTelefono;
-        private TipoLlamada tipoLlamada;
-        private string marcaTelefono;
+        private TipoTelefono tipo;
+        private string marca;
+        private static int idSiguiente = 1;
 
-        public Telefono (string numeroTelefono,string marca,TipoLlamada tipoLlamada,string identificador,bool enUso,string dniCliente)
-                    :base(identificador,enUso,dniCliente)
+        public Telefono(string marca, TipoTelefono tipo):base()
         {
-            NumeroTelefono = numeroTelefono;
-            this.marcaTelefono = marca;
-            this.tipoLlamada = tipoLlamada;
-        }
-
-        public override bool EnUso
-        {
-            get { return this.enUso; }
-            set { this.enUso = value; }
-        }
-
-        public override string DniCliente 
-        {
-            get { return this.dniCliente; }
-            set { this.dniCliente = value; }
-        }
-
-        public override string Identificador
-        {
-            get { return this.identificador; }
-            set
+            Marca = marca;
+            TipoTelefono = tipo;
+            if(idSiguiente <6)
             {
-                if (value is not null)
-                {
-                    char[] array = value.ToCharArray();
-
-                    for (int i = 0; i < array.Length; i++)
-                    {
-                        if (array[0] == 'T' && array[1] == '0' && (array[2] > '0' || array[2] < '9'))
-                        {
-                            this.identificador = new string(array);
-                        }
-                        else
-                        {
-                            this.identificador = "VALOR INVALIDO";
-                            break;
-                        }
-                    }
-                }
+                this.idPuesto = "T0" + idSiguiente;
             }
+            idSiguiente++;
         }
 
-        public string NumeroTelefono
+        public  string Marca
         {
-            get { return this.numeroTelefono; }
-            set 
-            {
-                this.numeroTelefono = value;
-            }
+            get { return this.marca; }
+            set { this.marca = value; }
         }
 
-        public TipoLlamada TipoLlamada
+        public TipoTelefono TipoTelefono 
         {
-            get { return this.tipoLlamada; }
-            set { this.tipoLlamada = value; }
+            get { return this.tipo; }
+            set { this.tipo = value; }
         }
+
+        public override double CalcularCosto(Sesion.Sesion llamada)
+        {
+            if(llamada is Llam)
+        }
+
 
 
     }

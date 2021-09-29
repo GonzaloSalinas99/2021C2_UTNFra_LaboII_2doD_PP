@@ -7,8 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Cliente;
-using Puesto;
+using Entidades;
 
 namespace Salinas.Gonzalo.PrimerParcial
 {
@@ -32,49 +31,53 @@ namespace Salinas.Gonzalo.PrimerParcial
             string dni= textBox3.Text;
             string edad = textBox4.Text;
 
-            //Queue<Cliente> listaClientes = new Queue<Cliente>();
-            //Cliente aux = new Cliente(nombre, apellido, dni, edad);
 
-            //listaClientes.Enqueue(aux);
+            //Crear Cliente
+            ClienteCabina cl1 = new ClienteCabina(nombre, apellido, dni, edad,Enumerados.TipoTelefono.Teclado,"541142414903","PHILIPS");
+            //List<Cliente> listaClientes = new List<Cliente>();
+
+            richTextBox1.Text = cl1.ToString();
             
+            
+            //listaClientes.Add(cl1);
 
-            //foreach (Cliente c in listaClientes)
+            //Cabina cab1 = new Cabina("PHILIPS", Enumerados.TipoTelefono.Teclado);
+
+            //Llamada llam = new Llamada("541142414903", cl1, cab1);
+
+
+            //foreach (Cliente aux in listaClientes)
             //{
-            //    MessageBox.Show(c.mostrar());
+            //    richTextBox1.Text = $"{aux.mostrar()}";
+            //    richTextBox1.Text =  cab1.ToString();
+            //    richTextBox1.Text = llam.ToString();
             //}
-            //foreach (Cliente c in listaClientes)
+            
+            
+            //Computadora compu = new Computadora();
+
+            //foreach (Control c in groupBox1.Controls)
             //{
-            //    MessageBox.Show(c.mostrar());
+            //    if(checkBox2.Checked== true )
+            //    {
+            //        compu.Hadware = checkBox2.Text;
+            //    }
+
+
+            //    if (checkBox3.Checked == true)
+            //    {
+            //        compu.Hadware=checkBox3.Text;
+            //    }
+            //    if (checkBox4.Checked == true)
+            //    {
+            //        compu.Hadware=checkBox4.Text;
+            //    }
             //}
-            //listaClientes.Dequeue();
 
-
-
-
-            Computadora compu = new Computadora("C01",true);
-
-            foreach (Control c in groupBox1.Controls)
-            {
-                if(checkBox2.Checked== true )
-                {
-                    compu.Hadware = checkBox2.Text;
-                }
-
-
-                if (checkBox3.Checked == true)
-                {
-                    compu.Hadware=checkBox3.Text;
-                }
-                if (checkBox4.Checked == true)
-                {
-                    compu.Hadware=checkBox4.Text;
-                }
-            }
-
-            //compu.AGREGARHADWARE("PLACA VIDEO");
-            //compu.AGREGARHADWARE("INTERNET");
-            //compu.AGREGARHADWARE("RAM");
-            MessageBox.Show(compu.MostrarCompu());
+            ////compu.AGREGARHADWARE("PLACA VIDEO");
+            ////compu.AGREGARHADWARE("INTERNET");
+            ////compu.AGREGARHADWARE("RAM");
+            //MessageBox.Show(compu.MostrarCompu());
 
         }
 
@@ -89,14 +92,14 @@ namespace Salinas.Gonzalo.PrimerParcial
 
     
 
-            Computadora aux = new Computadora("C01",true);
+            Computadora aux = new Computadora();
             aux.CargarHadware("PLACA VIDEO", "INTERNET", "RAM");
             aux.CargarSoftware("MESSENGER", "ARES", "");
             aux.CargarJuegos("AGE OF EMPIRES", "COUNTER STRIKE", "MU");
             aux.CargarPerifericos("cAMARA", "MICROFONO", "");
             listaComputadoras.Add(aux);
 
-            Computadora aux2 = new Computadora("C02",true);
+            Computadora aux2 = new Computadora();
             aux2.CargarHadware("", "", "RAM");
             aux2.CargarSoftware("MESSENGER", "", "");
             aux2.CargarJuegos("AGE OF EMPIRES", "DIABLO II", "MU");

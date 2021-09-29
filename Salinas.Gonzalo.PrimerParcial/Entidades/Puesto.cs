@@ -1,8 +1,7 @@
 ﻿using System;
 using System.Text;
 using Enumerados;
-using Sesion;
-namespace Puesto
+namespace Entidades
 {
     public abstract class Puesto
     {
@@ -14,7 +13,6 @@ namespace Puesto
         {
             this.usoMinutos = 0;
             this.estado = EstadoPuesto.SinUso;
-
         }
 
         public string IdPuesto
@@ -56,7 +54,7 @@ namespace Puesto
             return sb.ToString();
         }
 
-        public abstract double CalcularCosto(Sesion.Sesion llamada);
+        public abstract double CalcularCosto(Sesion llamada);
 
     }
 }
