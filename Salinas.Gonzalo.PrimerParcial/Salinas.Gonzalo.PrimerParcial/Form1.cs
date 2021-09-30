@@ -33,7 +33,7 @@ namespace Salinas.Gonzalo.PrimerParcial
 
 
             //Crear Cliente
-            ClienteCabina cl1 = new ClienteCabina(nombre, apellido, dni, edad,Enumerados.TipoTelefono.Teclado,"541142414903","PHILIPS");
+            ClienteCabina cl1 = new ClienteCabina("Gonzalo", "Salinas", "42038608", "21",Enumerados.TipoTelefono.Teclado,"541142414903","PHILIPS");
             //List<Cliente> listaClientes = new List<Cliente>();
 
             richTextBox1.Text = cl1.ToString();

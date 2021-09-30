@@ -34,6 +34,11 @@ namespace Entidades
             }
     
         }
+
+        public EstadoCliente EstadoCliente
+        {
+
+        }
         public string Dni
         {
             get { return this.dni; }

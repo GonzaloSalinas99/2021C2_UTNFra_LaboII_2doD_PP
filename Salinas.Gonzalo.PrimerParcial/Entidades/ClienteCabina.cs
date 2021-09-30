@@ -10,14 +10,14 @@ namespace Entidades
     {
         private string numeroTelefono;
         private Enumerados.TipoTelefono tipoTelefono;
-        private string marcaTelefono;
+
 
         public ClienteCabina(string nombre, string apellido, string dni, string edad,TipoTelefono tipoTelefono,string numeroTelefono,string marcaTelefono)
             :base(nombre,apellido,dni,edad)
         {
             this.tipoTelefono = tipoTelefono;
             this.numeroTelefono = numeroTelefono;
-            this.marcaTelefono = marcaTelefono;
+
         }
 
         public Enumerados.TipoTelefono TipoTelefono
@@ -32,20 +32,17 @@ namespace Entidades
             set { this.numeroTelefono = value; }
         }
 
-        public string MarcaTelefono
-        {
-            get { return this.marcaTelefono; }
-            set { this.marcaTelefono = value; }
-        }
 
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
-            sb.AppendLine("Cliente.");
+            sb.AppendLine("Datos Cliente.");
             sb.AppendLine(base.mostrar());
+
+            sb.AppendLine("Datos Telefono.");
             sb.AppendLine($"Tipo Telefono: {TipoTelefono}");
             sb.AppendLine($"Numero Telefono: {NumeroTelefono}");
-            sb.AppendLine($"Marca Telefono: {MarcaTelefono}");
+            
 
             return sb.ToString();
         }
