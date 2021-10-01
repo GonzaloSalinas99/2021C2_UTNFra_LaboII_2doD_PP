@@ -32,13 +32,24 @@ namespace Salinas.Gonzalo.PrimerParcial
             string edad = textBox4.Text;
 
 
+            Cabina cab1 = new Cabina("PHILIPS", Enumerados.TipoTelefono.Teclado);
             //Crear Cliente
-            ClienteCabina cl1 = new ClienteCabina("Gonzalo", "Salinas", "42038608", "21",Enumerados.TipoTelefono.Teclado,"541142414903","PHILIPS");
+            ClienteCabina cl1 = new ClienteCabina("Gonzalo", "Salinas", "42038608", "21",Enumerados.TipoTelefono.Teclado,"541142414903");
             //List<Cliente> listaClientes = new List<Cliente>();
 
-            richTextBox1.Text = cl1.ToString();
-            
-            
+            //richTextBox1.Text = cl1.ToString() + cab1.ToString();
+
+            Controlador controlador = new Controlador();
+            //controlador.AsignarClienteTelefono(cl1,cab1);
+            //Llamada aux = controlador.AsignarClienteTelefono(cl1, cab1);
+            //Llamada aux2 = controlador.CerrarSesionTelefono(cl1);
+            //richTextBox1.Text = aux.ToString();
+            //richTextBox1.Text = aux2.ToString();
+
+            controlador.AgregarClienteCabina(cl1);
+            richTextBox1.Text = controlador.AbrirSesionLlamada(cl1, cab1).ToString();
+
+
             //listaClientes.Add(cl1);
 
             //Cabina cab1 = new Cabina("PHILIPS", Enumerados.TipoTelefono.Teclado);
@@ -52,8 +63,8 @@ namespace Salinas.Gonzalo.PrimerParcial
             //    richTextBox1.Text =  cab1.ToString();
             //    richTextBox1.Text = llam.ToString();
             //}
-            
-            
+
+
             //Computadora compu = new Computadora();
 
             //foreach (Control c in groupBox1.Controls)
@@ -83,37 +94,40 @@ namespace Salinas.Gonzalo.PrimerParcial
 
         private void button2_Click(object sender, EventArgs e)
         {
-            List<Computadora> listaComputadoras = new List<Computadora>();
-            
-            List<string> hadware = new List<string>();
-            List<string> software= new List<string>();
-            List<string> juegos = new List<string>();
-            List<string> perifericos = new List<string>();
+            //    List<Computadora> listaComputadoras = new List<Computadora>();
 
-    
-
-            Computadora aux = new Computadora();
-            aux.CargarHadware("PLACA VIDEO", "INTERNET", "RAM");
-            aux.CargarSoftware("MESSENGER", "ARES", "");
-            aux.CargarJuegos("AGE OF EMPIRES", "COUNTER STRIKE", "MU");
-            aux.CargarPerifericos("cAMARA", "MICROFONO", "");
-            listaComputadoras.Add(aux);
-
-            Computadora aux2 = new Computadora();
-            aux2.CargarHadware("", "", "RAM");
-            aux2.CargarSoftware("MESSENGER", "", "");
-            aux2.CargarJuegos("AGE OF EMPIRES", "DIABLO II", "MU");
-            aux2.CargarPerifericos("", "", "AURICULARES");
-            listaComputadoras.Add(aux2);
+            //    List<string> hadware = new List<string>();
+            //    List<string> software= new List<string>();
+            //    List<string> juegos = new List<string>();
+            //    List<string> perifericos = new List<string>();
 
 
-            foreach (Computadora c in listaComputadoras)
-            {
-                if(c is not null)
-                {
-                    MessageBox.Show( c.MostrarCompu());
-                }
-            }
+
+            //    Computadora aux = new Computadora();
+            //    aux.CargarHadware("PLACA VIDEO", "INTERNET", "RAM");
+            //    aux.CargarSoftware("MESSENGER", "ARES", "");
+            //    aux.CargarJuegos("AGE OF EMPIRES", "COUNTER STRIKE", "MU");
+            //    aux.CargarPerifericos("cAMARA", "MICROFONO", "");
+            //    listaComputadoras.Add(aux);
+
+            //    Computadora aux2 = new Computadora();
+            //    aux2.CargarHadware("", "", "RAM");
+            //    aux2.CargarSoftware("MESSENGER", "", "");
+            //    aux2.CargarJuegos("AGE OF EMPIRES", "DIABLO II", "MU");
+            //    aux2.CargarPerifericos("", "", "AURICULARES");
+            //    listaComputadoras.Add(aux2);
+
+
+            //    foreach (Computadora c in listaComputadoras)
+            //    {
+            //        if(c is not null)
+            //        {
+            //            MessageBox.Show( c.MostrarCompu());
+            //        }
+            //    }
+
+            Controlador control = new Controlador();
+            richTextBox1.Text = control.MOSTRAR();
 
         }
 

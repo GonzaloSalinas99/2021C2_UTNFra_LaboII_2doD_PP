@@ -12,7 +12,7 @@ namespace Entidades
         private Enumerados.TipoTelefono tipoTelefono;
 
 
-        public ClienteCabina(string nombre, string apellido, string dni, string edad,TipoTelefono tipoTelefono,string numeroTelefono,string marcaTelefono)
+        public ClienteCabina(string nombre, string apellido, string dni, string edad,TipoTelefono tipoTelefono,string numeroTelefono)
             :base(nombre,apellido,dni,edad)
         {
             this.tipoTelefono = tipoTelefono;

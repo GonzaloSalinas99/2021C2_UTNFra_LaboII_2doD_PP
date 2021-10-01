@@ -6,17 +6,87 @@ using System.Threading.Tasks;
 using Entidades;
 namespace Entidades
 {
-    public static class Controlador
+    public sealed class Controlador
     {
+       //private List<Llamada> listaLlamadas;
+        private List<Sesion> listaSesiones;
+        private List<Puesto> listaPuestos;
+        private List<ClienteCabina> listaClienteCabinas;
+        private List<ClienteComputadora> clienteComputadoras;
+        private DateTime fecha;
 
-
-        public bool AsignarClienteTelefono(ClienteCabina cliente,Llamada llamada)
+        public Controlador()
         {
-            if(cliente is ClienteCabina && llamada is Llamada)
-            {
-                if(cliente)
-            }
+            listaSesiones = new List<Sesion>();
+            listaPuestos = new List<Puesto>();
+            listaClienteCabinas = new List<ClienteCabina>();
+            clienteComputadoras = new List<ClienteComputadora>();
+            fecha = default(DateTime);
         }
 
+        public bool AgregarClienteCabina(ClienteCabina cliente)
+        {
+            if(cliente is ClienteCabina && cliente is not null)
+            {
+                listaClienteCabinas.Add(cliente);
+                return true;
+            }
+            return false;
+        }
+
+        public bool AgregarPuesto(Puesto puesto)
+        {
+            if (puesto is Puesto && puesto is not null)
+            {
+                listaPuestos.Add(puesto);
+                return true;
+            }
+            return false;
+        }
+
+        public bool AbrirSesionLlamada(ClienteCabina cliente,Cabina cabina)
+        {
+            
+            if (cliente is ClienteCabina && cabina is Cabina)
+            {
+                if(cliente.EstadoCliente == Enumerados.EstadoCliente.Esperando 
+                    && cabina.EstadoPuesto == Enumerados.EstadoPuesto.SinUso)
+                {
+                    Llamada nuevaLlamada = new Llamada(cliente.NumeroTelefono, cliente, cabina);
+                    this.listaSesiones.Add(nuevaLlamada);
+                    return true;
+                }
+            }
+            return false;
+        }
+
+        public string CerrarSesionTelefono(Sesion sesion)
+        {
+            if (sesion.Puesto.EstadoPuesto == Enumerados.EstadoPuesto.EnUso
+                && sesion.Cliente.EstadoCliente == Enumerados.EstadoCliente.Asignado)
+            {
+                sesion.Puesto.EstadoPuesto = Enumerados.EstadoPuesto.SinUso;
+                sesion.Cliente.EstadoCliente = Enumerados.EstadoCliente.Atendido;
+                sesion.TiempoFinal = DateTime.Now;
+                sesion.CostoSesion = sesion.Puesto.CalcularCosto(sesion);
+                foreach (Sesion item in this.listaSesiones)
+                {
+                    if(sesion == item)
+                    {
+                        this.listaSesiones.Remove(sesion);
+                        return sesion.ToString();
+                    
+                    }
+                }
+
+            }
+
+            return "NO LO ENCONTRE";
+        }
+
+        public string MOSTRAR()
+        {
+            return this.listaClienteCabinas.ToString();
+        }
     }
 }

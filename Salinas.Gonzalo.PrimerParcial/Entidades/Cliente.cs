@@ -37,7 +37,8 @@ namespace Entidades
 
         public EstadoCliente EstadoCliente
         {
-
+            get { return this.estadoCliente; }
+            set { this.estadoCliente = value; }
         }
         public string Dni
         {

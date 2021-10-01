@@ -15,8 +15,11 @@ namespace Entidades
         protected DateTime tiempoFinal;
         public Sesion(Puesto puesto,Cliente cliente)
         {
+
             this.cliente = cliente;
+            this.cliente.EstadoCliente = Enumerados.EstadoCliente.Asignado;
             this.puesto = puesto;
+            Puesto.EstadoPuesto = Enumerados.EstadoPuesto.EnUso;
             this.costoSesion = 0;
             this.duracionSesion = 0;
             this.idSesion = idSiguiente;
@@ -67,8 +70,7 @@ namespace Entidades
         {
             StringBuilder sb = new StringBuilder();
             sb.AppendLine($"Id de sesión: {this.IdSesion}.");
-            sb.AppendLine($"Puesto:");
-            sb.AppendLine(Puesto.ToString());
+            sb.AppendLine($"Puesto:{Puesto.ToString()}");
             sb.AppendLine("Cliente:");
             sb.AppendLine(Cliente.mostrar());
             sb.AppendLine($"Hora de inicio: {this.TiempoInicio}.");
