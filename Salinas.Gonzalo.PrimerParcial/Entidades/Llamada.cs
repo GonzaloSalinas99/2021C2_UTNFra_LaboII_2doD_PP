@@ -39,36 +39,42 @@ namespace Entidades
 
         public Enumerados.TipoLlamada TipoLlamada
         {
-            get { return this.tipoLlamada; }
+            get { return ValidarTipoLlamada(this.numero); }
             set 
             {
-                char[] arrayTelefono = this.Numero.ToCharArray();
-                if(arrayTelefono.Length == 12)
+                if(value == Enumerados.TipoLlamada.Local || value == Enumerados.TipoLlamada.LargaDistancia || value == Enumerados.TipoLlamada.Internacional || value == Enumerados.TipoLlamada.SinAsignar )
                 {
-                    if(arrayTelefono[0]=='5' && arrayTelefono[1] == '4')
-                    {
-                        if(arrayTelefono[2] == '1' && arrayTelefono[3] == '1')
-                        {
-                            this.tipoLlamada = Enumerados.TipoLlamada.Local;
-                        }
-                        else
-                        {
-                            this.tipoLlamada = Enumerados.TipoLlamada.LargaDistancia;
-                        }
-                    }
-                    else
-                    {
-                        this.tipoLlamada = Enumerados.TipoLlamada.Internacional;
-                    }
-                }
-                else
-                {
-                    this.tipoLlamada = Enumerados.TipoLlamada.SinAsignar;
+                    this.tipoLlamada = value;
                 }
             }
         }
 
-
+        private Enumerados.TipoLlamada ValidarTipoLlamada(string numero)
+        {
+            char[] arrayTelefono = this.Numero.ToCharArray();
+            if (arrayTelefono.Length == 12)
+            {
+                if (arrayTelefono[0] == '5' && arrayTelefono[1] == '4')
+                {
+                    if (arrayTelefono[2] == '1' && arrayTelefono[3] == '1')
+                    {
+                        return Enumerados.TipoLlamada.Local;
+                    }
+                    else
+                    {
+                        return  Enumerados.TipoLlamada.LargaDistancia;
+                    }
+                }
+                else
+                {
+                    return  Enumerados.TipoLlamada.Internacional;
+                }
+            }
+            else
+            {
+                return  Enumerados.TipoLlamada.SinAsignar;
+            }
+        }
 
         public override double CostoSesion
         {

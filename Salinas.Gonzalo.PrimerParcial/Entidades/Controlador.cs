@@ -8,12 +8,40 @@ namespace Entidades
 {
     public sealed class Controlador
     {
-       //private List<Llamada> listaLlamadas;
+        //private List<Llamada> listaLlamadas;
         private List<Sesion> listaSesiones;
         private List<Puesto> listaPuestos;
         private List<ClienteCabina> listaClienteCabinas;
         private List<ClienteComputadora> clienteComputadoras;
         private DateTime fecha;
+
+        //private static Controlador control;
+
+        internal List<ClienteComputadora> ClienteComputadoras
+        {
+            get { return this.clienteComputadoras; }
+            set { clienteComputadoras = value; }
+        }
+        public List<Sesion> ListaSesiones
+        {
+            get { return this.listaSesiones; }
+            set { listaSesiones = value; }
+        }
+        public List<Puesto> ListaPuestos
+        {
+            get { return this.listaPuestos; }
+            set { listaPuestos = value; }
+        }
+        public List<ClienteCabina> ListaClienteCabinas
+        {
+            get { return this.listaClienteCabinas; }
+            set { listaClienteCabinas = value; }
+        }
+        public DateTime Fecha
+        {
+            get { return this.fecha; }
+            set { this.fecha = value; }
+        }
 
         public Controlador()
         {
@@ -59,7 +87,14 @@ namespace Entidades
             }
             return false;
         }
-
+        public Sesion MostrarSesionLlamada()
+        {
+            foreach (Llamada llamada in this.listaSesiones)
+            {
+                return llamada;
+            }
+            return null;
+        }
         public string CerrarSesionTelefono(Sesion sesion)
         {
             if (sesion.Puesto.EstadoPuesto == Enumerados.EstadoPuesto.EnUso
@@ -67,12 +102,17 @@ namespace Entidades
             {
                 sesion.Puesto.EstadoPuesto = Enumerados.EstadoPuesto.SinUso;
                 sesion.Cliente.EstadoCliente = Enumerados.EstadoCliente.Atendido;
+                
+
+
                 sesion.TiempoFinal = DateTime.Now;
                 sesion.CostoSesion = sesion.Puesto.CalcularCosto(sesion);
+                sesion.Puesto.UsoMinutos = sesion.DuracionSesion;
                 foreach (Sesion item in this.listaSesiones)
                 {
                     if(sesion == item)
                     {
+                        Historial.Sesiones.Add(sesion);
                         this.listaSesiones.Remove(sesion);
                         return sesion.ToString();
                     
@@ -84,9 +124,9 @@ namespace Entidades
             return "NO LO ENCONTRE";
         }
 
-        public string MOSTRAR()
+        public List<Puesto> MOSTRAR()
         {
-            return this.listaClienteCabinas.ToString();
+            return ListaPuestos;
         }
     }
 }

@@ -60,8 +60,16 @@ namespace Entidades
 
         public int DuracionSesion
         {
-            get { return this.duracionSesion; }
-            set { this.duracionSesion = value; }
+            get { return  CalcularDuracionSesion(); }
+            set {
+                this.DuracionSesion = value;
+                 }
+        }
+        public int CalcularDuracionSesion()
+        {
+            double var= (this.tiempoFinal - this.tiempoInicio).TotalSeconds;
+
+            return (int)var;
         }
 
         public abstract double CostoSesion { get; set; }
