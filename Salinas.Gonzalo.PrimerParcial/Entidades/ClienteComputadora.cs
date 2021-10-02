@@ -121,7 +121,7 @@ namespace Entidades
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
-            sb.AppendLine($"Datos Cliente: {base.mostrar()}");
+            sb.AppendLine($"{base.ToString()}");
             sb.AppendLine($"Software Requerido: {SoftwareCliente}");
             if(HadwareCliente == "")
             {

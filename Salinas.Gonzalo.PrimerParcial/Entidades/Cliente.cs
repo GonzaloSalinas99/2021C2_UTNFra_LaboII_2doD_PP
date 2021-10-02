@@ -52,9 +52,17 @@ namespace Entidades
             }
 
         }
-        public string mostrar()
+        public override string ToString()
         {
-            return $"{this.nombre} {this.apellido} {this.dni} {this.edad} {this.estadoCliente}";
+
+            StringBuilder sb = new StringBuilder();
+            sb.AppendLine($"DATOS CLIENTE.");
+            sb.AppendLine($"Nombre: {this.nombre}.");
+            sb.AppendLine($"Apellido: {this.apellido}.");
+            sb.AppendLine($"Dni: {this.dni}.");
+            sb.AppendLine($"Edad: {this.edad}.");
+            sb.AppendLine($"Estado: {this.estadoCliente}.");
+            return sb.ToString();
         }
 
 

@@ -97,6 +97,37 @@ namespace Entidades
             }
             return false;
         }
+        public Sesion MostrarSesionLlamada()
+        {
+            foreach (Llamada llamada in this.listaSesiones)
+            {
+                return llamada;
+            }
+            return null;
+        }
+        public string CerrarSesionTelefono(Sesion sesion)
+        {
+            if (sesion.Puesto.EstadoPuesto == Enumerados.EstadoPuesto.EnUso
+                && sesion.Cliente.EstadoCliente == Enumerados.EstadoCliente.Asignado)
+            {
+                sesion.Puesto.EstadoPuesto = Enumerados.EstadoPuesto.SinUso;
+                sesion.Cliente.EstadoCliente = Enumerados.EstadoCliente.Atendido;
+                sesion.TiempoFinal = DateTime.Now;
+                sesion.CostoSesion = sesion.Puesto.CalcularCosto(sesion);
+                sesion.Puesto.UsoMinutos = sesion.DuracionSesion;
+                foreach (Sesion item in this.listaSesiones)
+                {
+                    if (sesion == item)
+                    {
+                        Historial.Sesiones.Add(sesion);
+                        this.listaSesiones.Remove(sesion);
+                        return sesion.ToString();
+                    }
+                }
+            }
+
+            return "NO LO ENCONTRE";
+        }
 
         private bool CompararClienteConComputadora(ClienteComputadora cliente, Computadora computadora)
         {
@@ -137,14 +168,7 @@ namespace Entidades
             return null;
         }
 
-        public Sesion MostrarSesionLlamada()
-        {
-            foreach (Llamada llamada in this.listaSesiones)
-            {
-                return llamada;
-            }
-            return null;
-        }
+        
         public string CerrarSesionConexion(Sesion sesion)
         {
             if (sesion.Puesto.EstadoPuesto == Enumerados.EstadoPuesto.EnUso
@@ -166,40 +190,6 @@ namespace Entidades
                 }
             }
             return "NO LO ENCONTRE";
-        }
-
-        public string CerrarSesionTelefono(Sesion sesion)
-        {
-            if (sesion.Puesto.EstadoPuesto == Enumerados.EstadoPuesto.EnUso
-                && sesion.Cliente.EstadoCliente == Enumerados.EstadoCliente.Asignado)
-            {
-                sesion.Puesto.EstadoPuesto = Enumerados.EstadoPuesto.SinUso;
-                sesion.Cliente.EstadoCliente = Enumerados.EstadoCliente.Atendido;
-                
-
-
-                sesion.TiempoFinal = DateTime.Now;
-                sesion.CostoSesion = sesion.Puesto.CalcularCosto(sesion);
-                sesion.Puesto.UsoMinutos = sesion.DuracionSesion;
-                foreach (Sesion item in this.listaSesiones)
-                {
-                    if(sesion == item)
-                    {
-                        Historial.Sesiones.Add(sesion);
-                        this.listaSesiones.Remove(sesion);
-                        return sesion.ToString();
-                    
-                    }
-                }
-
-            }
-
-            return "NO LO ENCONTRE";
-        }
-
-        public List<Puesto> MOSTRAR()
-        {
-            return ListaPuestos;
         }
     }
 }

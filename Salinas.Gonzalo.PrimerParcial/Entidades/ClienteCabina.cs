@@ -37,7 +37,7 @@ namespace Entidades
         {
             StringBuilder sb = new StringBuilder();
             sb.AppendLine("Datos Cliente.");
-            sb.AppendLine(base.mostrar());
+            sb.AppendLine(base.ToString());
 
             sb.AppendLine("Datos Telefono.");
             sb.AppendLine($"Tipo Telefono: {TipoTelefono}");

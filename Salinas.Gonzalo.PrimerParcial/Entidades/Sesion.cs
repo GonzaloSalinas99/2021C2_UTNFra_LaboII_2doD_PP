@@ -79,8 +79,8 @@ namespace Entidades
             StringBuilder sb = new StringBuilder();
             sb.AppendLine($"Id de sesión: {this.IdSesion}.");
             sb.AppendLine($"Puesto:{Puesto.ToString()}");
-            sb.AppendLine("Cliente:");
-            sb.AppendLine(Cliente.mostrar());
+
+            sb.AppendLine(Cliente.ToString());
             sb.AppendLine($"Hora de inicio: {this.TiempoInicio}.");
             if (this.TiempoFinal != DateTime.MinValue)
             {
