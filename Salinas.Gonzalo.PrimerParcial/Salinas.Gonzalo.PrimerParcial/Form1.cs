@@ -27,7 +27,7 @@ namespace Salinas.Gonzalo.PrimerParcial
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            
+
             
         }
 
@@ -38,23 +38,36 @@ namespace Salinas.Gonzalo.PrimerParcial
             string apellido= textBox2.Text;
             string dni= textBox3.Text;
             string edad = textBox4.Text;
+            ClienteComputadora cl2 = new ClienteComputadora("FACUNDO", "SALINAS", "40293029","24");
+            cl2.JuegosCliente = "Counter Strike";
+            cl2.JuegosCliente = "Age of Empire";
+            cl2.JuegosCliente = "MU";
+            cl2.PerifericosCliente = "Camara";
+            cl2.SoftwareCliente = "Messenger";
+            cl2.SoftwareCliente = "Mi Encarta";
 
+            Computadora comp1 = new Computadora();
+
+            comp1.CargarJuegos("Counter Strike","Age of Empire","MU");
+            comp1.CargarPerifericos("Camara","","");
+            comp1.CargarSoftware("Messenger","Mi Encarta","");
             //Crear cabina
             Cabina cab1 = new Cabina("PHILIPS", Enumerados.TipoTelefono.Teclado);
             //Crear Cliente
-            ClienteCabina cl1 = new ClienteCabina("Gonzalo", "Salinas", "42038608", "21",Enumerados.TipoTelefono.Teclado,"441142414903");
+            ClienteCabina cl1 = new ClienteCabina("Gonzalo", "Salinas", "42038608", "21",Enumerados.TipoTelefono.ADisco,"441142414903");
 
-
+            controlador.AgregarClienteComputadora(cl2);
+            controlador.AbrirSesionConexion(cl2,comp1);
+            richTextBox1.Text = controlador.MostrarSesionConexion().ToString();
             
-            
-            //agrego el cliente a la lista
-            controlador.AgregarClienteCabina(cl1);
-            //abro sesion de llamada con cliente y cabina
-            controlador.AbrirSesionLlamada(cl1, cab1).ToString();
-            //recorro las sesiones y las cierro
+            ////agrego el cliente a la lista
+            //controlador.AgregarClienteCabina(cl1);
+            ////abro sesion de llamada con cliente y cabina
+            //controlador.AbrirSesionLlamada(cl1, cab1).ToString();
+            ////recorro las sesiones y las cierro
 
 
-            richTextBox1.Text = controlador.MostrarSesionLlamada().ToString();
+            //richTextBox1.Text = controlador.MostrarSesionLlamada().ToString();
 
         }
 
@@ -63,7 +76,7 @@ namespace Salinas.Gonzalo.PrimerParcial
             foreach (Sesion ses in controlador.ListaSesiones)
             {
                 
-                richTextBox1.Text = controlador.CerrarSesionTelefono(ses);
+                richTextBox1.Text = controlador.CerrarSesionConexion(ses);
                 break;
             }
             //controlador.CerrarSesionTelefono(controlador.ListaSesiones);

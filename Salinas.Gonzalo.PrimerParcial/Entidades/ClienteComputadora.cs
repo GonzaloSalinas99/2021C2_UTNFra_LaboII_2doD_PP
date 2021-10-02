@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Entidades
 {
-    class ClienteComputadora : Cliente
+    public class ClienteComputadora : Cliente
     {
         private List<string> hadware;
         private List<string> software;
@@ -30,7 +30,10 @@ namespace Entidades
                 StringBuilder b = new StringBuilder();
                 foreach (string s in hadware)
                 {
-                    b.AppendLine(s.ToString());
+                    
+                        b.AppendLine(s.ToString());
+
+                    
                 }
                 return b.ToString();
             }
@@ -52,7 +55,10 @@ namespace Entidades
                 StringBuilder b = new StringBuilder();
                 foreach (string s in software)
                 {
-                    b.AppendLine(s.ToString());
+                    
+                        b.AppendLine(s.ToString());
+
+                    
                 }
                 return b.ToString();
             }
@@ -74,7 +80,7 @@ namespace Entidades
                 StringBuilder b = new StringBuilder();
                 foreach (string s in juegos)
                 {
-                    b.AppendLine(s.ToString());
+                        b.AppendLine(s.ToString());
                 }
                 return b.ToString();
             }
@@ -95,7 +101,10 @@ namespace Entidades
                 StringBuilder b = new StringBuilder();
                 foreach (string s in perifericos)
                 {
-                    b.AppendLine(s.ToString());
+                    
+                        b.AppendLine(s.ToString());
+
+                    
                 }
                 return b.ToString();
             }
@@ -106,6 +115,27 @@ namespace Entidades
                     this.perifericos.Add(value);
                 }
             }
+        }
+
+
+        public override string ToString()
+        {
+            StringBuilder sb = new StringBuilder();
+            sb.AppendLine($"Datos Cliente: {base.mostrar()}");
+            sb.AppendLine($"Software Requerido: {SoftwareCliente}");
+            if(HadwareCliente == "")
+            {
+                sb.AppendLine($"Hadware Requerido: Sin Hadware Requerido.");
+            }
+            else
+            {
+                sb.AppendLine($"Hadware Requerido: {HadwareCliente}");
+            }
+            
+            sb.AppendLine($"Juegos Requeridos: {JuegosCliente}");
+            sb.AppendLine($"Perifericos Requeridos: {PerifericosCliente}");
+
+            return sb.ToString();
         }
 
     }

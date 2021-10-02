@@ -47,14 +47,14 @@ namespace Entidades
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
-            sb.AppendLine($"ID: {IdPuesto}");
-            sb.AppendLine($"Estado: {EstadoPuesto}");
-            sb.AppendLine($"Uso minutos: {UsoMinutos}");
+            sb.AppendLine($"ID: {IdPuesto}\n");
+            sb.AppendLine($"Estado: {EstadoPuesto}\n");
+            sb.AppendLine($"Uso minutos: {UsoMinutos}\n");
             sb.AppendLine("---------------------------");
             return sb.ToString();
         }
 
-        public abstract double CalcularCosto(Sesion llamada);
+        public abstract double CalcularCosto(Sesion sesion);
 
     }
 }

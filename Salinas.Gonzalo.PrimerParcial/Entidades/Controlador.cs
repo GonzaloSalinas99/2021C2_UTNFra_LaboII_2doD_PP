@@ -12,15 +12,14 @@ namespace Entidades
         private List<Sesion> listaSesiones;
         private List<Puesto> listaPuestos;
         private List<ClienteCabina> listaClienteCabinas;
-        private List<ClienteComputadora> clienteComputadoras;
+        private List<ClienteComputadora> listaClientesComputadoras;
         private DateTime fecha;
 
-        //private static Controlador control;
 
         internal List<ClienteComputadora> ClienteComputadoras
         {
-            get { return this.clienteComputadoras; }
-            set { clienteComputadoras = value; }
+            get { return this.listaClientesComputadoras; }
+            set { listaClientesComputadoras = value; }
         }
         public List<Sesion> ListaSesiones
         {
@@ -48,7 +47,7 @@ namespace Entidades
             listaSesiones = new List<Sesion>();
             listaPuestos = new List<Puesto>();
             listaClienteCabinas = new List<ClienteCabina>();
-            clienteComputadoras = new List<ClienteComputadora>();
+            listaClientesComputadoras = new List<ClienteComputadora>();
             fecha = default(DateTime);
         }
 
@@ -61,6 +60,17 @@ namespace Entidades
             }
             return false;
         }
+
+        public bool AgregarClienteComputadora(ClienteComputadora cliente)
+        {
+            if (cliente is ClienteComputadora && cliente is not null)
+            {
+                listaClientesComputadoras.Add(cliente);
+                return true;
+            }
+            return false;
+        }
+
 
         public bool AgregarPuesto(Puesto puesto)
         {
@@ -87,6 +97,46 @@ namespace Entidades
             }
             return false;
         }
+
+        private bool CompararClienteConComputadora(ClienteComputadora cliente, Computadora computadora)
+        {
+            if (cliente is ClienteComputadora && computadora is Computadora)
+            {
+                if(cliente.SoftwareCliente == computadora.Software  &&
+                    cliente.PerifericosCliente == computadora.Perifericos && cliente.JuegosCliente == computadora.Juegos)
+                {
+                    return true;
+                }
+            }
+            return false;
+
+        }
+
+
+        public bool AbrirSesionConexion(ClienteComputadora cliente, Computadora computadora)
+        {
+
+            if (cliente is ClienteComputadora && computadora is Computadora)
+            {
+                if (cliente.EstadoCliente == Enumerados.EstadoCliente.Esperando
+                    && computadora.EstadoPuesto == Enumerados.EstadoPuesto.SinUso && CompararClienteConComputadora(cliente,computadora))
+                {
+                    Conexion nuevaConexion = new Conexion(computadora,cliente);
+                    ListaSesiones.Add(nuevaConexion);
+                    return true;
+                }
+            }
+            return false;
+        }
+        public Sesion MostrarSesionConexion()
+        {
+            foreach (Conexion conexion in ListaSesiones)
+            {
+                return conexion;
+            }
+            return null;
+        }
+
         public Sesion MostrarSesionLlamada()
         {
             foreach (Llamada llamada in this.listaSesiones)
@@ -95,6 +145,29 @@ namespace Entidades
             }
             return null;
         }
+        public string CerrarSesionConexion(Sesion sesion)
+        {
+            if (sesion.Puesto.EstadoPuesto == Enumerados.EstadoPuesto.EnUso
+                && sesion.Cliente.EstadoCliente == Enumerados.EstadoCliente.Asignado)
+            {
+                sesion.Puesto.EstadoPuesto = Enumerados.EstadoPuesto.SinUso;
+                sesion.Cliente.EstadoCliente = Enumerados.EstadoCliente.Atendido;
+                sesion.TiempoFinal = DateTime.Now;
+                sesion.CostoSesion = sesion.Puesto.CalcularCosto(sesion);
+                sesion.Puesto.UsoMinutos = sesion.DuracionSesion;
+                foreach (Sesion sesionLista in ListaSesiones)
+                {
+                    if (sesion == sesionLista)
+                    {
+                        Historial.Sesiones.Add(sesion);
+                        this.listaSesiones.Remove(sesion);
+                        return sesion.ToString();
+                    }
+                }
+            }
+            return "NO LO ENCONTRE";
+        }
+
         public string CerrarSesionTelefono(Sesion sesion)
         {
             if (sesion.Puesto.EstadoPuesto == Enumerados.EstadoPuesto.EnUso

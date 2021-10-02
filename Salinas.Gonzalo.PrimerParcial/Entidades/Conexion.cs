@@ -8,14 +8,15 @@ namespace Entidades
 {
     public class Conexion : Sesion
     {
-        public Conexion (Puesto puesto,Cliente cliente):base(puesto,cliente)
+        public Conexion (Puesto puesto,Cliente cliente)
+            :base(puesto,cliente)
         {
         }
 
         public override double CostoSesion 
         {
             get { return this.costoSesion; }
-            set { this.Puesto.CalcularCosto(this); }
+            set { this.costoSesion = this.Puesto.CalcularCosto(this); }
         }
 
     }
