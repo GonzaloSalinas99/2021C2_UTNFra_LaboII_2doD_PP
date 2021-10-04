@@ -16,7 +16,7 @@ namespace Entidades
         private DateTime fecha;
 
 
-        internal List<ClienteComputadora> ClienteComputadoras
+        public List<ClienteComputadora> ListaClienteComputadora
         {
             get { return this.listaClientesComputadoras; }
             set { listaClientesComputadoras = value; }
@@ -88,7 +88,8 @@ namespace Entidades
             if (cliente is ClienteCabina && cabina is Cabina)
             {
                 if(cliente.EstadoCliente == Enumerados.EstadoCliente.Esperando 
-                    && cabina.EstadoPuesto == Enumerados.EstadoPuesto.SinUso)
+                    && cabina.EstadoPuesto == Enumerados.EstadoPuesto.SinUso
+                    && cabina.TipoTelefono == cliente.TipoTelefono)
                 {
                     Llamada nuevaLlamada = new Llamada(cliente.NumeroTelefono, cliente, cabina);
                     this.listaSesiones.Add(nuevaLlamada);

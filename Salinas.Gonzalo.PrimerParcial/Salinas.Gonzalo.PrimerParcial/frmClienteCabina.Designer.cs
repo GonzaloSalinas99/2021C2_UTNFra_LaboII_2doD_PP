@@ -42,6 +42,7 @@ namespace Salinas.Gonzalo.PrimerParcial
             this.txtNumeroTelefono = new System.Windows.Forms.TextBox();
             this.cmbTipoTelefono = new System.Windows.Forms.ComboBox();
             this.btnAgregarCliente = new System.Windows.Forms.Button();
+            this.btnVolver = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lblNombre
@@ -153,11 +154,23 @@ namespace Salinas.Gonzalo.PrimerParcial
             this.btnAgregarCliente.UseVisualStyleBackColor = true;
             this.btnAgregarCliente.Click += new System.EventHandler(this.btnAgregarClienteCabina_Click);
             // 
+            // btnVolver
+            // 
+            this.btnVolver.DialogResult = System.Windows.Forms.DialogResult.OK;
+            this.btnVolver.Location = new System.Drawing.Point(12, 356);
+            this.btnVolver.Name = "btnVolver";
+            this.btnVolver.Size = new System.Drawing.Size(121, 46);
+            this.btnVolver.TabIndex = 8;
+            this.btnVolver.Text = "Volver";
+            this.btnVolver.UseVisualStyleBackColor = true;
+            this.btnVolver.Click += new System.EventHandler(this.btnVolver_Click);
+            // 
             // frmClienteCabina
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(389, 414);
+            this.Controls.Add(this.btnVolver);
             this.Controls.Add(this.btnAgregarCliente);
             this.Controls.Add(this.cmbTipoTelefono);
             this.Controls.Add(this.txtNumeroTelefono);
@@ -194,5 +207,6 @@ namespace Salinas.Gonzalo.PrimerParcial
         private System.Windows.Forms.TextBox txtNumeroTelefono;
         private System.Windows.Forms.ComboBox cmbTipoTelefono;
         public System.Windows.Forms.Button btnAgregarCliente;
+        public System.Windows.Forms.Button btnVolver;
     }
 }

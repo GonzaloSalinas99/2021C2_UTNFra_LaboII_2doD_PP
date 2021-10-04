@@ -22,6 +22,32 @@ namespace Salinas.Gonzalo.PrimerParcial
             controlador.AgregarPuesto(new Cabina("TELECOM", Enumerados.TipoTelefono.ADisco));
             controlador.AgregarPuesto(new Cabina("SANYO", Enumerados.TipoTelefono.Teclado));
             controlador.AgregarPuesto(new Cabina("TLC", Enumerados.TipoTelefono.Teclado));
+            Computadora c1 = new Computadora();
+            c1.Software = "Ares";
+            c1.Software = "Messenger";
+            c1.Juegos = "Age of Empires";
+            c1.Juegos = "Counter Strike";
+            c1.Perifericos = "Camara";
+            controlador.AgregarPuesto(c1);
+            Computadora c2 = new Computadora();
+            c2.Software = "Mi Encarta";
+            c2.Software = "Ares";
+            c2.Software = "Messenger";
+            c2.Juegos = "Age of Empires";
+            c2.Juegos = "Counter Strike";
+
+            
+            c2.Perifericos = "Microfono";
+            c2.Perifericos = "Camara";
+            controlador.AgregarPuesto(c2);
+            Computadora c3 = new Computadora();
+            c3.Juegos = "Counter Strike";
+            c3.Juegos = "Age of Empires";
+            
+            controlador.AgregarPuesto(c3);
+            //Computadora c4 = new Computadora();
+            //Computadora c5 = new Computadora();
+
             InitializeComponent();
         }
 
@@ -59,7 +85,7 @@ namespace Salinas.Gonzalo.PrimerParcial
             //controlador.AgregarClienteComputadora(cl2);
             //controlador.AbrirSesionConexion(cl2,comp1);
             //richTextBox1.Text = controlador.MostrarSesionConexion().ToString();
-            
+
             //////agrego el cliente a la lista
             ////controlador.AgregarClienteCabina(cl1);
             //////abro sesion de llamada con cliente y cabina
@@ -68,7 +94,7 @@ namespace Salinas.Gonzalo.PrimerParcial
 
 
             ////richTextBox1.Text = controlador.MostrarSesionLlamada().ToString();
-
+            
         }
 
 
@@ -81,13 +107,8 @@ namespace Salinas.Gonzalo.PrimerParcial
             frmClienteCabina frmClienteCabina = new frmClienteCabina(controlador);
             frmClienteCabina.ShowDialog();
             controlador= (frmClienteCabina.DevolverControlador);
-            foreach (ClienteCabina Cliente in controlador.ListaClienteCabinas)
-            {
-                if (Cliente is ClienteCabina && Cliente is not null)
-                {
-                    listBox1.Items.Add(Cliente.ToString());
-                }
-            }            
+            
+           
         }
         private void frmMenuPrincipal_FormClosing(object sender, FormClosingEventArgs e)
         {
@@ -96,8 +117,69 @@ namespace Salinas.Gonzalo.PrimerParcial
 
         private void btnAgregarClienteComputadora_Click(object sender, EventArgs e)
         {
-            frmClienteComputadora frmClienteComputadora = new frmClienteComputadora(controlador);
+            frmCrearSesionLlamada frmClienteComputadora = new frmCrearSesionLlamada(controlador);
             frmClienteComputadora.ShowDialog();
+            controlador = (frmClienteComputadora.DevolverControlador);
+            
+        }
+
+        
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+
+            StringBuilder clientesCabina = new StringBuilder();
+            clientesCabina.AppendLine("Lista Clientes Cabina");
+            if(controlador.ListaClienteCabinas.Count == 0 )
+            {
+                clientesCabina.AppendLine("No hay clientes cargados");
+            }
+            else
+            {
+                foreach (ClienteCabina cliente in controlador.ListaClienteCabinas)
+                {
+                    clientesCabina.AppendLine(cliente.ToString());
+                }
+                
+            }
+            
+            StringBuilder clientesComputadora = new StringBuilder();
+            clientesComputadora.AppendLine("Lista Clientes Computadora");
+
+            if (controlador.ListaClienteComputadora.Count == 0)
+            {
+                clientesComputadora.AppendLine("No hay clientes cargados");
+            }
+            else
+            {
+                foreach (ClienteComputadora cliente in controlador.ListaClienteComputadora)
+                {
+                    clientesComputadora.AppendLine(cliente.ToString());
+                }
+            }
+            
+            MessageBox.Show(clientesCabina.ToString());
+            MessageBox.Show(clientesComputadora.ToString());
+        }
+
+        private void btnCrearSesionLlamada_Click(object sender, EventArgs e)
+        {
+            frmSesionLlamada frmSesionLlamada = new frmSesionLlamada(controlador);
+            frmSesionLlamada.ShowDialog();
+            controlador = frmSesionLlamada.DevolverControlador;
+        }
+
+        private void btnCrearSesionConexion_Click(object sender, EventArgs e)
+        {
+            frmCrearSesionConexion frmSesionConexion = new frmCrearSesionConexion(controlador);
+            frmSesionConexion.ShowDialog();
+            controlador = frmSesionConexion.DevolverControlador;
+        }
+
+        private void btnCerrarSesionLlamada_Click(object sender, EventArgs e)
+        {
+            frmCerrarSesionLlamada frmCerrarSesionLlamada = new frmCerrarSesionLlamada(controlador);
+            frmCerrarSesionLlamada.ShowDialog();
         }
     }
 }

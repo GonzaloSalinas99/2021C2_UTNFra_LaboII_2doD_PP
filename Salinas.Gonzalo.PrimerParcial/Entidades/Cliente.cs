@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using Enumerados;
 namespace Entidades
 {
-    public  class Cliente 
+    public abstract class Cliente 
     {
         private string nombre;
         private string dni;
@@ -64,7 +64,6 @@ namespace Entidades
             sb.AppendLine($"Estado: {this.estadoCliente}.");
             return sb.ToString();
         }
-
 
 
     }

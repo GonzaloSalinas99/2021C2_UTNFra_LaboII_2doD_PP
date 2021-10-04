@@ -55,14 +55,14 @@ namespace Salinas.Gonzalo.PrimerParcial
 
             this.Close();
         }
-        public ClienteCabina DevolverClienteCabina
-        {
-            get { return this.clienteCabina; }
-            set { this.clienteCabina = value; }
-        }
         public Controlador DevolverControlador
         {
             get { return this.controlAux; }
+        }
+
+        private void btnVolver_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }
