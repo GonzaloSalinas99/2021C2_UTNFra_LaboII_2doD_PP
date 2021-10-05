@@ -10,10 +10,10 @@ using System.Windows.Forms;
 using Entidades;
 namespace Salinas.Gonzalo.PrimerParcial
 {
-    public partial class frmCrearSesionLlamada : Form
+    public partial class @as : Form
     {
         private Controlador control;
-        public frmCrearSesionLlamada(Controlador controlador)
+        public @as(Controlador controlador)
         {
 
             InitializeComponent();

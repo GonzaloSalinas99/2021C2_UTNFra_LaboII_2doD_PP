@@ -45,9 +45,14 @@ namespace Salinas.Gonzalo.PrimerParcial
             c3.Juegos = "Age of Empires";
             
             controlador.AgregarPuesto(c3);
-            //Computadora c4 = new Computadora();
-            //Computadora c5 = new Computadora();
-
+            ClienteCabina cliCab1 = new ClienteCabina("Gonzalo","Salinas","42038608","21",Enumerados.TipoTelefono.Teclado,"111112345678");
+            ClienteCabina cliCab2 = new ClienteCabina("Facundo","Cruz","40101010","23",Enumerados.TipoTelefono.Teclado,"121212345678");
+            ClienteCabina cliCab3 = new ClienteCabina("Eliana","Cuervo","40123123","21",Enumerados.TipoTelefono.ADisco,"541142414903");
+            ClienteCabina cliCab4 = new ClienteCabina("Hugo","Horacio","10123456","21",Enumerados.TipoTelefono.ADisco,"541220771022");
+            controlador.AgregarClienteCabina(cliCab1);
+            controlador.AgregarClienteCabina(cliCab2);
+            controlador.AgregarClienteCabina(cliCab3);
+            controlador.AgregarClienteCabina(cliCab4);
             InitializeComponent();
         }
 
@@ -117,7 +122,7 @@ namespace Salinas.Gonzalo.PrimerParcial
 
         private void btnAgregarClienteComputadora_Click(object sender, EventArgs e)
         {
-            frmCrearSesionLlamada frmClienteComputadora = new frmCrearSesionLlamada(controlador);
+            @as frmClienteComputadora = new @as(controlador);
             frmClienteComputadora.ShowDialog();
             controlador = (frmClienteComputadora.DevolverControlador);
             
@@ -180,6 +185,8 @@ namespace Salinas.Gonzalo.PrimerParcial
         {
             frmCerrarSesionLlamada frmCerrarSesionLlamada = new frmCerrarSesionLlamada(controlador);
             frmCerrarSesionLlamada.ShowDialog();
+            controlador = frmCerrarSesionLlamada.DevolverControlador;
+            
         }
     }
 }

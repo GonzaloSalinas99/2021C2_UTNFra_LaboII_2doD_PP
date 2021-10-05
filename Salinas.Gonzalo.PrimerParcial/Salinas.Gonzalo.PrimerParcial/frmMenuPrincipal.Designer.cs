@@ -129,7 +129,7 @@ namespace Salinas.Gonzalo.PrimerParcial
             // 
             this.btnCerrarSesionLlamada.Location = new System.Drawing.Point(160, 196);
             this.btnCerrarSesionLlamada.Name = "btnCerrarSesionLlamada";
-            this.btnCerrarSesionLlamada.Size = new System.Drawing.Size(133, 23);
+            this.btnCerrarSesionLlamada.Size = new System.Drawing.Size(169, 23);
             this.btnCerrarSesionLlamada.TabIndex = 24;
             this.btnCerrarSesionLlamada.Text = "Cerrar Sesion Llamada";
             this.btnCerrarSesionLlamada.UseVisualStyleBackColor = true;

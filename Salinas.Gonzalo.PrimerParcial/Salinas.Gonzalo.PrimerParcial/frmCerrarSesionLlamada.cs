@@ -21,6 +21,20 @@ namespace Salinas.Gonzalo.PrimerParcial
 
         private void btnCerrarSesionLlamada_Click(object sender, EventArgs e)
         {
+            string identificador = txtIdentificadorLlamada.Text;
+            if(BuscarLlamadaIdentificador(control,identificador) is not null)
+            {
+                Llamada llamadaAux = BuscarLlamadaIdentificador(control, identificador);
+                control.CerrarSesionTelefono(llamadaAux);
+                MessageBox.Show("Se cerro sesion correctamente");
+                MessageBox.Show(Historial.MostrarHistorial());
+                lBoxLlamadas.Items.Clear();
+                ActualizarListasSesiones(control);
+            }
+            else
+            {
+                MessageBox.Show("Ocurrio un error al cerrar sesion");
+            }
 
         }
 
@@ -34,5 +48,42 @@ namespace Salinas.Gonzalo.PrimerParcial
                 }
             }
         }
+
+        private Llamada BuscarLlamadaIdentificador(Controlador control, string identificador)
+        {
+            int valorIdentificador;
+            if(int.TryParse(identificador,out valorIdentificador))
+            {
+                foreach (Sesion sesion in control.ListaSesiones)
+                {
+                    if (sesion is Llamada && sesion is not null)
+                    {
+                        if (sesion.IdSesion == valorIdentificador )
+                        {
+                            return (Llamada)sesion;
+                        }
+                    }
+                }
+            }
+            
+            return null;
+        }
+
+        private void ActualizarListasSesiones(Controlador control)
+        {
+            foreach (Sesion sesion in control.ListaSesiones)
+            {
+                if (sesion is Sesion)
+                {
+                    lBoxLlamadas.Items.Add(sesion);
+                }
+            }
+            
+        }
+        public Controlador DevolverControlador
+        {
+            get { return this.control; }
+        }
+
     }
 }

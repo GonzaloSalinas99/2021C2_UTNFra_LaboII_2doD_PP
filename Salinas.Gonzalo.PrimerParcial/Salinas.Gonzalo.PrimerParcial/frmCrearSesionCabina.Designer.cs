@@ -38,6 +38,7 @@ namespace Salinas.Gonzalo.PrimerParcial
             this.lblIdentificadorCabina = new System.Windows.Forms.Label();
             this.lblClienteEncontrado = new System.Windows.Forms.Label();
             this.lblCabinaEncontrada = new System.Windows.Forms.Label();
+            this.btnVolverMenuPrincipal = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lBoxClientes
@@ -46,9 +47,9 @@ namespace Salinas.Gonzalo.PrimerParcial
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lBoxClientes.FormattingEnabled = true;
             this.lBoxClientes.ItemHeight = 15;
-            this.lBoxClientes.Location = new System.Drawing.Point(12, 12);
+            this.lBoxClientes.Location = new System.Drawing.Point(11, 8);
             this.lBoxClientes.Name = "lBoxClientes";
-            this.lBoxClientes.Size = new System.Drawing.Size(423, 109);
+            this.lBoxClientes.Size = new System.Drawing.Size(1138, 109);
             this.lBoxClientes.TabIndex = 0;
             // 
             // lBoxCabinas
@@ -57,18 +58,18 @@ namespace Salinas.Gonzalo.PrimerParcial
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lBoxCabinas.FormattingEnabled = true;
             this.lBoxCabinas.ItemHeight = 15;
-            this.lBoxCabinas.Location = new System.Drawing.Point(12, 145);
+            this.lBoxCabinas.Location = new System.Drawing.Point(11, 132);
             this.lBoxCabinas.Name = "lBoxCabinas";
-            this.lBoxCabinas.Size = new System.Drawing.Size(423, 124);
+            this.lBoxCabinas.Size = new System.Drawing.Size(1138, 124);
             this.lBoxCabinas.TabIndex = 1;
             // 
             // btnCrearSesionLlamada
             // 
             this.btnCrearSesionLlamada.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnCrearSesionLlamada.Location = new System.Drawing.Point(635, 280);
+            this.btnCrearSesionLlamada.Location = new System.Drawing.Point(1036, 276);
             this.btnCrearSesionLlamada.Name = "btnCrearSesionLlamada";
-            this.btnCrearSesionLlamada.Size = new System.Drawing.Size(139, 43);
+            this.btnCrearSesionLlamada.Size = new System.Drawing.Size(102, 43);
             this.btnCrearSesionLlamada.TabIndex = 2;
             this.btnCrearSesionLlamada.Text = "Crear Sesion";
             this.btnCrearSesionLlamada.UseVisualStyleBackColor = true;
@@ -76,7 +77,7 @@ namespace Salinas.Gonzalo.PrimerParcial
             // 
             // txtDocumentoCliente
             // 
-            this.txtDocumentoCliente.Location = new System.Drawing.Point(635, 23);
+            this.txtDocumentoCliente.Location = new System.Drawing.Point(571, 276);
             this.txtDocumentoCliente.Name = "txtDocumentoCliente";
             this.txtDocumentoCliente.Size = new System.Drawing.Size(126, 23);
             this.txtDocumentoCliente.TabIndex = 3;
@@ -85,7 +86,7 @@ namespace Salinas.Gonzalo.PrimerParcial
             // 
             this.txtIdentificadorCabina.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtIdentificadorCabina.Location = new System.Drawing.Point(635, 64);
+            this.txtIdentificadorCabina.Location = new System.Drawing.Point(571, 307);
             this.txtIdentificadorCabina.Name = "txtIdentificadorCabina";
             this.txtIdentificadorCabina.Size = new System.Drawing.Size(126, 23);
             this.txtIdentificadorCabina.TabIndex = 4;
@@ -95,7 +96,7 @@ namespace Salinas.Gonzalo.PrimerParcial
             this.lblDocumentoCliente.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lblDocumentoCliente.AutoSize = true;
-            this.lblDocumentoCliente.Location = new System.Drawing.Point(507, 31);
+            this.lblDocumentoCliente.Location = new System.Drawing.Point(419, 284);
             this.lblDocumentoCliente.Name = "lblDocumentoCliente";
             this.lblDocumentoCliente.Size = new System.Drawing.Size(110, 15);
             this.lblDocumentoCliente.TabIndex = 5;
@@ -106,7 +107,7 @@ namespace Salinas.Gonzalo.PrimerParcial
             this.lblIdentificadorCabina.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lblIdentificadorCabina.AutoSize = true;
-            this.lblIdentificadorCabina.Location = new System.Drawing.Point(507, 72);
+            this.lblIdentificadorCabina.Location = new System.Drawing.Point(419, 315);
             this.lblIdentificadorCabina.Name = "lblIdentificadorCabina";
             this.lblIdentificadorCabina.Size = new System.Drawing.Size(114, 15);
             this.lblIdentificadorCabina.TabIndex = 6;
@@ -115,7 +116,7 @@ namespace Salinas.Gonzalo.PrimerParcial
             // lblClienteEncontrado
             // 
             this.lblClienteEncontrado.AutoSize = true;
-            this.lblClienteEncontrado.Location = new System.Drawing.Point(635, 136);
+            this.lblClienteEncontrado.Location = new System.Drawing.Point(402, 285);
             this.lblClienteEncontrado.Name = "lblClienteEncontrado";
             this.lblClienteEncontrado.Size = new System.Drawing.Size(0, 15);
             this.lblClienteEncontrado.TabIndex = 7;
@@ -123,16 +124,29 @@ namespace Salinas.Gonzalo.PrimerParcial
             // lblCabinaEncontrada
             // 
             this.lblCabinaEncontrada.AutoSize = true;
-            this.lblCabinaEncontrada.Location = new System.Drawing.Point(635, 167);
+            this.lblCabinaEncontrada.Location = new System.Drawing.Point(402, 316);
             this.lblCabinaEncontrada.Name = "lblCabinaEncontrada";
             this.lblCabinaEncontrada.Size = new System.Drawing.Size(0, 15);
             this.lblCabinaEncontrada.TabIndex = 8;
+            // 
+            // btnVolverMenuPrincipal
+            // 
+            this.btnVolverMenuPrincipal.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnVolverMenuPrincipal.Location = new System.Drawing.Point(25, 276);
+            this.btnVolverMenuPrincipal.Name = "btnVolverMenuPrincipal";
+            this.btnVolverMenuPrincipal.Size = new System.Drawing.Size(102, 43);
+            this.btnVolverMenuPrincipal.TabIndex = 9;
+            this.btnVolverMenuPrincipal.Text = "Volver";
+            this.btnVolverMenuPrincipal.UseVisualStyleBackColor = true;
+            this.btnVolverMenuPrincipal.Click += new System.EventHandler(this.btnVolverMenuPrincipal_Click);
             // 
             // frmSesionLlamada
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(786, 335);
+            this.ClientSize = new System.Drawing.Size(1161, 340);
+            this.Controls.Add(this.btnVolverMenuPrincipal);
             this.Controls.Add(this.lblCabinaEncontrada);
             this.Controls.Add(this.lblClienteEncontrado);
             this.Controls.Add(this.lblIdentificadorCabina);
@@ -161,5 +175,6 @@ namespace Salinas.Gonzalo.PrimerParcial
         private System.Windows.Forms.Label lblIdentificadorCabina;
         private System.Windows.Forms.Label lblClienteEncontrado;
         private System.Windows.Forms.Label lblCabinaEncontrada;
+        private System.Windows.Forms.Button btnVolverMenuPrincipal;
     }
 }

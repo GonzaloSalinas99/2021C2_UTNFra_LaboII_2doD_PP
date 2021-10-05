@@ -78,17 +78,17 @@ namespace Entidades
         {
             StringBuilder sb = new StringBuilder();
             sb.AppendLine($"Id de sesión: {this.IdSesion}.");
-            sb.AppendLine($"Puesto:{Puesto.ToString()}");
-
-            sb.AppendLine(Cliente.ToString());
+            
             sb.AppendLine($"Hora de inicio: {this.TiempoInicio}.");
+            sb.AppendLine(Cliente.ToString());
+            
             if (this.TiempoFinal != DateTime.MinValue)
             {
                 sb.AppendLine($"Hora de final: {this.TiempoFinal}.");
                 sb.AppendLine($"Duracion Sesion: {this.DuracionSesion}.");
                 sb.AppendLine($"Costo: {this.CostoSesion}.");
             }
-
+            sb.AppendLine($"Puesto:{Puesto.ToString()}");
             return sb.ToString();
         }
     }

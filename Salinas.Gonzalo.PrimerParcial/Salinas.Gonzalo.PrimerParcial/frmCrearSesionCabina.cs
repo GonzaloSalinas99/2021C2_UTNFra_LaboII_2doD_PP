@@ -123,7 +123,9 @@ namespace Salinas.Gonzalo.PrimerParcial
             get { return this.control; }
         }
 
-
-
+        private void btnVolverMenuPrincipal_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

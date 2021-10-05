@@ -1,7 +1,7 @@
 ﻿
 namespace Salinas.Gonzalo.PrimerParcial
 {
-    partial class frmCrearSesionLlamada
+    partial class @as
     {
         /// <summary>
         /// Required designer variable.
@@ -266,7 +266,7 @@ namespace Salinas.Gonzalo.PrimerParcial
             this.btnVolver.UseVisualStyleBackColor = true;
             this.btnVolver.Click += new System.EventHandler(this.btnVolver_Click);
             // 
-            // frmClienteComputadora
+            // @as
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -284,8 +284,8 @@ namespace Salinas.Gonzalo.PrimerParcial
             this.Controls.Add(this.lblDni);
             this.Controls.Add(this.lblApellido);
             this.Controls.Add(this.lblNombre);
-            this.Name = "frmClienteComputadora";
-            this.Text = "Form3";
+            this.Name = "@as";
+            this.Text = "Crear Cliente Computadora";
             this.Load += new System.EventHandler(this.frmClienteComputadora_Load);
             this.gBoxSoftware.ResumeLayout(false);
             this.gBoxSoftware.PerformLayout();
