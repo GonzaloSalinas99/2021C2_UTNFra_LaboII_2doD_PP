@@ -21,7 +21,15 @@ namespace Entidades
         }
 
 
-        
+        private int contAgeOfEmpires;
+        private int contCounterStrike;
+        private int contMu;
+        private int contMessenger;
+        private int contAres;
+        private int contMiEncarta;
+        private int contCamara;
+        private int contMicrofono;
+        private int contAuriculares;
 
 
         public string SoftwareCliente
@@ -31,10 +39,7 @@ namespace Entidades
                 StringBuilder b = new StringBuilder();
                 foreach (string s in software)
                 {
-                    
                         b.AppendLine(s.ToString());
-
-                    
                 }
                 return b.ToString();
             }
@@ -43,6 +48,21 @@ namespace Entidades
             {
                 if (value is not null)
                 {
+                    if(value == "Messenger")
+                    {
+                        contMessenger++;
+                    }
+                    else
+                    {
+                        if (value == "Ares")
+                        {
+                            contAres++;
+                        }
+                        else
+                        {
+                            contMiEncarta++;
+                        }
+                    }
                     this.software.Add(value);
                 }
             }
@@ -56,15 +76,29 @@ namespace Entidades
                 StringBuilder b = new StringBuilder();
                 foreach (string s in juegos)
                 {
-                        b.AppendLine(s.ToString());
+                    b.AppendLine(s.ToString());
                 }
                 return b.ToString();
             }
-
             set
             {
                 if (value is not null)
                 {
+                    if (value == "Age of Empires")
+                    {
+                        contAgeOfEmpires++;
+                    }
+                    else
+                    {
+                        if (value == "Counter Strike")
+                        {
+                            contCounterStrike++;
+                        }
+                        else
+                        {
+                            contMu++;
+                        }
+                    }
                     this.juegos.Add(value);
                 }
             }
@@ -88,12 +122,63 @@ namespace Entidades
             {
                 if (value is not null)
                 {
+
+                    if (value == "Camara")
+                    {
+                        contCamara++;
+                    }
+                    else
+                    {
+                        if (value == "Microfono")
+                        {
+                            contMicrofono++;
+                        }
+                        else
+                        {
+                            contAuriculares++;
+                        }
+                    }
                     this.perifericos.Add(value);
                 }
             }
         }
 
-        
+        public int ContadorAgeOfEmpires
+        {
+            get { return this.contAgeOfEmpires; }
+        }
+        public int ContadorCounterStrike
+        {
+            get { return this.contCounterStrike; }
+        }
+        public int ContadorMuOnline
+        {
+            get { return this.ContadorMuOnline; }
+        }
+        public int ContadorMessenger
+        {
+            get { return this.contMessenger; }
+        }
+        public int ContadorAres
+        {
+            get { return this.contAres; }
+        }
+        public int ContadorMiEncarta
+        {
+            get { return this.contMiEncarta; }
+        }
+        public int ContadorCamara
+        {
+            get { return this.contCamara; }
+        }
+        public int ContadorAuriculares
+        {
+            get { return this.contAuriculares; }
+        }
+        public int ContadorMicrofono
+        {
+            get { return this.contMicrofono; }
+        }
 
         public override string ToString()
         {
@@ -124,7 +209,6 @@ namespace Entidades
             {
                 sb.AppendLine($"Periferico Requerido: {PerifericosCliente}");
             }
-
 
             return sb.ToString();
         }

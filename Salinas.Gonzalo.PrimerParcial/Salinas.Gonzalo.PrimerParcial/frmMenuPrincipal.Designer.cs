@@ -36,10 +36,13 @@ namespace Salinas.Gonzalo.PrimerParcial
             this.lblAgregarClienteCabina = new System.Windows.Forms.Label();
             this.btnAgregarClienteComputadora = new System.Windows.Forms.Button();
             this.lblAgregarClienteComputadora = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnMostrarClientesEnEspera = new System.Windows.Forms.Button();
             this.btnCrearSesionLlamada = new System.Windows.Forms.Button();
             this.btnCrearSesionConexion = new System.Windows.Forms.Button();
             this.btnCerrarSesionLlamada = new System.Windows.Forms.Button();
+            this.btnCerrarSesionConexion = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // timer1
@@ -95,15 +98,15 @@ namespace Salinas.Gonzalo.PrimerParcial
             this.lblAgregarClienteComputadora.TabIndex = 20;
             this.lblAgregarClienteComputadora.Text = "Cliente Computadora";
             // 
-            // button1
+            // btnMostrarClientesEnEspera
             // 
-            this.button1.Location = new System.Drawing.Point(431, 147);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(167, 23);
-            this.button1.TabIndex = 21;
-            this.button1.Text = "Mostrar Clientes en Espera";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click_1);
+            this.btnMostrarClientesEnEspera.Location = new System.Drawing.Point(431, 147);
+            this.btnMostrarClientesEnEspera.Name = "btnMostrarClientesEnEspera";
+            this.btnMostrarClientesEnEspera.Size = new System.Drawing.Size(167, 23);
+            this.btnMostrarClientesEnEspera.TabIndex = 21;
+            this.btnMostrarClientesEnEspera.Text = "Mostrar Clientes en Espera";
+            this.btnMostrarClientesEnEspera.UseVisualStyleBackColor = true;
+            this.btnMostrarClientesEnEspera.Click += new System.EventHandler(this.btnMostrarClientesEnEspera_Click);
             // 
             // btnCrearSesionLlamada
             // 
@@ -135,15 +138,45 @@ namespace Salinas.Gonzalo.PrimerParcial
             this.btnCerrarSesionLlamada.UseVisualStyleBackColor = true;
             this.btnCerrarSesionLlamada.Click += new System.EventHandler(this.btnCerrarSesionLlamada_Click);
             // 
+            // btnCerrarSesionConexion
+            // 
+            this.btnCerrarSesionConexion.Location = new System.Drawing.Point(160, 225);
+            this.btnCerrarSesionConexion.Name = "btnCerrarSesionConexion";
+            this.btnCerrarSesionConexion.Size = new System.Drawing.Size(169, 23);
+            this.btnCerrarSesionConexion.TabIndex = 25;
+            this.btnCerrarSesionConexion.Text = "Cerrar Sesion Conexion";
+            this.btnCerrarSesionConexion.UseVisualStyleBackColor = true;
+            this.btnCerrarSesionConexion.Click += new System.EventHandler(this.btnCerrarSesionConexion_Click);
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(459, 338);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 26;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(470, 286);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(100, 23);
+            this.textBox1.TabIndex = 27;
+            // 
             // frmMenuPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(610, 450);
+            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnCerrarSesionConexion);
             this.Controls.Add(this.btnCerrarSesionLlamada);
             this.Controls.Add(this.btnCrearSesionConexion);
             this.Controls.Add(this.btnCrearSesionLlamada);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnMostrarClientesEnEspera);
             this.Controls.Add(this.lblAgregarClienteComputadora);
             this.Controls.Add(this.btnAgregarClienteComputadora);
             this.Controls.Add(this.lblAgregarClienteCabina);
@@ -166,10 +199,13 @@ namespace Salinas.Gonzalo.PrimerParcial
         private System.Windows.Forms.Label lblAgregarClienteCabina;
         private System.Windows.Forms.Button btnAgregarClienteComputadora;
         private System.Windows.Forms.Label lblAgregarClienteComputadora;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnMostrarClientesEnEspera;
         private System.Windows.Forms.Button btnCrearSesionLlamada;
         private System.Windows.Forms.Button btnCrearSesionConexion;
         private System.Windows.Forms.Button btnCerrarSesionLlamada;
+        private System.Windows.Forms.Button btnCerrarSesionConexion;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.TextBox textBox1;
     }
 }
 

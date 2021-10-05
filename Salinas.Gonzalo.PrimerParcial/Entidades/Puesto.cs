@@ -47,10 +47,10 @@ namespace Entidades
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
-            sb.AppendLine($"ID: {IdPuesto}\n");
-            sb.AppendLine($"Estado: {EstadoPuesto}\n");
-            sb.AppendLine($"Uso minutos: {UsoMinutos}\n");
-            sb.AppendLine("---------------------------");
+            sb.AppendLine($"ID: {IdPuesto}\n\t");
+            sb.AppendLine($"Estado: {EstadoPuesto}\n\t");
+            sb.AppendLine($"Uso minutos: {UsoMinutos}\n\t");
+            sb.AppendLine("---------------------------\t");
             return sb.ToString();
         }
 

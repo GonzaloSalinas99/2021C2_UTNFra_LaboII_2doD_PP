@@ -25,9 +25,9 @@ namespace Salinas.Gonzalo.PrimerParcial
             if(BuscarLlamadaIdentificador(control,identificador) is not null)
             {
                 Llamada llamadaAux = BuscarLlamadaIdentificador(control, identificador);
-                control.CerrarSesionTelefono(llamadaAux);
+                MessageBox.Show(control.CerrarSesionTelefono(llamadaAux));
                 MessageBox.Show("Se cerro sesion correctamente");
-                MessageBox.Show(Historial.MostrarHistorial());
+                //MessageBox.Show(Historial.MostrarHistorial());
                 lBoxLlamadas.Items.Clear();
                 ActualizarListasSesiones(control);
             }
@@ -73,7 +73,7 @@ namespace Salinas.Gonzalo.PrimerParcial
         {
             foreach (Sesion sesion in control.ListaSesiones)
             {
-                if (sesion is Sesion)
+                if (sesion is Llamada)
                 {
                     lBoxLlamadas.Items.Add(sesion);
                 }
@@ -85,5 +85,9 @@ namespace Salinas.Gonzalo.PrimerParcial
             get { return this.control; }
         }
 
+        private void btnVolverMenuPrincipal_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

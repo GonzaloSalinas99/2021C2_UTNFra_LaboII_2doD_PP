@@ -1,7 +1,7 @@
 ﻿
 namespace Salinas.Gonzalo.PrimerParcial
 {
-    partial class @as
+    partial class frmClienteComputadora
     {
         /// <summary>
         /// Required designer variable.

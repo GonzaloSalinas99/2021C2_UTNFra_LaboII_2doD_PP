@@ -10,10 +10,10 @@ using System.Windows.Forms;
 using Entidades;
 namespace Salinas.Gonzalo.PrimerParcial
 {
-    public partial class @as : Form
+    public partial class frmClienteComputadora : Form
     {
         private Controlador control;
-        public @as(Controlador controlador)
+        public frmClienteComputadora(Controlador controlador)
         {
 
             InitializeComponent();
@@ -26,12 +26,17 @@ namespace Salinas.Gonzalo.PrimerParcial
             string apellido = txtApellido.Text;
             string dni = txtDni.Text;
             string edad = txtEdad.Text;
+
+            
+
+
             ClienteComputadora cliente = new ClienteComputadora(nombre, apellido, dni, edad);
             foreach (Control item in gBoxSoftware.Controls)
             {
                 if(item is CheckBox && ((CheckBox)item).Checked)
                 {
                     cliente.SoftwareCliente = ((CheckBox)item).Text;
+                    
                 }
             }
 

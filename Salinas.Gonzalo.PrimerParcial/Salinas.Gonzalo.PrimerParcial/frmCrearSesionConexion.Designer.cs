@@ -83,14 +83,14 @@ namespace Salinas.Gonzalo.PrimerParcial
             // 
             this.txtIdentificadorComputadora.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtIdentificadorComputadora.Location = new System.Drawing.Point(533, 323);
+            this.txtIdentificadorComputadora.Location = new System.Drawing.Point(533, 363);
             this.txtIdentificadorComputadora.Name = "txtIdentificadorComputadora";
             this.txtIdentificadorComputadora.Size = new System.Drawing.Size(126, 23);
             this.txtIdentificadorComputadora.TabIndex = 13;
             // 
             // txtDocumentoCliente
             // 
-            this.txtDocumentoCliente.Location = new System.Drawing.Point(533, 363);
+            this.txtDocumentoCliente.Location = new System.Drawing.Point(533, 326);
             this.txtDocumentoCliente.Name = "txtDocumentoCliente";
             this.txtDocumentoCliente.Size = new System.Drawing.Size(126, 23);
             this.txtDocumentoCliente.TabIndex = 12;

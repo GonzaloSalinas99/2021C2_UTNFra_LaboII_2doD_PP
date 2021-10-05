@@ -66,9 +66,9 @@ namespace Entidades
             StringBuilder sb = new StringBuilder();
 
             sb.AppendLine(base.ToString());
-            sb.AppendLine($"Tipo Telefono: {TipoTelefono}");
-            sb.AppendLine($"Marca Telefono: {Marca}");
-            sb.AppendLine("----------------------------");
+            sb.AppendLine($"Tipo Telefono: {TipoTelefono}\t");
+            sb.AppendLine($"Marca Telefono: {Marca}\t");
+            sb.AppendLine("----------------------------\t");
 
             return sb.ToString();
         }
