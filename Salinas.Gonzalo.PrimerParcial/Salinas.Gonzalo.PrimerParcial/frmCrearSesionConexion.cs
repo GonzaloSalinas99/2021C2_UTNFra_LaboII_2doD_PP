@@ -25,7 +25,8 @@ namespace Salinas.Gonzalo.PrimerParcial
             {
                 if (puesto is Computadora && puesto.EstadoPuesto == Enumerados.EstadoPuesto.SinUso)
                 {
-                    lBoxComputadora.Items.Add(puesto.ToString());
+                    Computadora aux = (Computadora)puesto;
+                    lBoxComputadora.Items.Add(puesto.ToString() + aux.MostrarComputadora());
                 }
             }
 

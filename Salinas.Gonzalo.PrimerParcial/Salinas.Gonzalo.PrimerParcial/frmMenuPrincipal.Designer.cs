@@ -41,8 +41,13 @@ namespace Salinas.Gonzalo.PrimerParcial
             this.btnCrearSesionConexion = new System.Windows.Forms.Button();
             this.btnCerrarSesionLlamada = new System.Windows.Forms.Button();
             this.btnCerrarSesionConexion = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtNombrePuesto = new System.Windows.Forms.TextBox();
+            this.lblCrearSesionLlamada = new System.Windows.Forms.Label();
+            this.lblCrearSesionConexion = new System.Windows.Forms.Label();
+            this.lblCerrarSesionLlamada = new System.Windows.Forms.Label();
+            this.lblCerrarSesionConexion = new System.Windows.Forms.Label();
+            this.btnMostrarEstadisticas = new System.Windows.Forms.Button();
+            this.btnMostrarPuestos = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // timer1
@@ -73,7 +78,7 @@ namespace Salinas.Gonzalo.PrimerParcial
             // lblAgregarClienteCabina
             // 
             this.lblAgregarClienteCabina.AutoSize = true;
-            this.lblAgregarClienteCabina.Location = new System.Drawing.Point(21, 34);
+            this.lblAgregarClienteCabina.Location = new System.Drawing.Point(22, 34);
             this.lblAgregarClienteCabina.Name = "lblAgregarClienteCabina";
             this.lblAgregarClienteCabina.Size = new System.Drawing.Size(82, 15);
             this.lblAgregarClienteCabina.TabIndex = 17;
@@ -81,7 +86,7 @@ namespace Salinas.Gonzalo.PrimerParcial
             // 
             // btnAgregarClienteComputadora
             // 
-            this.btnAgregarClienteComputadora.Location = new System.Drawing.Point(197, 58);
+            this.btnAgregarClienteComputadora.Location = new System.Drawing.Point(684, 30);
             this.btnAgregarClienteComputadora.Name = "btnAgregarClienteComputadora";
             this.btnAgregarClienteComputadora.Size = new System.Drawing.Size(75, 23);
             this.btnAgregarClienteComputadora.TabIndex = 19;
@@ -92,7 +97,7 @@ namespace Salinas.Gonzalo.PrimerParcial
             // lblAgregarClienteComputadora
             // 
             this.lblAgregarClienteComputadora.AutoSize = true;
-            this.lblAgregarClienteComputadora.Location = new System.Drawing.Point(21, 66);
+            this.lblAgregarClienteComputadora.Location = new System.Drawing.Point(507, 34);
             this.lblAgregarClienteComputadora.Name = "lblAgregarClienteComputadora";
             this.lblAgregarClienteComputadora.Size = new System.Drawing.Size(121, 15);
             this.lblAgregarClienteComputadora.TabIndex = 20;
@@ -100,9 +105,9 @@ namespace Salinas.Gonzalo.PrimerParcial
             // 
             // btnMostrarClientesEnEspera
             // 
-            this.btnMostrarClientesEnEspera.Location = new System.Drawing.Point(431, 147);
+            this.btnMostrarClientesEnEspera.Location = new System.Drawing.Point(315, 99);
             this.btnMostrarClientesEnEspera.Name = "btnMostrarClientesEnEspera";
-            this.btnMostrarClientesEnEspera.Size = new System.Drawing.Size(167, 23);
+            this.btnMostrarClientesEnEspera.Size = new System.Drawing.Size(167, 50);
             this.btnMostrarClientesEnEspera.TabIndex = 21;
             this.btnMostrarClientesEnEspera.Text = "Mostrar Clientes en Espera";
             this.btnMostrarClientesEnEspera.UseVisualStyleBackColor = true;
@@ -110,68 +115,120 @@ namespace Salinas.Gonzalo.PrimerParcial
             // 
             // btnCrearSesionLlamada
             // 
-            this.btnCrearSesionLlamada.Location = new System.Drawing.Point(160, 138);
+            this.btnCrearSesionLlamada.Location = new System.Drawing.Point(197, 91);
             this.btnCrearSesionLlamada.Name = "btnCrearSesionLlamada";
-            this.btnCrearSesionLlamada.Size = new System.Drawing.Size(169, 23);
+            this.btnCrearSesionLlamada.Size = new System.Drawing.Size(75, 23);
             this.btnCrearSesionLlamada.TabIndex = 22;
-            this.btnCrearSesionLlamada.Text = "Crear Sesion Llamada";
+            this.btnCrearSesionLlamada.Text = "Crear";
             this.btnCrearSesionLlamada.UseVisualStyleBackColor = true;
             this.btnCrearSesionLlamada.Click += new System.EventHandler(this.btnCrearSesionLlamada_Click);
             // 
             // btnCrearSesionConexion
             // 
-            this.btnCrearSesionConexion.Location = new System.Drawing.Point(160, 167);
+            this.btnCrearSesionConexion.Location = new System.Drawing.Point(684, 95);
             this.btnCrearSesionConexion.Name = "btnCrearSesionConexion";
-            this.btnCrearSesionConexion.Size = new System.Drawing.Size(169, 23);
+            this.btnCrearSesionConexion.Size = new System.Drawing.Size(75, 23);
             this.btnCrearSesionConexion.TabIndex = 23;
-            this.btnCrearSesionConexion.Text = "Crear Sesion Conexion";
+            this.btnCrearSesionConexion.Text = "Crear";
             this.btnCrearSesionConexion.UseVisualStyleBackColor = true;
             this.btnCrearSesionConexion.Click += new System.EventHandler(this.btnCrearSesionConexion_Click);
             // 
             // btnCerrarSesionLlamada
             // 
-            this.btnCerrarSesionLlamada.Location = new System.Drawing.Point(160, 196);
+            this.btnCerrarSesionLlamada.Location = new System.Drawing.Point(197, 157);
             this.btnCerrarSesionLlamada.Name = "btnCerrarSesionLlamada";
-            this.btnCerrarSesionLlamada.Size = new System.Drawing.Size(169, 23);
+            this.btnCerrarSesionLlamada.Size = new System.Drawing.Size(75, 23);
             this.btnCerrarSesionLlamada.TabIndex = 24;
-            this.btnCerrarSesionLlamada.Text = "Cerrar Sesion Llamada";
+            this.btnCerrarSesionLlamada.Text = "Cerrar";
             this.btnCerrarSesionLlamada.UseVisualStyleBackColor = true;
             this.btnCerrarSesionLlamada.Click += new System.EventHandler(this.btnCerrarSesionLlamada_Click);
             // 
             // btnCerrarSesionConexion
             // 
-            this.btnCerrarSesionConexion.Location = new System.Drawing.Point(160, 225);
+            this.btnCerrarSesionConexion.Location = new System.Drawing.Point(684, 157);
             this.btnCerrarSesionConexion.Name = "btnCerrarSesionConexion";
-            this.btnCerrarSesionConexion.Size = new System.Drawing.Size(169, 23);
+            this.btnCerrarSesionConexion.Size = new System.Drawing.Size(75, 23);
             this.btnCerrarSesionConexion.TabIndex = 25;
-            this.btnCerrarSesionConexion.Text = "Cerrar Sesion Conexion";
+            this.btnCerrarSesionConexion.Text = "Cerrar";
+            this.btnCerrarSesionConexion.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btnCerrarSesionConexion.UseVisualStyleBackColor = true;
             this.btnCerrarSesionConexion.Click += new System.EventHandler(this.btnCerrarSesionConexion_Click);
             // 
-            // button1
+            // txtNombrePuesto
             // 
-            this.button1.Location = new System.Drawing.Point(459, 338);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 26;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.txtNombrePuesto.Location = new System.Drawing.Point(315, 12);
+            this.txtNombrePuesto.Name = "txtNombrePuesto";
+            this.txtNombrePuesto.Size = new System.Drawing.Size(167, 23);
+            this.txtNombrePuesto.TabIndex = 27;
             // 
-            // textBox1
+            // lblCrearSesionLlamada
             // 
-            this.textBox1.Location = new System.Drawing.Point(470, 286);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 23);
-            this.textBox1.TabIndex = 27;
+            this.lblCrearSesionLlamada.AutoSize = true;
+            this.lblCrearSesionLlamada.Location = new System.Drawing.Point(21, 99);
+            this.lblCrearSesionLlamada.Name = "lblCrearSesionLlamada";
+            this.lblCrearSesionLlamada.Size = new System.Drawing.Size(120, 15);
+            this.lblCrearSesionLlamada.TabIndex = 28;
+            this.lblCrearSesionLlamada.Text = "Crear Sesion Llamada";
+            // 
+            // lblCrearSesionConexion
+            // 
+            this.lblCrearSesionConexion.AutoSize = true;
+            this.lblCrearSesionConexion.Location = new System.Drawing.Point(507, 99);
+            this.lblCrearSesionConexion.Name = "lblCrearSesionConexion";
+            this.lblCrearSesionConexion.Size = new System.Drawing.Size(126, 15);
+            this.lblCrearSesionConexion.TabIndex = 29;
+            this.lblCrearSesionConexion.Text = "Crear Sesion Conexion";
+            // 
+            // lblCerrarSesionLlamada
+            // 
+            this.lblCerrarSesionLlamada.AutoSize = true;
+            this.lblCerrarSesionLlamada.Location = new System.Drawing.Point(22, 165);
+            this.lblCerrarSesionLlamada.Name = "lblCerrarSesionLlamada";
+            this.lblCerrarSesionLlamada.Size = new System.Drawing.Size(124, 15);
+            this.lblCerrarSesionLlamada.TabIndex = 30;
+            this.lblCerrarSesionLlamada.Text = "Cerrar Sesion Llamada";
+            // 
+            // lblCerrarSesionConexion
+            // 
+            this.lblCerrarSesionConexion.AutoSize = true;
+            this.lblCerrarSesionConexion.Location = new System.Drawing.Point(507, 161);
+            this.lblCerrarSesionConexion.Name = "lblCerrarSesionConexion";
+            this.lblCerrarSesionConexion.Size = new System.Drawing.Size(130, 15);
+            this.lblCerrarSesionConexion.TabIndex = 31;
+            this.lblCerrarSesionConexion.Text = "Cerrar Sesion Conexion";
+            // 
+            // btnMostrarEstadisticas
+            // 
+            this.btnMostrarEstadisticas.Location = new System.Drawing.Point(315, 181);
+            this.btnMostrarEstadisticas.Name = "btnMostrarEstadisticas";
+            this.btnMostrarEstadisticas.Size = new System.Drawing.Size(167, 50);
+            this.btnMostrarEstadisticas.TabIndex = 32;
+            this.btnMostrarEstadisticas.Text = "Mostrar Estadisticas ";
+            this.btnMostrarEstadisticas.UseVisualStyleBackColor = true;
+            this.btnMostrarEstadisticas.Click += new System.EventHandler(this.btnMostrarEstadisticas_Click);
+            // 
+            // btnMostrarPuestos
+            // 
+            this.btnMostrarPuestos.Location = new System.Drawing.Point(315, 41);
+            this.btnMostrarPuestos.Name = "btnMostrarPuestos";
+            this.btnMostrarPuestos.Size = new System.Drawing.Size(167, 31);
+            this.btnMostrarPuestos.TabIndex = 33;
+            this.btnMostrarPuestos.Text = "Mostrar Puestos";
+            this.btnMostrarPuestos.UseVisualStyleBackColor = true;
+            this.btnMostrarPuestos.Click += new System.EventHandler(this.btnMostrarPuestos_Click);
             // 
             // frmMenuPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(610, 450);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.button1);
+            this.ClientSize = new System.Drawing.Size(810, 450);
+            this.Controls.Add(this.btnMostrarPuestos);
+            this.Controls.Add(this.btnMostrarEstadisticas);
+            this.Controls.Add(this.lblCerrarSesionConexion);
+            this.Controls.Add(this.lblCerrarSesionLlamada);
+            this.Controls.Add(this.lblCrearSesionConexion);
+            this.Controls.Add(this.lblCrearSesionLlamada);
+            this.Controls.Add(this.txtNombrePuesto);
             this.Controls.Add(this.btnCerrarSesionConexion);
             this.Controls.Add(this.btnCerrarSesionLlamada);
             this.Controls.Add(this.btnCrearSesionConexion);
@@ -204,8 +261,13 @@ namespace Salinas.Gonzalo.PrimerParcial
         private System.Windows.Forms.Button btnCrearSesionConexion;
         private System.Windows.Forms.Button btnCerrarSesionLlamada;
         private System.Windows.Forms.Button btnCerrarSesionConexion;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtNombrePuesto;
+        private System.Windows.Forms.Label lblCrearSesionLlamada;
+        private System.Windows.Forms.Label lblCrearSesionConexion;
+        private System.Windows.Forms.Label lblCerrarSesionLlamada;
+        private System.Windows.Forms.Label lblCerrarSesionConexion;
+        private System.Windows.Forms.Button btnMostrarEstadisticas;
+        private System.Windows.Forms.Button btnMostrarPuestos;
     }
 }
 

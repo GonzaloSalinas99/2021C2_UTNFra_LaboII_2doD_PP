@@ -57,11 +57,11 @@ namespace Entidades
 
             StringBuilder sb = new StringBuilder();
             sb.AppendLine($"DATOS CLIENTE.");
-            sb.AppendLine($"Nombre: {this.nombre}.");
-            sb.AppendLine($"Apellido: {this.apellido}.");
-            sb.AppendLine($"Dni: {this.dni}.");
-            sb.AppendLine($"Edad: {this.edad}.");
-            sb.AppendLine($"Estado: {this.estadoCliente}.");
+            sb.AppendLine($"Nombre: {this.nombre}.   ");
+            sb.AppendLine($"Apellido: {this.apellido}.   ");
+            sb.AppendLine($"Dni: {this.dni}.   ");
+            sb.AppendLine($"Edad: {this.edad}.   ");
+            sb.AppendLine($"Estado: {this.estadoCliente}.   ");
             return sb.ToString();
         }
 

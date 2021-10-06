@@ -160,19 +160,32 @@ namespace Salinas.Gonzalo.PrimerParcial
             MessageBox.Show(clientesComputadora.ToString());
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void btnMostrarEstadisticas_Click(object sender, EventArgs e)
         {
             StringBuilder puesto = new StringBuilder();
             puesto.Append("Entidades.");
-            puesto.Append(textBox1.Text);
-           // MessageBox.Show(puesto.ToString());
+            puesto.Append(txtNombrePuesto.Text);
+            // MessageBox.Show(puesto.ToString());
             List<Puesto> listaAux = Historial.OrdenarLista(puesto.ToString());
-            StringBuilder sb = new StringBuilder();
-            foreach (Puesto item in listaAux)
+
+            MessageBox.Show(Historial.GananciaTotalClasificadasPorServicio());
+            MessageBox.Show(Historial.LoMasPedidoPorClientesComputadora());
+            MessageBox.Show(Historial.RecaudacionPorTipoDeLlamadaYHorasTotales());
+        }
+
+        private void btnMostrarPuestos_Click(object sender, EventArgs e)
+        {
+            StringBuilder puestoABuscar = new StringBuilder();
+            puestoABuscar.AppendLine("Entidades.");
+            puestoABuscar.AppendLine(txtNombrePuesto.Text);
+
+            List<Puesto> listaAux = Historial.FiltroLista(puestoABuscar.ToString());
+            StringBuilder listaDePuesto = new StringBuilder();
+            foreach (Puesto puesto in listaAux)
             {
-                sb.AppendLine(item.ToString());
+                listaDePuesto.AppendLine(puesto.ToString());
             }
-            MessageBox.Show(sb.ToString());
+            MessageBox.Show(listaDePuesto.ToString());
         }
     }
 }

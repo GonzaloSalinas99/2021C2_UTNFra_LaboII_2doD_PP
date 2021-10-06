@@ -8,28 +8,32 @@ namespace Entidades
 {
     public class ClienteComputadora : Cliente
     {
-        private List<string> software;
-        private List<string> perifericos;
-        private List<string> juegos;
+        private List<string> listaSoftware;
+        private List<string> listaPerifericos;
+        private List<string> listaJuegos;
 
         public ClienteComputadora(string nombre, string apellido, string dni, string edad)
                                 :base(nombre, apellido, dni, edad)
         {
-            this.software = new List<string>();
-            this.perifericos = new List<string>();
-            this.juegos = new List<string>();
+            this.listaSoftware = new List<string>();
+            this.listaPerifericos = new List<string>();
+            this.listaJuegos = new List<string>();
         }
 
+        public List<string> ListaSoftware
+        {
+            get { return this.listaSoftware; }
+        }
 
-        private int contAgeOfEmpires;
-        private int contCounterStrike;
-        private int contMu;
-        private int contMessenger;
-        private int contAres;
-        private int contMiEncarta;
-        private int contCamara;
-        private int contMicrofono;
-        private int contAuriculares;
+        public List<string> ListaPerifericos
+        {
+            get { return this.listaPerifericos; }
+        }
+
+        public List<string> ListaJuegos
+        {
+            get { return this.listaJuegos; }
+        }
 
 
         public string SoftwareCliente
@@ -37,7 +41,7 @@ namespace Entidades
             get
             {
                 StringBuilder b = new StringBuilder();
-                foreach (string s in software)
+                foreach (string s in listaSoftware)
                 {
                         b.AppendLine(s.ToString());
                 }
@@ -48,22 +52,8 @@ namespace Entidades
             {
                 if (value is not null)
                 {
-                    if(value == "Messenger")
-                    {
-                        contMessenger++;
-                    }
-                    else
-                    {
-                        if (value == "Ares")
-                        {
-                            contAres++;
-                        }
-                        else
-                        {
-                            contMiEncarta++;
-                        }
-                    }
-                    this.software.Add(value);
+                   
+                    this.listaSoftware.Add(value);
                 }
             }
         }
@@ -74,7 +64,7 @@ namespace Entidades
             get
             {
                 StringBuilder b = new StringBuilder();
-                foreach (string s in juegos)
+                foreach (string s in listaJuegos)
                 {
                     b.AppendLine(s.ToString());
                 }
@@ -84,22 +74,8 @@ namespace Entidades
             {
                 if (value is not null)
                 {
-                    if (value == "Age of Empires")
-                    {
-                        contAgeOfEmpires++;
-                    }
-                    else
-                    {
-                        if (value == "Counter Strike")
-                        {
-                            contCounterStrike++;
-                        }
-                        else
-                        {
-                            contMu++;
-                        }
-                    }
-                    this.juegos.Add(value);
+                   
+                    this.listaJuegos.Add(value);
                 }
             }
         }
@@ -109,7 +85,7 @@ namespace Entidades
             get
             {
                 StringBuilder b = new StringBuilder();
-                foreach (string s in perifericos)
+                foreach (string s in listaPerifericos)
                 {
                     
                         b.AppendLine(s.ToString());
@@ -123,62 +99,13 @@ namespace Entidades
                 if (value is not null)
                 {
 
-                    if (value == "Camara")
-                    {
-                        contCamara++;
-                    }
-                    else
-                    {
-                        if (value == "Microfono")
-                        {
-                            contMicrofono++;
-                        }
-                        else
-                        {
-                            contAuriculares++;
-                        }
-                    }
-                    this.perifericos.Add(value);
+                    
+                    this.listaPerifericos.Add(value);
                 }
             }
         }
 
-        public int ContadorAgeOfEmpires
-        {
-            get { return this.contAgeOfEmpires; }
-        }
-        public int ContadorCounterStrike
-        {
-            get { return this.contCounterStrike; }
-        }
-        public int ContadorMuOnline
-        {
-            get { return this.ContadorMuOnline; }
-        }
-        public int ContadorMessenger
-        {
-            get { return this.contMessenger; }
-        }
-        public int ContadorAres
-        {
-            get { return this.contAres; }
-        }
-        public int ContadorMiEncarta
-        {
-            get { return this.contMiEncarta; }
-        }
-        public int ContadorCamara
-        {
-            get { return this.contCamara; }
-        }
-        public int ContadorAuriculares
-        {
-            get { return this.contAuriculares; }
-        }
-        public int ContadorMicrofono
-        {
-            get { return this.contMicrofono; }
-        }
+       
 
         public override string ToString()
         {

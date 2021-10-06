@@ -36,12 +36,11 @@ namespace Entidades
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
-            sb.AppendLine("Datos Cliente.");
             sb.AppendLine(base.ToString());
 
-            sb.AppendLine("Datos Telefono.");
-            sb.AppendLine($"Tipo Telefono: {TipoTelefono}");
-            sb.AppendLine($"Numero Telefono: {NumeroTelefono}");
+            sb.AppendLine("DATOS TELEFONO.  ");
+            sb.AppendLine($"Tipo Telefono: {TipoTelefono}  ");
+            sb.AppendLine($"Numero Telefono: {NumeroTelefono}  ");
             
 
             return sb.ToString();
