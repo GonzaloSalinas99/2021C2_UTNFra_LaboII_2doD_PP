@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,7 +11,7 @@ namespace Entidades
     {
         private List<Sesion> listaSesiones;
         private List<Puesto> listaPuestos;
-        private List<ClienteCabina> listaClienteCabinas;
+        private Queue listaClienteCabinas;
         private List<ClienteComputadora> listaClientesComputadoras;
         private DateTime fecha;
 
@@ -30,7 +31,7 @@ namespace Entidades
             get { return this.listaPuestos; }
             set { listaPuestos = value; }
         }
-        public List<ClienteCabina> ListaClienteCabinas
+        public Queue ListaClienteCabinas
         {
             get { return this.listaClienteCabinas; }
             set { listaClienteCabinas = value; }
@@ -45,7 +46,7 @@ namespace Entidades
         {
             listaSesiones = new List<Sesion>();
             listaPuestos = new List<Puesto>();
-            listaClienteCabinas = new List<ClienteCabina>();
+            listaClienteCabinas = new Queue();
             listaClientesComputadoras = new List<ClienteComputadora>();
             fecha = default(DateTime);
         }
@@ -54,7 +55,7 @@ namespace Entidades
         {
             if(cliente is ClienteCabina && cliente is not null)
             {
-                listaClienteCabinas.Add(cliente);
+                listaClienteCabinas.Enqueue(cliente);
                 return true;
             }
             return false;
