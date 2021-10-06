@@ -31,8 +31,8 @@ namespace Salinas.Gonzalo.PrimerParcial
         {
             this.lblLoginNombre = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txtNombreAdministrador = new System.Windows.Forms.TextBox();
+            this.txtApellidoAdministrador = new System.Windows.Forms.TextBox();
             this.btnIngresarAdministrador = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
@@ -54,19 +54,19 @@ namespace Salinas.Gonzalo.PrimerParcial
             this.label2.TabIndex = 1;
             this.label2.Text = "Apellido";
             // 
-            // textBox1
+            // txtNombreAdministrador
             // 
-            this.textBox1.Location = new System.Drawing.Point(122, 37);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 23);
-            this.textBox1.TabIndex = 2;
+            this.txtNombreAdministrador.Location = new System.Drawing.Point(122, 37);
+            this.txtNombreAdministrador.Name = "txtNombreAdministrador";
+            this.txtNombreAdministrador.Size = new System.Drawing.Size(100, 23);
+            this.txtNombreAdministrador.TabIndex = 2;
             // 
-            // textBox2
+            // txtApellidoAdministrador
             // 
-            this.textBox2.Location = new System.Drawing.Point(122, 98);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 23);
-            this.textBox2.TabIndex = 3;
+            this.txtApellidoAdministrador.Location = new System.Drawing.Point(122, 98);
+            this.txtApellidoAdministrador.Name = "txtApellidoAdministrador";
+            this.txtApellidoAdministrador.Size = new System.Drawing.Size(100, 23);
+            this.txtApellidoAdministrador.TabIndex = 3;
             // 
             // btnIngresarAdministrador
             // 
@@ -84,12 +84,13 @@ namespace Salinas.Gonzalo.PrimerParcial
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(302, 177);
             this.Controls.Add(this.btnIngresarAdministrador);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtApellidoAdministrador);
+            this.Controls.Add(this.txtNombreAdministrador);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.lblLoginNombre);
             this.Name = "frmLogin";
             this.Text = "Login Administrador";
+            this.Load += new System.EventHandler(this.frmLogin_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -99,8 +100,8 @@ namespace Salinas.Gonzalo.PrimerParcial
 
         private System.Windows.Forms.Label lblLoginNombre;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txtNombreAdministrador;
+        private System.Windows.Forms.TextBox txtApellidoAdministrador;
         private System.Windows.Forms.Button btnIngresarAdministrador;
     }
 }

@@ -34,7 +34,7 @@ namespace Entidades
         }
 
 
-        public static List<Puesto> FiltroLista(string puesto)
+        private static List<Puesto> FiltroLista(string puesto)
         {
             List<Puesto> retorno = new List<Puesto>();
 

@@ -6,19 +6,19 @@ namespace Entidades
 {
     public class Computadora : Puesto
     {
-        private List<string> hadware;
-        private List<string> software;
-        private List<string> perifericos;
-        private List<string> juegos;
+
+        private List<string> listaSoftware;
+        private List<string> listaPerifericos;
+        private List<string> listaJuegos;
         private static int idSiguiente = 1;
 
 
         public Computadora() : base()
         {
-            this.hadware = new List<string>();
-            this.software = new List<string>();
-            this.perifericos = new List<string>();
-            this.juegos = new List<string>();
+
+            this.listaSoftware = new List<string>();
+            this.listaPerifericos = new List<string>();
+            this.listaJuegos = new List<string>();
             if (idSiguiente < 11)
             {
                 this.idPuesto = "C0" + idSiguiente;
@@ -49,10 +49,18 @@ namespace Entidades
             get
             {
                 StringBuilder b = new StringBuilder();
-                foreach (string s in software)
+                if(listaSoftware.Count == 0)
                 {
-                    b.AppendLine(s.ToString());
+                    b.AppendLine("No hay software cargados");
                 }
+                else
+                {
+                    foreach (string s in listaSoftware)
+                    {
+                        b.AppendLine(s.ToString());
+                    }
+                }
+                
                 return b.ToString();
             }
 
@@ -60,7 +68,7 @@ namespace Entidades
             {
                 if (value is not null)
                 {
-                    this.software.Add(value);
+                    this.listaSoftware.Add(value);
                 }
             }
         }
@@ -71,9 +79,16 @@ namespace Entidades
             get
             {
                 StringBuilder b = new StringBuilder();
-                foreach (string s in juegos)
+                if (listaJuegos.Count == 0)
                 {
-                    b.AppendLine(s.ToString());
+                    b.AppendLine("No hay juegos cargados");
+                }
+                else
+                {
+                    foreach (string s in listaJuegos)
+                    {
+                        b.AppendLine(s.ToString());
+                    }
                 }
                 return b.ToString();
             }
@@ -82,7 +97,7 @@ namespace Entidades
             {
                 if (value is not null)
                 {
-                    this.juegos.Add(value);
+                    this.listaJuegos.Add(value);
                 }
             }
         }
@@ -92,25 +107,33 @@ namespace Entidades
             get
             {
                 StringBuilder b = new StringBuilder();
-                foreach (string s in perifericos)
+                if (listaPerifericos.Count == 0)
                 {
-                    b.AppendLine(s.ToString());
+                    b.AppendLine("No hay perifericos cargados");
                 }
+                else
+                {
+                    foreach (string s in listaPerifericos)
+                    {
+                        b.AppendLine(s.ToString());
+                    }
+                }
+
                 return b.ToString();
             }
             set
             {
                 if (value is not null)
                 {
-                    this.perifericos.Add(value);
+                    this.listaPerifericos.Add(value);
                 }
             }
         }
 
-        public string MostrarComputadora()
+        public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
-
+            sb.AppendLine(base.ToString());
             sb.AppendLine($"Software: {Software}  ");
             sb.AppendLine($"Juegos: {Juegos}  ");
             sb.AppendLine($"Perifericos: {Perifericos} ");

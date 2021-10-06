@@ -8,7 +8,6 @@ namespace Entidades
 {
     public sealed class Controlador
     {
-        //private List<Llamada> listaLlamadas;
         private List<Sesion> listaSesiones;
         private List<Puesto> listaPuestos;
         private List<ClienteCabina> listaClienteCabinas;
@@ -192,5 +191,38 @@ namespace Entidades
             }
             return "NO LO ENCONTRE";
         }
+
+        public List<Puesto> FiltroLista(string puesto)
+        {
+            List<Puesto> retorno = new List<Puesto>();
+
+            if (puesto.Equals("Cabina"))
+            {
+                foreach (Puesto item in ListaPuestos)
+                {
+                    if(item is Cabina)
+                    {
+                        Cabina auxiliar = (Cabina)item;
+                        retorno.Add(auxiliar);
+                    }
+                }
+            }
+
+            if (puesto.Equals("Computadora"))
+            {
+                foreach (Puesto item in ListaPuestos)
+                {
+                    if (item is Computadora)
+                    {
+                        Computadora auxiliar = (Computadora)item;
+                        retorno.Add(auxiliar);
+                    }
+                }
+            }
+
+
+            return retorno;
+        }
+
     }
 }

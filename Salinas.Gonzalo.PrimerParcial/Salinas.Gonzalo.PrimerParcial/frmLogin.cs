@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Entidades;
 
 namespace Salinas.Gonzalo.PrimerParcial
 {
@@ -21,12 +22,26 @@ namespace Salinas.Gonzalo.PrimerParcial
         {
             frmMenuPrincipal menuPrincipal = new frmMenuPrincipal();
             StringBuilder sb = new StringBuilder();
-            sb.AppendLine($"Administrador: {textBox1.Text} {textBox2.Text}");
-            sb.AppendLine($"Fecha : {DateTime.Now.ToString("dd-MM-yyyy")}");
-            menuPrincipal.lblInformacion.Text = sb.ToString();
+            if(ValidadorDeInformacion.ValidarStringTexto(txtNombreAdministrador.Text) == false || ValidadorDeInformacion.ValidarStringTexto(txtApellidoAdministrador.Text) == false)
+            {
+                MessageBox.Show("Tiene que ingresar un nombre y un apellido", "Error de ingreso");
+            }
+            else
+            {
+                sb.AppendLine($"Administrador: {txtNombreAdministrador.Text} {txtApellidoAdministrador.Text}");
+                sb.AppendLine($"Fecha : {DateTime.Now.ToString("dd-MM-yyyy")}");
+                menuPrincipal.lblInformacion.Text = sb.ToString();
+
+                menuPrincipal.Show();
+                this.Hide();
+            }
             
-            menuPrincipal.Show();
-            this.Hide();
+            
+        }
+
+        private void frmLogin_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

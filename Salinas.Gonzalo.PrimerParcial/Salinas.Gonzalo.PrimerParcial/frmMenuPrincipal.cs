@@ -176,10 +176,10 @@ namespace Salinas.Gonzalo.PrimerParcial
         private void btnMostrarPuestos_Click(object sender, EventArgs e)
         {
             StringBuilder puestoABuscar = new StringBuilder();
-            puestoABuscar.AppendLine("Entidades.");
-            puestoABuscar.AppendLine(txtNombrePuesto.Text);
+            //puestoABuscar.Append("Entidades.");
+            puestoABuscar.Append(txtNombrePuesto.Text);
 
-            List<Puesto> listaAux = Historial.FiltroLista(puestoABuscar.ToString());
+            List<Puesto> listaAux = controlador.FiltroLista(puestoABuscar.ToString());
             StringBuilder listaDePuesto = new StringBuilder();
             foreach (Puesto puesto in listaAux)
             {

@@ -32,28 +32,37 @@ namespace Salinas.Gonzalo.PrimerParcial
 
         private void btnAgregarClienteCabina_Click(object sender, EventArgs e)
         {
-            
-            string nombre = txtNombre.Text;
-            string apellido = txtApellido.Text;
-            string dni = txtDni.Text;
-            string edad = txtEdad.Text;
-            Enumerados.TipoTelefono tipo;
-            string numeroTelefono = txtNumeroTelefono.Text;
-
-            if(cmbTipoTelefono.SelectedItem.ToString() == "A Disco")
+            if(ValidadorDeInformacion.ValidarStringTexto(txtNombre.Text) == false || ValidadorDeInformacion.ValidarStringTexto(txtApellido.Text) == false ||
+                ValidadorDeInformacion.ValidarDocumento(txtDni.Text) == false || ValidadorDeInformacion.ValidarEdad(txtEdad.Text) == false ||
+                ValidadorDeInformacion.ValidarNumeroTelefono(txtNumeroTelefono.Text) == false )
             {
-                tipo = Enumerados.TipoTelefono.ADisco;
+                MessageBox.Show("Ocurrio un error al guardar los datos", "Error de ingreso");
             }
             else
             {
-                tipo = Enumerados.TipoTelefono.Teclado;
+                string nombre = txtNombre.Text;
+                string apellido = txtApellido.Text;
+                string dni = txtDni.Text;
+                string edad = txtEdad.Text;
+                Enumerados.TipoTelefono tipo;
+                string numeroTelefono = txtNumeroTelefono.Text;
+
+                if (cmbTipoTelefono.SelectedItem.ToString() == "A Disco")
+                {
+                    tipo = Enumerados.TipoTelefono.ADisco;
+                }
+                else
+                {
+                    tipo = Enumerados.TipoTelefono.Teclado;
+                }
+
+                clienteCabina = new ClienteCabina(nombre, apellido, dni, edad, tipo, numeroTelefono);
+                MessageBox.Show(clienteCabina.ToString());
+                controlAux.AgregarClienteCabina(clienteCabina);
+
+                this.Close();
             }
-
-            clienteCabina = new ClienteCabina(nombre,apellido,dni,edad,tipo,numeroTelefono);
-            MessageBox.Show(clienteCabina.ToString());
-            controlAux.AgregarClienteCabina(clienteCabina);
-
-            this.Close();
+            
         }
         public Controlador DevolverControlador
         {
@@ -64,5 +73,7 @@ namespace Salinas.Gonzalo.PrimerParcial
         {
             this.Close();
         }
+
+        
     }
 }
