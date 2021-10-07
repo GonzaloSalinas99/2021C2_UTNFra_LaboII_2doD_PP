@@ -11,12 +11,11 @@ namespace Entidades
     {
         private List<Sesion> listaSesiones;
         private List<Puesto> listaPuestos;
-        private Queue listaClienteCabinas;
-        private List<ClienteComputadora> listaClientesComputadoras;
+        private Queue <ClienteCabina>listaClienteCabinas;
+        private Queue<ClienteComputadora> listaClientesComputadoras;
         private DateTime fecha;
 
-
-        public List<ClienteComputadora> ListaClienteComputadora
+        public Queue<ClienteComputadora> ListaClienteComputadora
         {
             get { return this.listaClientesComputadoras; }
             set { listaClientesComputadoras = value; }
@@ -31,7 +30,7 @@ namespace Entidades
             get { return this.listaPuestos; }
             set { listaPuestos = value; }
         }
-        public Queue ListaClienteCabinas
+        public Queue<ClienteCabina> ListaClienteCabinas
         {
             get { return this.listaClienteCabinas; }
             set { listaClienteCabinas = value; }
@@ -42,18 +41,24 @@ namespace Entidades
             set { this.fecha = value; }
         }
 
+        //public int CantidadCabinas
+        //{
+        //    get { return this.cantidadCabinas; }
+
+        //}
+
         public Controlador()
         {
             listaSesiones = new List<Sesion>();
             listaPuestos = new List<Puesto>();
-            listaClienteCabinas = new Queue();
-            listaClientesComputadoras = new List<ClienteComputadora>();
+            listaClienteCabinas = new Queue<ClienteCabina>();
+            listaClientesComputadoras = new Queue<ClienteComputadora>();
             fecha = default(DateTime);
         }
 
         public bool AgregarClienteCabina(ClienteCabina cliente)
         {
-            if(cliente is ClienteCabina && cliente is not null)
+            if(cliente is ClienteCabina && cliente is not null )
             {
                 listaClienteCabinas.Enqueue(cliente);
                 return true;
@@ -65,18 +70,35 @@ namespace Entidades
         {
             if (cliente is ClienteComputadora && cliente is not null)
             {
-                listaClientesComputadoras.Add(cliente);
+                listaClientesComputadoras.Enqueue(cliente);
                 return true;
             }
             return false;
         }
 
-
+        
         public bool AgregarPuesto(Puesto puesto)
         {
             if (puesto is Puesto && puesto is not null)
             {
                 listaPuestos.Add(puesto);
+                return true;
+            }
+            return false;
+        }
+
+        public bool CorroborarCantidadPuestos(Puesto puestoACorroborar,int numeroLimite)
+        {
+            int contador = 0;
+            foreach (Puesto puesto in listaPuestos)
+            {
+                if(puesto is not null && puesto.GetType() == puestoACorroborar.GetType())
+                {
+                    contador++;
+                }
+            }
+            if(contador<numeroLimite)
+            {
                 return true;
             }
             return false;
@@ -225,5 +247,19 @@ namespace Entidades
             return retorno;
         }
 
+        public Cabina BuscarCabinaIdentificador( string identificador)
+        {
+            foreach (Puesto puesto in ListaPuestos)
+            {
+                if (puesto is Cabina && puesto is not null)
+                {
+                    if (puesto.IdPuesto == identificador && puesto.EstadoPuesto == Enumerados.EstadoPuesto.SinUso)
+                    {
+                        return (Cabina)puesto;
+                    }
+                }
+            }
+            return null;
+        }
     }
 }

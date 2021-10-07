@@ -42,50 +42,62 @@ namespace Salinas.Gonzalo.PrimerParcial
         }
         private void btnCrearSesionConexion_Click_1(object sender, EventArgs e)
         {
-            ClienteComputadora clienteAuxiliar;
-            Computadora computadoraAuxiliar;
-            string documento = txtDocumentoCliente.Text;
-            string identificador = txtIdentificadorComputadora.Text;
-            computadoraAuxiliar = BuscarCabinaIdentificador(control, identificador);
-            clienteAuxiliar = BuscarClienteDocumento(control, documento);
 
 
-            if (clienteAuxiliar is not null && clienteAuxiliar.Dni == documento && computadoraAuxiliar is not null && computadoraAuxiliar.IdPuesto == identificador)
+            if(ValidadorDeInformacion.ValidarStringTexto(txtDocumentoCliente.Text) && ValidadorDeInformacion.ValidarStringTexto(txtIdentificadorComputadora.Text))
             {
-                if (control.AbrirSesionConexion(clienteAuxiliar, computadoraAuxiliar))
+                ClienteComputadora clienteAuxiliar;
+                Computadora computadoraAuxiliar;
+                string documento = txtDocumentoCliente.Text;
+                string identificador = txtIdentificadorComputadora.Text;
+                computadoraAuxiliar = BuscarComputadoraIdentificador(control, identificador);
+                clienteAuxiliar = BuscarClienteDocumento(control, documento);
+                if (clienteAuxiliar is not null && clienteAuxiliar.Dni == documento && computadoraAuxiliar is not null && computadoraAuxiliar.IdPuesto == identificador)
                 {
-                    MessageBox.Show("Se inicio la sesion correctamente", "Inicio Sesion");
-                    lBoxComputadora.Items.Clear();
-                    lBoxClientes.Items.Clear();
-                    ActualizarListaClienteComputadora(control);
+                    if (control.AbrirSesionConexion(clienteAuxiliar, computadoraAuxiliar))
+                    {
+                        MessageBox.Show("Se inicio la sesion correctamente", "Inicio Sesion");
+                        lBoxComputadora.Items.Clear();
+                        lBoxClientes.Items.Clear();
+                        ActualizarListaClienteComputadora(control);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Error con el identificador de la computadora. Reingrese el identificador", "Error de informacion");
+                    }
                 }
                 else
                 {
-                    MessageBox.Show("Ocurrio un error con el inicio de sesion");
+                    MessageBox.Show("Error con la asignacion de la computadora. Asegurese que el documento coincida con el primer cliente o que haya clientes cargados", "Error de informacion", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
             else
             {
-                lblClienteEncontrado.Text = "Hubo un error";
+                MessageBox.Show("Debe ingresar datos en todos los campos.");
             }
         }
 
         private ClienteComputadora BuscarClienteDocumento(Controlador control, string documento)
         {
-            foreach (ClienteComputadora cliente in control.ListaClienteComputadora)
+            if(control.ListaClienteComputadora.Count != 0)
             {
-                if (cliente is ClienteComputadora && cliente is not null)
+                ClienteComputadora aux = control.ListaClienteComputadora.Peek();
+                foreach (ClienteComputadora cliente in control.ListaClienteComputadora)
                 {
-                    if (cliente.Dni == documento && cliente.EstadoCliente == Enumerados.EstadoCliente.Esperando)
+                    if (cliente is ClienteComputadora && cliente is not null && cliente == aux)
                     {
-                        return cliente;
+                        if (cliente.Dni == documento && cliente.EstadoCliente == Enumerados.EstadoCliente.Esperando)
+                        {
+                            return cliente;
+                        }
                     }
                 }
             }
+            
             return null;
         }
 
-        private Computadora BuscarCabinaIdentificador(Controlador control, string identificador)
+        private Computadora BuscarComputadoraIdentificador(Controlador control, string identificador)
         {
             foreach (Puesto puesto in control.ListaPuestos)
             {

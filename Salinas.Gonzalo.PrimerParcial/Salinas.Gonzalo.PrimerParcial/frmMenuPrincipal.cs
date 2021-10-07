@@ -187,5 +187,12 @@ namespace Salinas.Gonzalo.PrimerParcial
             }
             MessageBox.Show(listaDePuesto.ToString());
         }
+
+        private void btnAgregarCabina_Click(object sender, EventArgs e)
+        {
+            frmAltaCabina altaCabina = new frmAltaCabina(controlador);
+            altaCabina.ShowDialog();
+            controlador = altaCabina.DevolverControlador; 
+        }
     }
 }

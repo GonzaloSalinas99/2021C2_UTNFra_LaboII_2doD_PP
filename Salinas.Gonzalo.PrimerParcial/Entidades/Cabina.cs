@@ -25,6 +25,8 @@ namespace Entidades
             idSiguiente++;
         }
 
+
+
         public  string Marca
         {
             get { return this.marca; }

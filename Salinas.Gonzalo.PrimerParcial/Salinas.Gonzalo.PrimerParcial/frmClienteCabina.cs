@@ -14,7 +14,7 @@ namespace Salinas.Gonzalo.PrimerParcial
     
     public partial class frmClienteCabina : Form
     {
-        private ClienteCabina clienteCabina;
+        
         private Controlador controlAux;
         public frmClienteCabina(Controlador controlador)
         {
@@ -55,8 +55,7 @@ namespace Salinas.Gonzalo.PrimerParcial
                 {
                     tipo = Enumerados.TipoTelefono.Teclado;
                 }
-
-                clienteCabina = new ClienteCabina(nombre, apellido, dni, edad, tipo, numeroTelefono);
+                 ClienteCabina clienteCabina = new ClienteCabina(nombre, apellido, dni, edad, tipo, numeroTelefono);
                 MessageBox.Show(clienteCabina.ToString());
                 controlAux.AgregarClienteCabina(clienteCabina);
 

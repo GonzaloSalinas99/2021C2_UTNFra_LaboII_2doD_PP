@@ -42,16 +42,22 @@ namespace Salinas.Gonzalo.PrimerParcial
 
         private ClienteCabina BuscarClienteCabinaDocumento(Controlador control,string documento)
         {
-            foreach (ClienteCabina cliente in control.ListaClienteCabinas)
+            if(control.ListaClienteCabinas.Count!=0)
             {
-                if (cliente is ClienteCabina && cliente is not null)
+                ClienteCabina aux = control.ListaClienteCabinas.Peek();
+                foreach (ClienteCabina cliente in control.ListaClienteCabinas)
                 {
-                    if (cliente.Dni == documento && cliente.EstadoCliente == Enumerados.EstadoCliente.Esperando)
+
+                    if (cliente is ClienteCabina && cliente is not null && cliente == aux)
                     {
-                        return cliente;
+                        if (cliente.Dni == documento && cliente.EstadoCliente == Enumerados.EstadoCliente.Esperando)
+                        {
+                            return cliente;
+                        }
                     }
                 }
             }
+            
             return null;
         }
 
@@ -72,33 +78,41 @@ namespace Salinas.Gonzalo.PrimerParcial
 
         private void btnCrearSesionLlamada_Click(object sender, EventArgs e)
         {
-            ClienteCabina clienteAuxiliar;
-            Cabina cabinaAuxiliar;
-            string documento = txtDocumentoCliente.Text;
-            string identificador = txtIdentificadorCabina.Text;
-            cabinaAuxiliar = BuscarCabinaIdentificador(control, identificador);
-            clienteAuxiliar = BuscarClienteCabinaDocumento(control, documento);
-
-            
-            if (clienteAuxiliar is not null && clienteAuxiliar.Dni == documento && cabinaAuxiliar is not null && cabinaAuxiliar.IdPuesto == identificador)
+            if(ValidadorDeInformacion.ValidarStringTexto(txtDocumentoCliente.Text) && ValidadorDeInformacion.ValidarStringTexto(txtIdentificadorCabina.Text))
             {
-                if(control.AbrirSesionLlamada(clienteAuxiliar, cabinaAuxiliar))
+                ClienteCabina clienteAuxiliar;
+                Cabina cabinaAuxiliar;
+                string documento = txtDocumentoCliente.Text;
+                string identificador = txtIdentificadorCabina.Text;
+                cabinaAuxiliar = BuscarCabinaIdentificador(control, identificador);
+                clienteAuxiliar = BuscarClienteCabinaDocumento(control, documento);
+
+
+                if (clienteAuxiliar is not null && clienteAuxiliar.Dni == documento && cabinaAuxiliar is not null && cabinaAuxiliar.IdPuesto == identificador)
                 {
-                    MessageBox.Show("Se inicio la sesion correctamente", "Inicio Sesion");
-                    lBoxCabinas.Items.Clear();
-                    lBoxClientes.Items.Clear();
-                    ActualizarListasClienteCabina(control);
+                    if (control.AbrirSesionLlamada(clienteAuxiliar, cabinaAuxiliar))
+                    {
+                        MessageBox.Show("Se inicio la sesion correctamente", "Inicio Sesion");
+                        lBoxCabinas.Items.Clear();
+                        lBoxClientes.Items.Clear();
+                        ActualizarListasClienteCabina(control);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Error con el identificador de la cabina. Reingrese el identificador", "Error de informacion");
+                    }
                 }
                 else
                 {
-                    MessageBox.Show("Ocurrio un error con el inicio de sesion");
+                    MessageBox.Show("Error con la asignacion de cabina. Asegurese que el documento coincida con el primer cliente o que haya clientes cargados", "Error de informacion");
                 }
             }
             else
             {
-                lblClienteEncontrado.Text = "Hubo un error";
+                MessageBox.Show("Debe ingresar datos en todos los campos.");
             }
-            
+
+
         }
 
         private void ActualizarListasClienteCabina(Controlador control)
