@@ -41,12 +41,52 @@ namespace Salinas.Gonzalo.PrimerParcial
                 {
 
                     Cabina cabinaAuxiliar = control.BuscarCabinaIdentificador(txtIdentificadorCabina.Text);
+
                     if(cabinaAuxiliar is not null)
                     {
+                        int indice = control.ListaPuestos.IndexOf(cabinaAuxiliar);
+                        control.ListaPuestos.RemoveAt(indice);
 
+                        string marcaTelefono = txtMarcaTelefono.Text;
+                        Enumerados.TipoTelefono tipoTelefono;
+                        if(cmbTipoTelefono.Text == "A Disco")
+                        {
+                            tipoTelefono = Enumerados.TipoTelefono.ADisco;
+                        }
+                        else
+                        {
+                            tipoTelefono = Enumerados.TipoTelefono.Teclado;
+                        }
+                        cabinaAuxiliar.Marca = marcaTelefono;
+                        cabinaAuxiliar.TipoTelefono = tipoTelefono;
+                        control.ListaPuestos.Insert(indice, cabinaAuxiliar);
+
+                        ActualizarListasClienteCabina(control);
+                        
                     }
+                    else
+                    {
+                        MessageBox.Show("Ocurrio un error con la modificacion.");
+                    }
+                    
                 }
             }
+        }
+
+        private void ActualizarListasClienteCabina(Controlador control)
+        {
+            foreach (Puesto puesto in control.ListaPuestos)
+            {
+                if (puesto is Cabina && puesto.EstadoPuesto == Enumerados.EstadoPuesto.SinUso)
+                {
+                    lBoxListaCabinas.Items.Add(puesto);
+                }
+            }
+
+        }
+        public Controlador DevolverControlador
+        {
+            get { return this.control; }
         }
     }
 }

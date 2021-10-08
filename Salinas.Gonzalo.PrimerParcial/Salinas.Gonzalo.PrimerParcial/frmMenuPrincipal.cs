@@ -194,5 +194,11 @@ namespace Salinas.Gonzalo.PrimerParcial
             altaCabina.ShowDialog();
             controlador = altaCabina.DevolverControlador; 
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            frmModificarCabina frmModificarCabina = new frmModificarCabina(controlador);
+            frmModificarCabina.ShowDialog();
+        }
     }
 }
