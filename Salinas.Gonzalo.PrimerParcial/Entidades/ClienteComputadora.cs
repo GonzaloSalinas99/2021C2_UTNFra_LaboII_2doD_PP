@@ -11,7 +11,13 @@ namespace Entidades
         private List<string> listaSoftware;
         private List<string> listaPerifericos;
         private List<string> listaJuegos;
-
+        /// <summary>
+        /// Constructor de 
+        /// </summary>
+        /// <param name="nombre"></param>
+        /// <param name="apellido"></param>
+        /// <param name="dni"></param>
+        /// <param name="edad"></param>
         public ClienteComputadora(string nombre, string apellido, string dni, string edad)
                                 :base(nombre, apellido, dni, edad)
         {

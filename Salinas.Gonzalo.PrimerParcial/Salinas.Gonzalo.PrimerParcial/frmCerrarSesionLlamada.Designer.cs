@@ -103,6 +103,8 @@ namespace Salinas.Gonzalo.PrimerParcial
             this.Controls.Add(this.lblIdentificadorLlamada);
             this.Controls.Add(this.txtIdentificadorLlamada);
             this.Controls.Add(this.lBoxLlamadas);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "frmCerrarSesionLlamada";
             this.Text = "frmCerrarSesionLlamada";
             this.Load += new System.EventHandler(this.frmCerrarSesionLlamada_Load);

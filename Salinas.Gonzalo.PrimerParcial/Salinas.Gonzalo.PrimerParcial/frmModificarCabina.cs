@@ -40,7 +40,7 @@ namespace Salinas.Gonzalo.PrimerParcial
                 if(ValidadorDeInformacion.ValidarStringTexto(txtMarcaTelefono.Text) && ValidadorDeInformacion.ValidarStringTexto(cmbTipoTelefono.Text))
                 {
 
-                    Cabina cabinaAuxiliar = control.BuscarCabinaIdentificador(txtIdentificadorCabina.Text);
+                    Cabina cabinaAuxiliar = (Cabina)control.BuscarPuestoPorIdentificador(txtIdentificadorCabina.Text,"Cabina");
 
                     if(cabinaAuxiliar is not null)
                     {
@@ -60,8 +60,8 @@ namespace Salinas.Gonzalo.PrimerParcial
                         cabinaAuxiliar.Marca = marcaTelefono;
                         cabinaAuxiliar.TipoTelefono = tipoTelefono;
                         control.ListaPuestos.Insert(indice, cabinaAuxiliar);
-
-                        ActualizarListasClienteCabina(control);
+                        lBoxListaCabinas.Items.Clear();
+                        ActualizarLista(control);
                         
                     }
                     else
@@ -73,13 +73,13 @@ namespace Salinas.Gonzalo.PrimerParcial
             }
         }
 
-        private void ActualizarListasClienteCabina(Controlador control)
+        private void ActualizarLista(Controlador control)
         {
             foreach (Puesto puesto in control.ListaPuestos)
             {
                 if (puesto is Cabina && puesto.EstadoPuesto == Enumerados.EstadoPuesto.SinUso)
                 {
-                    lBoxListaCabinas.Items.Add(puesto);
+                    lBoxListaCabinas.Items.Add(puesto.ToString());
                 }
             }
 
@@ -87,6 +87,11 @@ namespace Salinas.Gonzalo.PrimerParcial
         public Controlador DevolverControlador
         {
             get { return this.control; }
+        }
+
+        private void btnvolverMenuPrincipal_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

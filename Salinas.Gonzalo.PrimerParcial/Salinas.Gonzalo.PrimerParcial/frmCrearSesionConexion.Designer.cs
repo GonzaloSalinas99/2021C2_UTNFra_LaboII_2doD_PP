@@ -85,23 +85,23 @@ namespace Salinas.Gonzalo.PrimerParcial
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtIdentificadorComputadora.Location = new System.Drawing.Point(533, 363);
             this.txtIdentificadorComputadora.Name = "txtIdentificadorComputadora";
-            this.txtIdentificadorComputadora.Size = new System.Drawing.Size(126, 23);
+            this.txtIdentificadorComputadora.Size = new System.Drawing.Size(237, 23);
             this.txtIdentificadorComputadora.TabIndex = 13;
             // 
             // txtDocumentoCliente
             // 
             this.txtDocumentoCliente.Location = new System.Drawing.Point(533, 326);
             this.txtDocumentoCliente.Name = "txtDocumentoCliente";
-            this.txtDocumentoCliente.Size = new System.Drawing.Size(126, 23);
+            this.txtDocumentoCliente.Size = new System.Drawing.Size(237, 23);
             this.txtDocumentoCliente.TabIndex = 12;
             // 
             // btnCrearSesionConexion
             // 
             this.btnCrearSesionConexion.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnCrearSesionConexion.Location = new System.Drawing.Point(1025, 343);
+            this.btnCrearSesionConexion.Location = new System.Drawing.Point(1162, 343);
             this.btnCrearSesionConexion.Name = "btnCrearSesionConexion";
-            this.btnCrearSesionConexion.Size = new System.Drawing.Size(165, 43);
+            this.btnCrearSesionConexion.Size = new System.Drawing.Size(192, 43);
             this.btnCrearSesionConexion.TabIndex = 11;
             this.btnCrearSesionConexion.Text = "Crear Sesion";
             this.btnCrearSesionConexion.UseVisualStyleBackColor = true;
@@ -115,7 +115,7 @@ namespace Salinas.Gonzalo.PrimerParcial
             this.lBoxComputadora.ItemHeight = 15;
             this.lBoxComputadora.Location = new System.Drawing.Point(19, 174);
             this.lBoxComputadora.Name = "lBoxComputadora";
-            this.lBoxComputadora.Size = new System.Drawing.Size(1224, 124);
+            this.lBoxComputadora.Size = new System.Drawing.Size(1335, 124);
             this.lBoxComputadora.TabIndex = 10;
             // 
             // lBoxClientes
@@ -126,16 +126,16 @@ namespace Salinas.Gonzalo.PrimerParcial
             this.lBoxClientes.ItemHeight = 15;
             this.lBoxClientes.Location = new System.Drawing.Point(19, 36);
             this.lBoxClientes.Name = "lBoxClientes";
-            this.lBoxClientes.Size = new System.Drawing.Size(1224, 109);
+            this.lBoxClientes.Size = new System.Drawing.Size(1335, 109);
             this.lBoxClientes.TabIndex = 9;
             // 
             // btnVolverMenuPrincipal
             // 
             this.btnVolverMenuPrincipal.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnVolverMenuPrincipal.Location = new System.Drawing.Point(31, 343);
+            this.btnVolverMenuPrincipal.Location = new System.Drawing.Point(19, 343);
             this.btnVolverMenuPrincipal.Name = "btnVolverMenuPrincipal";
-            this.btnVolverMenuPrincipal.Size = new System.Drawing.Size(165, 43);
+            this.btnVolverMenuPrincipal.Size = new System.Drawing.Size(181, 43);
             this.btnVolverMenuPrincipal.TabIndex = 18;
             this.btnVolverMenuPrincipal.Text = "Volver";
             this.btnVolverMenuPrincipal.UseVisualStyleBackColor = true;
@@ -145,7 +145,7 @@ namespace Salinas.Gonzalo.PrimerParcial
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1255, 408);
+            this.ClientSize = new System.Drawing.Size(1366, 408);
             this.Controls.Add(this.btnVolverMenuPrincipal);
             this.Controls.Add(this.lblCabinaEncontrada);
             this.Controls.Add(this.lblClienteEncontrado);
@@ -156,6 +156,8 @@ namespace Salinas.Gonzalo.PrimerParcial
             this.Controls.Add(this.btnCrearSesionConexion);
             this.Controls.Add(this.lBoxComputadora);
             this.Controls.Add(this.lBoxClientes);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "frmCrearSesionConexion";
             this.Text = "Iniciar Sesion Conexion";
             this.Load += new System.EventHandler(this.frmSesionConexion_Load);

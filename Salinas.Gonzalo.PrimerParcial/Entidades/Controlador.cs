@@ -41,12 +41,6 @@ namespace Entidades
             set { this.fecha = value; }
         }
 
-        //public int CantidadCabinas
-        //{
-        //    get { return this.cantidadCabinas; }
-
-        //}
-
         public Controlador()
         {
             listaSesiones = new List<Sesion>();
@@ -247,19 +241,37 @@ namespace Entidades
             return retorno;
         }
 
-        public Cabina BuscarCabinaIdentificador( string identificador)
+        public Puesto BuscarPuestoPorIdentificador( string identificador,string tipoPuesto)
         {
-            foreach (Puesto puesto in ListaPuestos)
+            if(tipoPuesto == "Cabina")
             {
-                if (puesto is Cabina && puesto is not null)
+                foreach (Puesto puesto in ListaPuestos)
                 {
-                    if (puesto.IdPuesto == identificador && puesto.EstadoPuesto == Enumerados.EstadoPuesto.SinUso)
+                    if (puesto is Cabina && puesto is not null)
                     {
-                        return (Cabina)puesto;
+                        if (puesto.IdPuesto == identificador && puesto.EstadoPuesto == Enumerados.EstadoPuesto.SinUso)
+                        {
+                            return puesto;
+                        }
                     }
                 }
             }
+            else
+            {
+                foreach (Puesto puesto in ListaPuestos)
+                {
+                    if (puesto is Computadora && puesto is not null)
+                    {
+                        if (puesto.IdPuesto == identificador && puesto.EstadoPuesto == Enumerados.EstadoPuesto.SinUso)
+                        {
+                            return puesto;
+                        }
+                    }
+                }
+            }
+           
             return null;
         }
+
     }
 }

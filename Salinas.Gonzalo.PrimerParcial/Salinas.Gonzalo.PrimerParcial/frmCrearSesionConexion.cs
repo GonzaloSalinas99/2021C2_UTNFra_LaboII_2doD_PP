@@ -59,7 +59,7 @@ namespace Salinas.Gonzalo.PrimerParcial
                         MessageBox.Show("Se inicio la sesion correctamente", "Inicio Sesion");
                         lBoxComputadora.Items.Clear();
                         lBoxClientes.Items.Clear();
-                        ActualizarListaClienteComputadora(control);
+                        ActualizarLista(control);
                     }
                     else
                     {
@@ -111,20 +111,20 @@ namespace Salinas.Gonzalo.PrimerParcial
             }
             return null;
         }
-        private void ActualizarListaClienteComputadora(Controlador control)
+        private void ActualizarLista(Controlador control)
         {
             foreach (Puesto puesto in control.ListaPuestos)
             {
                 if (puesto is Computadora && puesto.EstadoPuesto == Enumerados.EstadoPuesto.SinUso)
                 {
-                    lBoxComputadora.Items.Add(puesto);
+                    lBoxComputadora.Items.Add(puesto.ToString());
                 }
             }
             foreach (ClienteComputadora cliente in control.ListaClienteComputadora)
             {
                 if (cliente is ClienteComputadora && cliente.EstadoCliente == Enumerados.EstadoCliente.Esperando)
                 {
-                    lBoxClientes.Items.Add(cliente);
+                    lBoxClientes.Items.Add(cliente.ToString());
                 }
             }
         }

@@ -81,17 +81,5 @@ namespace Salinas.Gonzalo.PrimerParcial
 
         }
 
-        //public void AGREGAR(GroupBox grupo, string )
-        //{
-        //    List<string> aux = null;
-        //    foreach (Control item in grupo.Controls)
-        //    {
-        //        if(item is CheckBox && ((CheckBox)item).Checked)
-        //        {
-        //            cliente.SoftwareCliente = ((CheckBox)item).Text;
-        //        }
-        //    }
-        //    return aux;
-        //}
     }
 }

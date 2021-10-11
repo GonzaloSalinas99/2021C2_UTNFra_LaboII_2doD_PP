@@ -102,6 +102,8 @@ namespace Salinas.Gonzalo.PrimerParcial
             this.Controls.Add(this.txtMarcaTelefono);
             this.Controls.Add(this.lblTipoTelefono);
             this.Controls.Add(this.lblMarcaTelefono);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "frmAltaCabina";
             this.Text = "Agregar Cabina";
             this.Load += new System.EventHandler(this.AltaCabina_Load);

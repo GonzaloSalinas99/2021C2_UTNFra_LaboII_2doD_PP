@@ -88,6 +88,8 @@ namespace Salinas.Gonzalo.PrimerParcial
             this.Controls.Add(this.txtNombreAdministrador);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.lblLoginNombre);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "frmLogin";
             this.Text = "Login Administrador";
             this.Load += new System.EventHandler(this.frmLogin_Load);

@@ -52,7 +52,9 @@ namespace Salinas.Gonzalo.PrimerParcial
                     {
                         if (cliente.Dni == documento && cliente.EstadoCliente == Enumerados.EstadoCliente.Esperando)
                         {
+                            _ = control.ListaClienteCabinas.Dequeue();
                             return cliente;
+                            
                         }
                     }
                 }

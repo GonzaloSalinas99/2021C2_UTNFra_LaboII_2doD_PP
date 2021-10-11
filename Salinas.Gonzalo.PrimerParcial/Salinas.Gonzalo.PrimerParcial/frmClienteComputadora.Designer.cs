@@ -266,7 +266,7 @@ namespace Salinas.Gonzalo.PrimerParcial
             this.btnVolver.UseVisualStyleBackColor = true;
             this.btnVolver.Click += new System.EventHandler(this.btnVolver_Click);
             // 
-            // @as
+            // frmClienteComputadora
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -284,7 +284,9 @@ namespace Salinas.Gonzalo.PrimerParcial
             this.Controls.Add(this.lblDni);
             this.Controls.Add(this.lblApellido);
             this.Controls.Add(this.lblNombre);
-            this.Name = "@as";
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
+            this.Name = "frmClienteComputadora";
             this.Text = "Crear Cliente Computadora";
             this.Load += new System.EventHandler(this.frmClienteComputadora_Load);
             this.gBoxSoftware.ResumeLayout(false);

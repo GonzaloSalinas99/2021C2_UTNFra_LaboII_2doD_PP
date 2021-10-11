@@ -195,10 +195,39 @@ namespace Salinas.Gonzalo.PrimerParcial
             controlador = altaCabina.DevolverControlador; 
         }
 
-        private void button1_Click(object sender, EventArgs e)
+
+        private void btnModificarCabina_Click(object sender, EventArgs e)
         {
             frmModificarCabina frmModificarCabina = new frmModificarCabina(controlador);
             frmModificarCabina.ShowDialog();
+        }
+
+        private void btnBorrarCabina_Click(object sender, EventArgs e)
+        {
+            frmBajaCabina frmBajaCabina = new frmBajaCabina(controlador);
+            frmBajaCabina.ShowDialog();
+            controlador = frmBajaCabina.DevolverControlador;
+        }
+
+        private void btnAgregarComputadora_Click(object sender, EventArgs e)
+        {
+            frmAltaComputadora frmAltaComputadora = new frmAltaComputadora(controlador);
+            frmAltaComputadora.ShowDialog();
+            controlador = frmAltaComputadora.DevolverControlador;
+        }
+
+        private void btnModificarComputadora_Click(object sender, EventArgs e)
+        {
+            frmModificarComputadora frmModificarComputadora = new frmModificarComputadora(controlador);
+            frmModificarComputadora.ShowDialog();
+            controlador = frmModificarComputadora.DevolverControlador;
+        }
+
+        private void btnBorrarComputadora_Click(object sender, EventArgs e)
+        {
+            frmBajaComputadora frmBajaComputadora = new frmBajaComputadora(controlador);
+            frmBajaComputadora.ShowDialog();
+            controlador = frmBajaComputadora.DevolverControlador;
         }
     }
 }

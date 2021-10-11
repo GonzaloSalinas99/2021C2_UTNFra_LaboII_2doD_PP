@@ -191,6 +191,7 @@ namespace Entidades
          int contMiEncarta = 0;
             foreach (Sesion sesion in listaSesiones)
             {
+                
                 if (sesion is Conexion)
                 {
                     Conexion aux = (Conexion)sesion;
@@ -224,22 +225,30 @@ namespace Entidades
                     }
                 }
             }
-            if(contMessenger>contAres && contMessenger>contMiEncarta)
+            if(contMessenger == 0 && contAres == 0 && contMiEncarta==0)
             {
-                return $"El software mas solicitado es Messenger con {contMessenger} veces pedido";
+                return "No se selecciono ningun software";
             }
             else
             {
-                if (contAres> contMiEncarta)
+                if (contMessenger > contAres && contMessenger > contMiEncarta)
                 {
-                    return $"El software mas solicitado es Ares con {contAres} veces pedido";
+                    return $"El software mas solicitado es Messenger con {contMessenger} veces pedido";
                 }
                 else
                 {
-                    return $"El software mas solicitado es Mi Encarta con {contMiEncarta} veces pedido";
+                    if (contAres > contMiEncarta)
+                    {
+                        return $"El software mas solicitado es Ares con {contAres} veces pedido";
+                    }
+                    else
+                    {
+                        return $"El software mas solicitado es Mi Encarta con {contMiEncarta} veces pedido";
 
+                    }
                 }
             }
+            
         }
         private static string JuegoMasPedido()
         {
@@ -282,22 +291,30 @@ namespace Entidades
                     }
                 }
             }
-            if (contAgeOfEmpires > contCounterStrike && contAgeOfEmpires > contMu)
+            if(contAgeOfEmpires == 0 && contCounterStrike == 0 && contMu == 0)
             {
-                return $"El juego mas solicitado es Age of Empires con {contAgeOfEmpires} veces pedido";
+                return "No se selecciono ningun juego";
             }
             else
             {
-                if (contCounterStrike > contMu)
+                if (contAgeOfEmpires > contCounterStrike && contAgeOfEmpires > contMu)
                 {
-                    return $"El juego mas solicitado es Counter Strike con {contCounterStrike} veces pedido";
+                    return $"El juego mas solicitado es Age of Empires con {contAgeOfEmpires} veces pedido";
                 }
                 else
                 {
-                    return $"El juego mas solicitado es MU Online con {contMu} veces pedido";
+                    if (contCounterStrike > contMu)
+                    {
+                        return $"El juego mas solicitado es Counter Strike con {contCounterStrike} veces pedido";
+                    }
+                    else
+                    {
+                        return $"El juego mas solicitado es MU Online con {contMu} veces pedido";
 
+                    }
                 }
             }
+            
         }
 
         private static string PerifericoMasPedido()
@@ -340,22 +357,30 @@ namespace Entidades
                     }
                 }
             }
-            if (contAuriculares > contCamara && contAuriculares> contMicrofono)
+            if (contAuriculares == 0 && contCamara == 0 && contMicrofono == 0)
             {
-                return $"El periferico mas solicitado es Auriculares con {contAuriculares} veces pedido";
+                return "No se selecciono ningun periferico";
             }
             else
             {
-                if (contCamara > contMicrofono)
+                if (contAuriculares > contCamara && contAuriculares > contMicrofono)
                 {
-                    return $"El periferico mas solicitado es Camara con {contCamara} veces pedido";
+                    return $"El periferico mas solicitado es Auriculares con {contAuriculares} veces pedido";
                 }
                 else
                 {
-                    return $"El periferico mas solicitado es Microfono con {contMicrofono} veces pedido";
+                    if (contCamara > contMicrofono)
+                    {
+                        return $"El periferico mas solicitado es Camara con {contCamara} veces pedido";
+                    }
+                    else
+                    {
+                        return $"El periferico mas solicitado es Microfono con {contMicrofono} veces pedido";
 
+                    }
                 }
             }
+            
         }
 
 

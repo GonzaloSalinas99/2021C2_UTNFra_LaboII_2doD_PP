@@ -184,6 +184,8 @@ namespace Salinas.Gonzalo.PrimerParcial
             this.Controls.Add(this.lblDni);
             this.Controls.Add(this.lblApellido);
             this.Controls.Add(this.lblNombre);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "frmClienteCabina";
             this.Text = "Crear Cliente Cabina";
             this.Load += new System.EventHandler(this.frmClienteCabina_Load);

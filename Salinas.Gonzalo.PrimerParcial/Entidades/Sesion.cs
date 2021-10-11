@@ -86,7 +86,7 @@ namespace Entidades
             {
                 sb.AppendLine($"Hora de final: {this.TiempoFinal}.");
                 sb.AppendLine($"Duracion Sesion: {this.DuracionSesion}.");
-                sb.AppendLine($"Costo: {this.CostoSesion}.");
+                sb.AppendLine($"Costo Final Mas IVA: {this.CostoSesion}.");
             }
             sb.AppendLine($"Puesto:{Puesto.ToString()}");
             return sb.ToString();

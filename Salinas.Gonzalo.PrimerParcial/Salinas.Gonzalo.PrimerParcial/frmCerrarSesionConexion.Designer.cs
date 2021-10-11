@@ -101,6 +101,8 @@ namespace Salinas.Gonzalo.PrimerParcial
             this.Controls.Add(this.txtIdentificadorConexion);
             this.Controls.Add(this.lblIdentificadorConexion);
             this.Controls.Add(this.lBoxSesionConexion);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "frmCerrarSesionConexion";
             this.Text = "frmCerrarSesionConexion";
             this.Load += new System.EventHandler(this.frmCerrarSesionConexion_Load);

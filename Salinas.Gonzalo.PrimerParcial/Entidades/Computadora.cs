@@ -10,19 +10,17 @@ namespace Entidades
         private List<string> listaSoftware;
         private List<string> listaPerifericos;
         private List<string> listaJuegos;
+        private List<string> listaHadware;
         private static int idSiguiente = 1;
 
 
         public Computadora() : base()
         {
-
+            this.listaHadware = new List<string>();
             this.listaSoftware = new List<string>();
             this.listaPerifericos = new List<string>();
             this.listaJuegos = new List<string>();
-            if (idSiguiente < 11)
-            {
-                this.idPuesto = "C0" + idSiguiente;
-            }
+            this.idPuesto = "C0" + idSiguiente;
             idSiguiente++;
         }
 
@@ -39,10 +37,36 @@ namespace Entidades
                 }
                 retorno = division * 0.5;
             }
-            return retorno;
+            return retorno * 0.21;
         }
 
+        public string Hadware
+        {
+            get
+            {
+                StringBuilder b = new StringBuilder();
+                if (listaHadware.Count == 0)
+                {
+                    b.AppendLine("No hay hadware cargados");
+                }
+                else
+                {
+                    foreach (string s in listaHadware)
+                    {
+                        b.AppendLine(s.ToString());
+                    }
+                }
 
+                return b.ToString();
+            }
+            set
+            {
+                if (value is not null)
+                {
+                    this.listaHadware.Add(value);
+                }
+            }
+        }
 
         public string Software
         {
@@ -134,6 +158,7 @@ namespace Entidades
         {
             StringBuilder sb = new StringBuilder();
             sb.AppendLine(base.ToString());
+            sb.AppendLine($"Hadware: {Hadware}  ");
             sb.AppendLine($"Software: {Software}  ");
             sb.AppendLine($"Juegos: {Juegos}  ");
             sb.AppendLine($"Perifericos: {Perifericos} ");

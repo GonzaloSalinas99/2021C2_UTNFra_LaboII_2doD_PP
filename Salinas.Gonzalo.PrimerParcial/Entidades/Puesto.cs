@@ -18,6 +18,7 @@ namespace Entidades
         public string IdPuesto
         {
             get{ return this.idPuesto; }
+            set { this.idPuesto = value; }
         }
         public EstadoPuesto EstadoPuesto
         {

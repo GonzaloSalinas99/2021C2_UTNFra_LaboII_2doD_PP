@@ -27,7 +27,6 @@ namespace Salinas.Gonzalo.PrimerParcial
                 Conexion conexionAux= BuscarConexionIdentificador(control, identificador);
                 MessageBox.Show(control.CerrarSesionConexion(conexionAux));
                 MessageBox.Show("Se cerro sesion correctamente");
-                //MessageBox.Show(Historial.MostrarHistorial());
                 lBoxSesionConexion.Items.Clear();
                 ActualizarListasSesiones(control);
             }
@@ -37,7 +36,7 @@ namespace Salinas.Gonzalo.PrimerParcial
             }
         }
 
-
+       
         private void btnVolverMenuPrincipal_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -79,7 +78,7 @@ namespace Salinas.Gonzalo.PrimerParcial
             {
                 if (sesion is Conexion)
                 {
-                    lBoxSesionConexion.Items.Add(sesion);
+                    lBoxSesionConexion.Items.Add(sesion.ToString());
                 }
             }
 

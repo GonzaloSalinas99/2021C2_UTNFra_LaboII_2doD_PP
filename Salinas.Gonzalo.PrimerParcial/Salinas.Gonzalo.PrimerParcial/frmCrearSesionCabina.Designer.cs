@@ -49,7 +49,7 @@ namespace Salinas.Gonzalo.PrimerParcial
             this.lBoxClientes.ItemHeight = 15;
             this.lBoxClientes.Location = new System.Drawing.Point(11, 8);
             this.lBoxClientes.Name = "lBoxClientes";
-            this.lBoxClientes.Size = new System.Drawing.Size(1138, 109);
+            this.lBoxClientes.Size = new System.Drawing.Size(1141, 109);
             this.lBoxClientes.TabIndex = 0;
             // 
             // lBoxCabinas
@@ -60,7 +60,7 @@ namespace Salinas.Gonzalo.PrimerParcial
             this.lBoxCabinas.ItemHeight = 15;
             this.lBoxCabinas.Location = new System.Drawing.Point(11, 132);
             this.lBoxCabinas.Name = "lBoxCabinas";
-            this.lBoxCabinas.Size = new System.Drawing.Size(1138, 124);
+            this.lBoxCabinas.Size = new System.Drawing.Size(1141, 124);
             this.lBoxCabinas.TabIndex = 1;
             // 
             // btnCrearSesionLlamada
@@ -69,7 +69,7 @@ namespace Salinas.Gonzalo.PrimerParcial
             | System.Windows.Forms.AnchorStyles.Right)));
             this.btnCrearSesionLlamada.Location = new System.Drawing.Point(1036, 276);
             this.btnCrearSesionLlamada.Name = "btnCrearSesionLlamada";
-            this.btnCrearSesionLlamada.Size = new System.Drawing.Size(102, 43);
+            this.btnCrearSesionLlamada.Size = new System.Drawing.Size(105, 43);
             this.btnCrearSesionLlamada.TabIndex = 2;
             this.btnCrearSesionLlamada.Text = "Crear Sesion";
             this.btnCrearSesionLlamada.UseVisualStyleBackColor = true;
@@ -88,7 +88,7 @@ namespace Salinas.Gonzalo.PrimerParcial
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtIdentificadorCabina.Location = new System.Drawing.Point(571, 307);
             this.txtIdentificadorCabina.Name = "txtIdentificadorCabina";
-            this.txtIdentificadorCabina.Size = new System.Drawing.Size(126, 23);
+            this.txtIdentificadorCabina.Size = new System.Drawing.Size(129, 23);
             this.txtIdentificadorCabina.TabIndex = 4;
             // 
             // lblDocumentoCliente
@@ -135,7 +135,7 @@ namespace Salinas.Gonzalo.PrimerParcial
             | System.Windows.Forms.AnchorStyles.Right)));
             this.btnVolverMenuPrincipal.Location = new System.Drawing.Point(25, 276);
             this.btnVolverMenuPrincipal.Name = "btnVolverMenuPrincipal";
-            this.btnVolverMenuPrincipal.Size = new System.Drawing.Size(102, 43);
+            this.btnVolverMenuPrincipal.Size = new System.Drawing.Size(105, 43);
             this.btnVolverMenuPrincipal.TabIndex = 9;
             this.btnVolverMenuPrincipal.Text = "Volver";
             this.btnVolverMenuPrincipal.UseVisualStyleBackColor = true;
@@ -145,7 +145,7 @@ namespace Salinas.Gonzalo.PrimerParcial
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1161, 340);
+            this.ClientSize = new System.Drawing.Size(1164, 340);
             this.Controls.Add(this.btnVolverMenuPrincipal);
             this.Controls.Add(this.lblCabinaEncontrada);
             this.Controls.Add(this.lblClienteEncontrado);
@@ -156,6 +156,8 @@ namespace Salinas.Gonzalo.PrimerParcial
             this.Controls.Add(this.btnCrearSesionLlamada);
             this.Controls.Add(this.lBoxCabinas);
             this.Controls.Add(this.lBoxClientes);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "frmSesionLlamada";
             this.Text = "Iniciar Sesion Llamada";
             this.Load += new System.EventHandler(this.frmSesionLlamada_Load);

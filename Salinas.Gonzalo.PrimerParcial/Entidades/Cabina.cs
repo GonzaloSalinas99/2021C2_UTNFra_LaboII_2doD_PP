@@ -13,32 +13,41 @@ namespace Entidades
         private TipoTelefono tipo;
         private string marca;
         private static int idSiguiente = 1;
-
+        /// <summary>
+        /// Constructor de la clase Cabina que genera ID autoincrementable
+        /// </summary>
+        /// <param name="marca">Marca a asignar</param>
+        /// <param name="tipo">Tipo de telefono</param>
         public Cabina(string marca, TipoTelefono tipo):base()
         {
             Marca = marca;
             TipoTelefono = tipo;
-            if(idSiguiente <6)
-            {
-                this.idPuesto = "T0" + idSiguiente;
-            }
+            this.idPuesto = "T0" + idSiguiente;
             idSiguiente++;
         }
 
 
-
+        /// <summary>
+        /// Propiedad Marca de lectura y asignacion del atributo marca
+        /// </summary>
         public  string Marca
         {
             get { return this.marca; }
             set { this.marca = value; }
         }
-
+        /// <summary>
+        /// Propiedad TipoTelefono de lectura y asignacion del atributo tipoTelefono
+        /// </summary>
         public TipoTelefono TipoTelefono 
         {
             get { return this.tipo; }
             set { this.tipo = value; }
         }
-
+        /// <summary>
+        /// Calcula costo de la llamada 
+        /// </summary>
+        /// <param name="llamada">Llamada a calcular su costo</param>
+        /// <returns></returns>
         public override double CalcularCosto(Sesion llamada)
         {
             double retorno=0;
@@ -60,9 +69,12 @@ namespace Entidades
                     retorno = llamada.DuracionSesion;
                 }
             }
-            return retorno;
+            return retorno * 0.21;
         }
-
+        /// <summary>
+        /// Retorna los datos de Puesto y los propios
+        /// </summary>
+        /// <returns></returns>
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
