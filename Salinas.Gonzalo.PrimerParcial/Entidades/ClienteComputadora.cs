@@ -12,12 +12,12 @@ namespace Entidades
         private List<string> listaPerifericos;
         private List<string> listaJuegos;
         /// <summary>
-        /// Constructor de 
+        /// Constructor de Cliente Computadora, instanciando las listas
         /// </summary>
-        /// <param name="nombre"></param>
-        /// <param name="apellido"></param>
-        /// <param name="dni"></param>
-        /// <param name="edad"></param>
+        /// <param name="nombre">Nombre del cliente a asignar</param>
+        /// <param name="apellido">Apellido del cliente a asignar</param>
+        /// <param name="dni">DNI del cliente a asignar</param>
+        /// <param name="edad">Edad del cliente a asignar</param>
         public ClienteComputadora(string nombre, string apellido, string dni, string edad)
                                 :base(nombre, apellido, dni, edad)
         {
@@ -25,23 +25,31 @@ namespace Entidades
             this.listaPerifericos = new List<string>();
             this.listaJuegos = new List<string>();
         }
-
+        /// <summary>
+        /// Retorna la lista de Software elegidos
+        /// </summary>
         public List<string> ListaSoftware
         {
             get { return this.listaSoftware; }
         }
-
+        /// <summary>
+        /// Retorna la lista de Software elegidos
+        /// </summary>
         public List<string> ListaPerifericos
         {
             get { return this.listaPerifericos; }
         }
-
+        /// <summary>
+        /// Retorna la lista de Software elegidos
+        /// </summary>
         public List<string> ListaJuegos
         {
             get { return this.listaJuegos; }
         }
 
-
+        /// <summary>
+        /// Propiedad SoftwareCliente de lectura y asignacion del atributo Software Cliente
+        /// </summary>
         public string SoftwareCliente
         {
             get
@@ -65,6 +73,9 @@ namespace Entidades
         }
 
 
+        /// <summary>
+        /// Propiedad JuegosCliente de lectura y asignacion del atributo Juegos Cliente
+        /// </summary>
         public string JuegosCliente
         {
             get
@@ -86,6 +97,9 @@ namespace Entidades
             }
         }
 
+        /// <summary>
+        /// Propiedad PerifericosCliente de lectura y asignacion del atributo Perifericos Cliente
+        /// </summary>
         public string PerifericosCliente
         {
             get
@@ -111,8 +125,11 @@ namespace Entidades
             }
         }
 
-       
 
+        /// <summary>
+        /// Escribe los datos del cliente y las especificaciones de la computadora solicitada
+        /// </summary>
+        /// <returns>Retorna los datos del cliente escritos</returns>
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();

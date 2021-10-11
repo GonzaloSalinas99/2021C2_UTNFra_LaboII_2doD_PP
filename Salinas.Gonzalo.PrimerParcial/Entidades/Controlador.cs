@@ -14,33 +14,49 @@ namespace Entidades
         private Queue <ClienteCabina>listaClienteCabinas;
         private Queue<ClienteComputadora> listaClientesComputadoras;
         private DateTime fecha;
-
+        /// <summary>
+        /// Propiedad ListaClienteComputadora de lectura y asignacion del atributo Lista Clientes Computadora
+        /// </summary>
         public Queue<ClienteComputadora> ListaClienteComputadora
         {
             get { return this.listaClientesComputadoras; }
             set { listaClientesComputadoras = value; }
         }
+        /// <summary>
+        /// Propiedad ListaSesiones de lectura y asignacion del atributo Lista Sesiones
+        /// </summary>
         public List<Sesion> ListaSesiones
         {
             get { return this.listaSesiones; }
             set { listaSesiones = value; }
         }
+        /// <summary>
+        /// Propiedad ListaPuestos de lectura y asignacion del atributo Lista Puestos
+        /// </summary>
         public List<Puesto> ListaPuestos
         {
             get { return this.listaPuestos; }
             set { listaPuestos = value; }
         }
+        /// <summary>
+        /// Propiedad ListaClienteCabinas de lectura y asignacion del atributo Lista Clientes Cabinas
+        /// </summary>
         public Queue<ClienteCabina> ListaClienteCabinas
         {
             get { return this.listaClienteCabinas; }
             set { listaClienteCabinas = value; }
         }
+        /// <summary>
+        /// Propiedad Fecha de lectura y asignacion del atributo Fecha
+        /// </summary>
         public DateTime Fecha
         {
             get { return this.fecha; }
             set { this.fecha = value; }
         }
-
+        /// <summary>
+        /// Constructor sin parametro que instancia todas las listas
+        /// </summary>
         public Controlador()
         {
             listaSesiones = new List<Sesion>();
@@ -49,7 +65,11 @@ namespace Entidades
             listaClientesComputadoras = new Queue<ClienteComputadora>();
             fecha = default(DateTime);
         }
-
+        /// <summary>
+        /// Agrega un cliente de tipo Cabina a la lista de clientes
+        /// </summary>
+        /// <param name="cliente">Cliente a ser guardado</param>
+        /// <returns>True si pudo agregar el cliente, False si no pudo</returns>
         public bool AgregarClienteCabina(ClienteCabina cliente)
         {
             if(cliente is ClienteCabina && cliente is not null )
@@ -59,7 +79,11 @@ namespace Entidades
             }
             return false;
         }
-
+        /// <summary>
+        /// Agrega un cliente de tipo Computadora a la lista de clientes
+        /// </summary>
+        /// <param name="cliente">Cliente a ser guardado</param>
+        /// <returns>True si pudo agregar el cliente, False si no pudo</returns>
         public bool AgregarClienteComputadora(ClienteComputadora cliente)
         {
             if (cliente is ClienteComputadora && cliente is not null)
@@ -70,7 +94,11 @@ namespace Entidades
             return false;
         }
 
-        
+        /// <summary>
+        /// Agrega un puesto a la lista de Puestos
+        /// </summary>
+        /// <param name="cliente">Puesto a ser guardado</param>
+        /// <returns>True si pudo agregar el puestos, False si no pudo</returns>
         public bool AgregarPuesto(Puesto puesto)
         {
             if (puesto is Puesto && puesto is not null)
@@ -80,7 +108,12 @@ namespace Entidades
             }
             return false;
         }
-
+        /// <summary>
+        /// Corroba la cantidad de Puestos que hay en la lista Puesto
+        /// </summary>
+        /// <param name="puestoACorroborar">Tipo de puesto a corroborar la cantidad</param>
+        /// <param name="numeroLimite">Cantidad limite de puestos que tienen que estar cargados</param>
+        /// <returns>True si se puede agregar un puesto, False si no se puede</returns>
         public bool CorroborarCantidadPuestos(Puesto puestoACorroborar,int numeroLimite)
         {
             int contador = 0;
@@ -97,7 +130,12 @@ namespace Entidades
             }
             return false;
         }
-
+        /// <summary>
+        /// Abre Sesion de llamada
+        /// </summary>
+        /// <param name="cliente">Cliente a ser vinculado con la llamada</param>
+        /// <param name="cabina">Cabina a ser vinculada con la llamada</param>
+        /// <returns>True si pudo abrir la sesion, False si no pudo</returns>
         public bool AbrirSesionLlamada(ClienteCabina cliente,Cabina cabina)
         {
             
@@ -114,14 +152,11 @@ namespace Entidades
             }
             return false;
         }
-        public Sesion MostrarSesionLlamada()
-        {
-            foreach (Llamada llamada in this.listaSesiones)
-            {
-                return llamada;
-            }
-            return null;
-        }
+        /// <summary>
+        /// Cierra la sesion de llamada
+        /// </summary>
+        /// <param name="sesion">Sesion a ser cerrada</param>
+        /// <returns>Si puedo cerrar la sesion, retorna los datos, sino un mensaje que no encontro la sesion</returns>
         public string CerrarSesionTelefono(Sesion sesion)
         {
             if (sesion.Puesto.EstadoPuesto == Enumerados.EstadoPuesto.EnUso
@@ -142,10 +177,14 @@ namespace Entidades
                     }
                 }
             }
-
             return "NO LO ENCONTRE";
         }
-
+        /// <summary>
+        /// Compara que un cliente tenga las mismas especificaciones que la computadora
+        /// </summary>
+        /// <param name="cliente">Cliente a ser comparado</param>
+        /// <param name="computadora">Computadora a ser comparada</param>
+        /// <returns>True si el cliente tiene las mismas especificaciones que la computadora, False si son diferentes</returns>
         private bool CompararClienteConComputadora(ClienteComputadora cliente, Computadora computadora)
         {
             if (cliente is ClienteComputadora && computadora is Computadora)
@@ -160,32 +199,32 @@ namespace Entidades
 
         }
 
-
+        /// <summary>
+        /// Abre la sesion Conexion entre cliente y computadora
+        /// </summary>
+        /// <param name="cliente">Cliente a ser vinculado en la conexion</param>
+        /// <param name="computadora">Computadora a ser vinculada en la conexion</param>
+        /// <returns>True si pudo abrir la sesion, False si no pudo</returns>
         public bool AbrirSesionConexion(ClienteComputadora cliente, Computadora computadora)
         {
 
             if (cliente is ClienteComputadora && computadora is Computadora)
             {
                 if (cliente.EstadoCliente == Enumerados.EstadoCliente.Esperando
-                    && computadora.EstadoPuesto == Enumerados.EstadoPuesto.SinUso && CompararClienteConComputadora(cliente,computadora))
+                    && computadora.EstadoPuesto == Enumerados.EstadoPuesto.SinUso && CompararClienteConComputadora(cliente, computadora))
                 {
-                    Conexion nuevaConexion = new Conexion(computadora,cliente);
+                    Conexion nuevaConexion = new Conexion(computadora, cliente);
                     ListaSesiones.Add(nuevaConexion);
                     return true;
                 }
             }
             return false;
         }
-        public Sesion MostrarSesionConexion()
-        {
-            foreach (Conexion conexion in ListaSesiones)
-            {
-                return conexion;
-            }
-            return null;
-        }
-
-        
+        /// <summary>
+        /// Cierra la sesion de conexion
+        /// </summary>
+        /// <param name="sesion">Sesion a ser cerrada</param>
+        /// <returns>Si pudo cerrar la sesion, retorna los datos, sino un mensaje que no encontro la sesion</returns>
         public string CerrarSesionConexion(Sesion sesion)
         {
             if (sesion.Puesto.EstadoPuesto == Enumerados.EstadoPuesto.EnUso
@@ -208,7 +247,11 @@ namespace Entidades
             }
             return "NO LO ENCONTRE";
         }
-
+        /// <summary>
+        /// Filtra una lista de puestos dependiendo el tipo de puesto pasado por parametro
+        /// </summary>
+        /// <param name="puesto">Nombre del tipo de puesto a filtrar</param>
+        /// <returns>Retorna la lista filtrada por el tipo del puesto</returns>
         public List<Puesto> FiltroLista(string puesto)
         {
             List<Puesto> retorno = new List<Puesto>();
@@ -236,11 +279,14 @@ namespace Entidades
                     }
                 }
             }
-
-
             return retorno;
         }
-
+        /// <summary>
+        /// Busca a travez del identificador un Puesto en la ListaPuestos 
+        /// </summary>
+        /// <param name="identificador">Identificador del puesto a buscar</param>
+        /// <param name="tipoPuesto">Nombre del tipo del puesto a buscar</param>
+        /// <returns>Retorna el puesto buscado por identificador</returns>
         public Puesto BuscarPuestoPorIdentificador( string identificador,string tipoPuesto)
         {
             if(tipoPuesto == "Cabina")
@@ -270,6 +316,48 @@ namespace Entidades
                 }
             }
            
+            return null;
+        }
+        /// <summary>
+        /// Busca un cliente por el numero de documento y el tipo del cliente
+        /// </summary>
+        /// <param name="documento">Documento a buscar en las listas</param>
+        /// <param name="tipoCliente">Tipo de cliente a buscar</param>
+        /// <returns>Retorna el cliente buscado a travez del documento</returns>
+        public Cliente BuscarClienteDocumento(string documento,string tipoCliente)
+        {
+            if (ListaClienteComputadora.Count != 0 && tipoCliente == "Computadora")
+            {
+                ClienteComputadora aux = ListaClienteComputadora.Peek();
+                foreach (ClienteComputadora cliente in ListaClienteComputadora)
+                {
+                    if (cliente is ClienteComputadora && cliente is not null && cliente == aux)
+                    {
+                        if (cliente.Dni == documento && cliente.EstadoCliente == Enumerados.EstadoCliente.Esperando)
+                        {
+                            return cliente;
+                        }
+                    }
+                }
+            }
+            else
+            {
+                if(ListaClienteCabinas.Count != 0 && tipoCliente == "Cabina")
+                {
+                    ClienteCabina aux = ListaClienteCabinas.Peek();
+                    foreach (ClienteCabina cliente in ListaClienteCabinas)
+                    {
+                        if (cliente is Cliente && cliente is not null && cliente == aux)
+                        {
+                            if (cliente.Dni == documento && cliente.EstadoCliente == Enumerados.EstadoCliente.Esperando)
+                            {
+                                return cliente;
+                            }
+                        }
+                    }
+                }
+            }
+
             return null;
         }
 

@@ -1,0 +1,116 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Entidades.Cabina" Collapsed="true">
+    <Position X="4.5" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AABABBAAAAAQAAAEAAAAAAAAAAAQAAAAAAAQAAAAAAA=</HashCode>
+      <FileName>Cabina.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Entidades.Cliente" Collapsed="true">
+    <Position X="10.75" Y="1.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAEEAAABAAQAAACEAAAEgAAAAAAAAAAAAAIAAAAAAAA=</HashCode>
+      <FileName>Cliente.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Entidades.ClienteCabina" Collapsed="true">
+    <Position X="9.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAEAACAABAAAAAQAAAAAACAAAAAAAA=</HashCode>
+      <FileName>ClienteCabina.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Entidades.ClienteComputadora" Collapsed="true">
+    <Position X="11.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAIIAAAAAAAEEEAAAABAAAEAAAQAAAAEAAAAAIA=</HashCode>
+      <FileName>ClienteComputadora.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Entidades.Computadora" Collapsed="true">
+    <Position X="6.75" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CABAAAIAAAEAAAAEAAAAEABAAAAAAAQAAAAYAAAAAAE=</HashCode>
+      <FileName>Computadora.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Entidades.Conexion" Collapsed="true">
+    <Position X="6.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Conexion.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Entidades.Controlador" Collapsed="true">
+    <Position X="14.25" Y="1.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAyAQACEAEAAoBAAAoAAIQABJCAgAgAAEAAAAA=</HashCode>
+      <FileName>Controlador.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Entidades.Historial" Collapsed="true">
+    <Position X="16" Y="1.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAgIIAQAAEAAAAEAAAAgIyAARAAAEAAAAAACAIAA=</HashCode>
+      <FileName>Historial.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Entidades.Llamada" Collapsed="true">
+    <Position X="4.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAChAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAEAAAABgAA=</HashCode>
+      <FileName>Llamada.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Entidades.Puesto" Collapsed="true">
+    <Position X="5.75" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAACAIAAAAAAAAEEAAAABAAAAAAAAQAAAgUAAAAAiA=</HashCode>
+      <FileName>Puesto.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Entidades.Sesion" Collapsed="true">
+    <Position X="5.75" Y="1.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AABBIAABAABAAAQEQACkAAABgAAAAAAgIAAAACAAAQA=</HashCode>
+      <FileName>Sesion.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Entidades.ValidadorDeInformacion" Collapsed="true">
+    <Position X="15" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAIAAAAAAAAAAAAAAAQAACAAAAAAAAABA=</HashCode>
+      <FileName>ValidadorDeInformacion.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Enum Name="Enumerados.TipoLlamada" Collapsed="true">
+    <Position X="14.25" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAABAAgAAAAAQAACAAAA=</HashCode>
+      <FileName>Enumerados.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="Enumerados.TipoTelefono" Collapsed="true">
+    <Position X="16" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Enumerados.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="Enumerados.EstadoCliente" Collapsed="true">
+    <Position X="14.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAEAAAAAAAAAAAQAACAAAAAAAAAAAAA=</HashCode>
+      <FileName>Enumerados.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="Enumerados.EstadoPuesto" Collapsed="true">
+    <Position X="16" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAEAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Enumerados.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

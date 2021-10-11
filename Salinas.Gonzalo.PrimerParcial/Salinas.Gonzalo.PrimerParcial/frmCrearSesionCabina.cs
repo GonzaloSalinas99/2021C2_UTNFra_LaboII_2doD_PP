@@ -40,43 +40,29 @@ namespace Salinas.Gonzalo.PrimerParcial
             }
         }
 
-        private ClienteCabina BuscarClienteCabinaDocumento(Controlador control,string documento)
-        {
-            if(control.ListaClienteCabinas.Count!=0)
-            {
-                ClienteCabina aux = control.ListaClienteCabinas.Peek();
-                foreach (ClienteCabina cliente in control.ListaClienteCabinas)
-                {
+        //private ClienteCabina BuscarClienteCabinaDocumento(Controlador control,string documento)
+        //{
+        //    if(control.ListaClienteCabinas.Count!=0)
+        //    {
+        //        ClienteCabina aux = control.ListaClienteCabinas.Peek();
+        //        foreach (ClienteCabina cliente in control.ListaClienteCabinas)
+        //        {
 
-                    if (cliente is ClienteCabina && cliente is not null && cliente == aux)
-                    {
-                        if (cliente.Dni == documento && cliente.EstadoCliente == Enumerados.EstadoCliente.Esperando)
-                        {
-                            _ = control.ListaClienteCabinas.Dequeue();
-                            return cliente;
+        //            if (cliente is ClienteCabina && cliente is not null && cliente == aux)
+        //            {
+        //                if (cliente.Dni == documento && cliente.EstadoCliente == Enumerados.EstadoCliente.Esperando)
+        //                {
+        //                    _ = control.ListaClienteCabinas.Dequeue();
+        //                    return cliente;
                             
-                        }
-                    }
-                }
-            }
+        //                }
+        //            }
+        //        }
+        //    }
             
-            return null;
-        }
+        //    return null;
+        //}
 
-        private Cabina BuscarCabinaIdentificador(Controlador control,string identificador)
-        {
-            foreach (Puesto puesto in control.ListaPuestos)
-            {
-                if(puesto is Cabina && puesto is not null)
-                {
-                    if(puesto.IdPuesto == identificador && puesto.EstadoPuesto== Enumerados.EstadoPuesto.SinUso)
-                    {
-                        return (Cabina)puesto;
-                    }
-                }
-            }
-            return null;
-        }
 
         private void btnCrearSesionLlamada_Click(object sender, EventArgs e)
         {
@@ -86,8 +72,8 @@ namespace Salinas.Gonzalo.PrimerParcial
                 Cabina cabinaAuxiliar;
                 string documento = txtDocumentoCliente.Text;
                 string identificador = txtIdentificadorCabina.Text;
-                cabinaAuxiliar = BuscarCabinaIdentificador(control, identificador);
-                clienteAuxiliar = BuscarClienteCabinaDocumento(control, documento);
+                cabinaAuxiliar = (Cabina)control.BuscarPuestoPorIdentificador(identificador,"Cabina");
+                clienteAuxiliar = (ClienteCabina)control.BuscarClienteDocumento(documento,"Cabina");
 
 
                 if (clienteAuxiliar is not null && clienteAuxiliar.Dni == documento && cabinaAuxiliar is not null && cabinaAuxiliar.IdPuesto == identificador)

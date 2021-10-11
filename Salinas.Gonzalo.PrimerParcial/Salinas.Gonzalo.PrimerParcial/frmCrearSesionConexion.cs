@@ -42,16 +42,14 @@ namespace Salinas.Gonzalo.PrimerParcial
         }
         private void btnCrearSesionConexion_Click_1(object sender, EventArgs e)
         {
-
-
             if(ValidadorDeInformacion.ValidarStringTexto(txtDocumentoCliente.Text) && ValidadorDeInformacion.ValidarStringTexto(txtIdentificadorComputadora.Text))
             {
                 ClienteComputadora clienteAuxiliar;
                 Computadora computadoraAuxiliar;
                 string documento = txtDocumentoCliente.Text;
                 string identificador = txtIdentificadorComputadora.Text;
-                computadoraAuxiliar = BuscarComputadoraIdentificador(control, identificador);
-                clienteAuxiliar = BuscarClienteDocumento(control, documento);
+                computadoraAuxiliar = (Computadora)control.BuscarPuestoPorIdentificador(identificador,"Computadora");
+                clienteAuxiliar =(ClienteComputadora)control.BuscarClienteDocumento(documento,"Computadora");
                 if (clienteAuxiliar is not null && clienteAuxiliar.Dni == documento && computadoraAuxiliar is not null && computadoraAuxiliar.IdPuesto == identificador)
                 {
                     if (control.AbrirSesionConexion(clienteAuxiliar, computadoraAuxiliar))
@@ -77,40 +75,7 @@ namespace Salinas.Gonzalo.PrimerParcial
             }
         }
 
-        private ClienteComputadora BuscarClienteDocumento(Controlador control, string documento)
-        {
-            if(control.ListaClienteComputadora.Count != 0)
-            {
-                ClienteComputadora aux = control.ListaClienteComputadora.Peek();
-                foreach (ClienteComputadora cliente in control.ListaClienteComputadora)
-                {
-                    if (cliente is ClienteComputadora && cliente is not null && cliente == aux)
-                    {
-                        if (cliente.Dni == documento && cliente.EstadoCliente == Enumerados.EstadoCliente.Esperando)
-                        {
-                            return cliente;
-                        }
-                    }
-                }
-            }
-            
-            return null;
-        }
 
-        private Computadora BuscarComputadoraIdentificador(Controlador control, string identificador)
-        {
-            foreach (Puesto puesto in control.ListaPuestos)
-            {
-                if (puesto is Computadora && puesto is not null)
-                {
-                    if (puesto.IdPuesto == identificador && puesto.EstadoPuesto == Enumerados.EstadoPuesto.SinUso)
-                    {
-                        return (Computadora)puesto;
-                    }
-                }
-            }
-            return null;
-        }
         private void ActualizarLista(Controlador control)
         {
             foreach (Puesto puesto in control.ListaPuestos)

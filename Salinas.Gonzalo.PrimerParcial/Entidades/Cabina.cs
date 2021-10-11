@@ -47,10 +47,11 @@ namespace Entidades
         /// Calcula costo de la llamada 
         /// </summary>
         /// <param name="llamada">Llamada a calcular su costo</param>
-        /// <returns></returns>
+        /// <returns>Retorna el costo total de la llamada con IVA</returns>
         public override double CalcularCosto(Sesion llamada)
         {
-            double retorno=0;
+            double costoTotal=0;
+            double costoFinal;
             Llamada auxiliar;
             if(llamada is Llamada && llamada.DuracionSesion >0)
             {
@@ -58,23 +59,25 @@ namespace Entidades
 
                 if(auxiliar.TipoLlamada == TipoLlamada.LargaDistancia)
                 {
-                    retorno = llamada.DuracionSesion * 2.50;
+                    costoTotal = llamada.DuracionSesion * 2.50;
                 }
                 else if(auxiliar.TipoLlamada == TipoLlamada.Internacional)
                 {
-                    retorno = llamada.DuracionSesion * 5;
+                    costoTotal = llamada.DuracionSesion * 5;
                 }
                 else
                 {
-                    retorno = llamada.DuracionSesion;
+                    costoTotal = llamada.DuracionSesion;
                 }
             }
-            return retorno * 0.21;
+
+            costoFinal = costoTotal * IVA;
+            return costoFinal+costoTotal;
         }
         /// <summary>
-        /// Retorna los datos de Puesto y los propios
+        /// Escribe los datos de la cabina y el puesto
         /// </summary>
-        /// <returns></returns>
+        /// <returns>Cadena con los datos</returns>
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();

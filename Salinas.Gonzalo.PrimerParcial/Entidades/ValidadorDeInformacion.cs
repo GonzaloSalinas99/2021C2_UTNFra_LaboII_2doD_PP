@@ -8,6 +8,11 @@ namespace Entidades
 {
     public static class ValidadorDeInformacion
     {
+        /// <summary>
+        /// Valida que la cadena no sea null ni este vacio
+        /// </summary>
+        /// <param name="cadenaAValidar">Cadena a validar</param>
+        /// <returns>True si esta correcta, false si no lo esta</returns>
         public static bool ValidarStringTexto(string cadenaAValidar)
         {
             if(cadenaAValidar is null || cadenaAValidar == "")
@@ -16,7 +21,11 @@ namespace Entidades
             }
             return true;
         }
-
+        /// <summary>
+        /// Valida el numero de telefono, que sea solo numeros
+        /// </summary>
+        /// <param name="cadenaAValidar">Numero de telefon oa validar</param>
+        /// <returns>True si es un numero de telefono, false si no lo es</returns>
         public static bool ValidarNumeroTelefono(string cadenaAValidar)
         {
             bool validador = true;
@@ -53,7 +62,11 @@ namespace Entidades
             }
             
         }
-
+        /// <summary>
+        /// Valida el numero de documento
+        /// </summary>
+        /// <param name="cadenaAValidar">Documento a validar</param>
+        /// <returns>true si es un numero de documento correcto, false si no lo es</returns>
         public static bool ValidarDocumento(string cadenaAValidar)
         {
             bool validador = true;
@@ -89,7 +102,11 @@ namespace Entidades
                 return false;
             }
         }
-
+        /// <summary>
+        /// Valida la edad
+        /// </summary>
+        /// <param name="cadenaAValidar">Edad a validar</param>
+        /// <returns>True si es una edad valida, false si no lo es</returns>
         public static bool ValidarEdad(string cadenaAValidar)
         {
             if(cadenaAValidar is not null && cadenaAValidar != "")
@@ -97,7 +114,10 @@ namespace Entidades
                 int edadAValidar;
                 if(int.TryParse(cadenaAValidar,out edadAValidar))
                 {
-                    return true;
+                    if(edadAValidar>0 && edadAValidar<100)
+                    {
+                        return true;
+                    }
                 }
             }
             return false;

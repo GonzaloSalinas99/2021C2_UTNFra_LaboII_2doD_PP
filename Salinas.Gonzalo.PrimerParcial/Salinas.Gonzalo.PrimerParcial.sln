@@ -5,7 +5,7 @@ VisualStudioVersion = 16.0.31402.337
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Salinas.Gonzalo.PrimerParcial", "Salinas.Gonzalo.PrimerParcial\Salinas.Gonzalo.PrimerParcial.csproj", "{1F045DEF-0A7B-46C4-8907-53D2EB2683C5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Entidades", "Entidades\Entidades.csproj", "{9E6A01F5-D033-4E0B-9CA5-D8F555533C31}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Entidades", "Entidades\Entidades.csproj", "{9E6A01F5-D033-4E0B-9CA5-D8F555533C31}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -13,6 +13,12 @@ namespace Entidades
         protected double costoSesion;
         protected DateTime tiempoInicio;
         protected DateTime tiempoFinal;
+
+        /// <summary>
+        /// Constructor de Sesion.
+        /// </summary>
+        /// <param name="puesto">Puesto a asignar a la sesion</param>
+        /// <param name="cliente">Cliente a asignar a la sesion</param>
         public Sesion(Puesto puesto,Cliente cliente)
         {
 
@@ -29,35 +35,48 @@ namespace Entidades
             idSiguiente++;
         }
 
-
+        /// <summary>
+        /// Propiedad IDSesion de lectura del atributo Id Sesion
+        /// </summary>
         public int IdSesion
         {
             get { return this.idSesion; }
         }
+        /// <summary>
+        /// Propiedad Cliente de lectura y asignacion del atributo Cliente
+        /// </summary>
         public Cliente Cliente
         {
             get { return this.cliente; }
             set { this.cliente = value; }
         }
-
+        /// <summary>
+        /// Propiedad Puesto de lectura y asignacion del atributo Puesto
+        /// </summary>
         public Puesto Puesto
         {
             get { return this.puesto; }
             set { this.puesto = value; }
         }
-
+        /// <summary>
+        /// Propiedad TiempoInicio de lectura y asignacion del atributo TiempoInicio
+        /// </summary>
         public DateTime TiempoInicio
         {
             get { return this.tiempoInicio; }
             set { this.tiempoInicio = value; }
         }
-
+        /// <summary>
+        /// Propiedad TiempoFinal de lectura y asignacion del atributo TiempoFinal
+        /// </summary>
         public DateTime TiempoFinal
         {
             get { return this.tiempoFinal; }
             set { this.tiempoFinal = value; }
         }
-
+        /// <summary>
+        /// Propiedad Duracionsesion de lectura y asignacion del atributo Duracion Sesion
+        /// </summary>
         public int DuracionSesion
         {
             get { return  CalcularDuracionSesion(); }
@@ -65,6 +84,10 @@ namespace Entidades
                 this.DuracionSesion = value;
                  }
         }
+        /// <summary>
+        /// Calcula la duracion de la sesion
+        /// </summary>
+        /// <returns>Retorna la duracion de la sesion</returns>
         public int CalcularDuracionSesion()
         {
             double var= (this.tiempoFinal - this.tiempoInicio).TotalSeconds;
@@ -73,7 +96,10 @@ namespace Entidades
         }
 
         public abstract double CostoSesion { get; set; }
-        
+        /// <summary>
+        /// Escribe los datos de la Sesion
+        /// </summary>
+        /// <returns>Retorna los datos escritos</returns>
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();

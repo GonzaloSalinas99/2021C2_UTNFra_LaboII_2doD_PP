@@ -45,9 +45,9 @@ namespace Entidades
         }
 
         /// <summary>
-        /// Retorna los datos del cliente y las especificaciones del telefono solicitado
+        /// Escribes los datos del cliente y las especificaciones del telefono solicitado
         /// </summary>
-        /// <returns></returns>
+        /// <returns>Retorna los datos escritos</returns>
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();

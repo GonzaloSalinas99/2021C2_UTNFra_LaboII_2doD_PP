@@ -27,7 +27,6 @@ namespace Salinas.Gonzalo.PrimerParcial
                 Llamada llamadaAux = BuscarLlamadaIdentificador(control, identificador);
                 MessageBox.Show(control.CerrarSesionTelefono(llamadaAux));
                 MessageBox.Show("Se cerro sesion correctamente");
-                //MessageBox.Show(Historial.MostrarHistorial());
                 lBoxLlamadas.Items.Clear();
                 ActualizarListasSesiones(control);
             }
