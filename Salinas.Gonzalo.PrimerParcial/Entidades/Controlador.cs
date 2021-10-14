@@ -72,7 +72,7 @@ namespace Entidades
         /// <returns>True si pudo agregar el cliente, False si no pudo</returns>
         public bool AgregarClienteCabina(ClienteCabina cliente)
         {
-            if(cliente is ClienteCabina && cliente is not null )
+            if(cliente is ClienteCabina && cliente is not null && this != cliente)
             {
                 listaClienteCabinas.Enqueue(cliente);
                 return true;
@@ -86,7 +86,7 @@ namespace Entidades
         /// <returns>True si pudo agregar el cliente, False si no pudo</returns>
         public bool AgregarClienteComputadora(ClienteComputadora cliente)
         {
-            if (cliente is ClienteComputadora && cliente is not null)
+            if (cliente is ClienteComputadora && cliente is not null && this != cliente)
             {
                 listaClientesComputadoras.Enqueue(cliente);
                 return true;
@@ -281,6 +281,7 @@ namespace Entidades
             }
             return retorno;
         }
+
         /// <summary>
         /// Busca a travez del identificador un Puesto en la ListaPuestos 
         /// </summary>
@@ -318,6 +319,7 @@ namespace Entidades
            
             return null;
         }
+
         /// <summary>
         /// Busca un cliente por el numero de documento y el tipo del cliente
         /// </summary>
@@ -359,6 +361,43 @@ namespace Entidades
             }
 
             return null;
+        }
+
+        public static bool operator == (Controlador control, Cliente cliente)
+        {
+            if(control is not null && cliente.Equals(cliente))
+            {
+                if(cliente is ClienteCabina)
+                {
+                    foreach (Cliente c1 in control.ListaClienteCabinas)
+                    {
+                        if (c1 == cliente)
+                        {
+                            return true;
+                        }
+                    }
+                }
+                else
+                {
+                    if(cliente is ClienteComputadora)
+                    {
+                        foreach (Cliente c1 in control.ListaClienteComputadora)
+                        {
+                            if(c1 == cliente)
+                            {
+                                return true;
+                            }
+                        }
+                    }
+                }
+                
+            }
+            return false;
+        }
+
+        public static bool operator !=(Controlador control, Cliente cliente)
+        {
+            return !(control == cliente);
         }
 
     }

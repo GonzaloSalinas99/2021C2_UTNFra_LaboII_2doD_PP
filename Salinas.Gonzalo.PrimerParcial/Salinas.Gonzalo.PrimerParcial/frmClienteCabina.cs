@@ -20,7 +20,6 @@ namespace Salinas.Gonzalo.PrimerParcial
         {
             InitializeComponent();
             this.controlAux = controlador;
-           // controlador = btnAgregarClienteCabina();
         }
 
         private void frmClienteCabina_Load(object sender, EventArgs e)
@@ -56,9 +55,15 @@ namespace Salinas.Gonzalo.PrimerParcial
                     tipo = Enumerados.TipoTelefono.Teclado;
                 }
                  ClienteCabina clienteCabina = new ClienteCabina(nombre, apellido, dni, edad, tipo, numeroTelefono);
-                MessageBox.Show(clienteCabina.ToString());
-                controlAux.AgregarClienteCabina(clienteCabina);
-
+                
+                if(controlAux.AgregarClienteCabina(clienteCabina))
+                {
+                    MessageBox.Show(clienteCabina.ToString());
+                }
+                else
+                {
+                    MessageBox.Show("Ocurrio un error con el cliente");
+                }
                 this.Close();
             }
             

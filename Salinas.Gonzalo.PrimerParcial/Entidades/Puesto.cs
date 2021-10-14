@@ -52,7 +52,7 @@ namespace Entidades
         /// <returns>true si son iguales, false si no lo son</returns>
         public static bool operator == (Puesto puesto1 , Puesto puesto2)
         {
-            if(puesto1.IdPuesto.Equals(puesto2.IdPuesto))
+            if(puesto1.Equals(puesto2) && puesto1.GetHashCode() == puesto2.GetHashCode())
             {
                 return true;
             }
@@ -88,5 +88,18 @@ namespace Entidades
         /// <returns>Retorna costo total de la sesion</returns>
         public abstract double CalcularCosto(Sesion sesion);
 
+        public override bool Equals(object obj)
+        {
+            if(obj is not null && obj is Puesto && this.GetType().Equals(obj.GetType()))
+            {
+                return true;
+            }
+            return false;
+        }
+
+        public override int GetHashCode()
+        {
+            return int.Parse(idPuesto);
+        }
     }
 }

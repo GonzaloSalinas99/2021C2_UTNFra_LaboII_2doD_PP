@@ -9,6 +9,11 @@ namespace Entidades
     public static class Historial
     {
         private static List<Sesion> listaSesiones;
+       
+        static Historial()
+        {
+            listaSesiones = new List<Sesion>();
+        }
         /// <summary>
         /// Propiedad Sesiones de lectura y asignacion del atributo listaSesiones
         /// </summary>

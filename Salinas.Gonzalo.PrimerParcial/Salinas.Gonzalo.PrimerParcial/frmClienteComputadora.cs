@@ -60,8 +60,14 @@ namespace Salinas.Gonzalo.PrimerParcial
                     }
                 }
 
-                MessageBox.Show(cliente.ToString());
-                control.AgregarClienteComputadora(cliente);
+                if(control.AgregarClienteComputadora(cliente))
+                {
+                    MessageBox.Show(cliente.ToString());
+                }
+                else
+                {
+                    MessageBox.Show("Ocurrio un error. No puede haber dos clientes con el mismo documento","Error de ingreso",MessageBoxButtons.OK,MessageBoxIcon.Error);
+                }
                 this.Close();
             }
         }

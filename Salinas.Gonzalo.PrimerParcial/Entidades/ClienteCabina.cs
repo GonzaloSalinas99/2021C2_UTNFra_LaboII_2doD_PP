@@ -41,7 +41,13 @@ namespace Entidades
         public string NumeroTelefono
         {
             get { return this.numeroTelefono; }
-            set { this.numeroTelefono = value; }
+            set
+            {
+                if (ValidadorDeInformacion.ValidarDocumento(value))
+                {
+                    this.numeroTelefono = value;
+                } 
+            }
         }
 
         /// <summary>

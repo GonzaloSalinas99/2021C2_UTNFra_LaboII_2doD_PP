@@ -40,29 +40,6 @@ namespace Salinas.Gonzalo.PrimerParcial
             }
         }
 
-        //private ClienteCabina BuscarClienteCabinaDocumento(Controlador control,string documento)
-        //{
-        //    if(control.ListaClienteCabinas.Count!=0)
-        //    {
-        //        ClienteCabina aux = control.ListaClienteCabinas.Peek();
-        //        foreach (ClienteCabina cliente in control.ListaClienteCabinas)
-        //        {
-
-        //            if (cliente is ClienteCabina && cliente is not null && cliente == aux)
-        //            {
-        //                if (cliente.Dni == documento && cliente.EstadoCliente == Enumerados.EstadoCliente.Esperando)
-        //                {
-        //                    _ = control.ListaClienteCabinas.Dequeue();
-        //                    return cliente;
-                            
-        //                }
-        //            }
-        //        }
-        //    }
-            
-        //    return null;
-        //}
-
 
         private void btnCrearSesionLlamada_Click(object sender, EventArgs e)
         {
@@ -80,6 +57,7 @@ namespace Salinas.Gonzalo.PrimerParcial
                 {
                     if (control.AbrirSesionLlamada(clienteAuxiliar, cabinaAuxiliar))
                     {
+                        control.ListaClienteCabinas.Dequeue();
                         MessageBox.Show("Se inicio la sesion correctamente", "Inicio Sesion");
                         lBoxCabinas.Items.Clear();
                         lBoxClientes.Items.Clear();
