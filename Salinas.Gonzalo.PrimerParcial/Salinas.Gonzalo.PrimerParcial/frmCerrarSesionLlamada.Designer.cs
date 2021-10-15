@@ -40,26 +40,30 @@ namespace Salinas.Gonzalo.PrimerParcial
             // 
             // lBoxLlamadas
             // 
-            this.lBoxLlamadas.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.lBoxLlamadas.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lBoxLlamadas.FormattingEnabled = true;
             this.lBoxLlamadas.ItemHeight = 15;
             this.lBoxLlamadas.Location = new System.Drawing.Point(25, 12);
             this.lBoxLlamadas.Name = "lBoxLlamadas";
-            this.lBoxLlamadas.Size = new System.Drawing.Size(1111, 139);
+            this.lBoxLlamadas.Size = new System.Drawing.Size(1280, 139);
             this.lBoxLlamadas.TabIndex = 0;
             // 
             // txtIdentificadorLlamada
             // 
-            this.txtIdentificadorLlamada.Location = new System.Drawing.Point(514, 224);
+            this.txtIdentificadorLlamada.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtIdentificadorLlamada.Location = new System.Drawing.Point(647, 229);
             this.txtIdentificadorLlamada.Name = "txtIdentificadorLlamada";
             this.txtIdentificadorLlamada.Size = new System.Drawing.Size(138, 23);
             this.txtIdentificadorLlamada.TabIndex = 1;
             // 
             // lblIdentificadorLlamada
             // 
+            this.lblIdentificadorLlamada.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.lblIdentificadorLlamada.AutoSize = true;
-            this.lblIdentificadorLlamada.Location = new System.Drawing.Point(323, 232);
+            this.lblIdentificadorLlamada.Location = new System.Drawing.Point(506, 232);
             this.lblIdentificadorLlamada.Name = "lblIdentificadorLlamada";
             this.lblIdentificadorLlamada.Size = new System.Drawing.Size(122, 15);
             this.lblIdentificadorLlamada.TabIndex = 2;
@@ -75,7 +79,8 @@ namespace Salinas.Gonzalo.PrimerParcial
             // 
             // btnCerrarSesionLlamada
             // 
-            this.btnCerrarSesionLlamada.Location = new System.Drawing.Point(971, 212);
+            this.btnCerrarSesionLlamada.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnCerrarSesionLlamada.Location = new System.Drawing.Point(1140, 214);
             this.btnCerrarSesionLlamada.Name = "btnCerrarSesionLlamada";
             this.btnCerrarSesionLlamada.Size = new System.Drawing.Size(165, 45);
             this.btnCerrarSesionLlamada.TabIndex = 4;
@@ -85,6 +90,7 @@ namespace Salinas.Gonzalo.PrimerParcial
             // 
             // btnVolverMenuPrincipal
             // 
+            this.btnVolverMenuPrincipal.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.btnVolverMenuPrincipal.Location = new System.Drawing.Point(25, 215);
             this.btnVolverMenuPrincipal.Name = "btnVolverMenuPrincipal";
             this.btnVolverMenuPrincipal.Size = new System.Drawing.Size(165, 42);
@@ -95,6 +101,7 @@ namespace Salinas.Gonzalo.PrimerParcial
             // 
             // btnAYUDA
             // 
+            this.btnAYUDA.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.btnAYUDA.Location = new System.Drawing.Point(25, 158);
             this.btnAYUDA.Name = "btnAYUDA";
             this.btnAYUDA.Size = new System.Drawing.Size(53, 23);
@@ -107,7 +114,7 @@ namespace Salinas.Gonzalo.PrimerParcial
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1158, 269);
+            this.ClientSize = new System.Drawing.Size(1327, 269);
             this.Controls.Add(this.btnAYUDA);
             this.Controls.Add(this.btnVolverMenuPrincipal);
             this.Controls.Add(this.btnCerrarSesionLlamada);
@@ -115,10 +122,10 @@ namespace Salinas.Gonzalo.PrimerParcial
             this.Controls.Add(this.lblIdentificadorLlamada);
             this.Controls.Add(this.txtIdentificadorLlamada);
             this.Controls.Add(this.lBoxLlamadas);
-            this.MaximizeBox = false;
-            this.MinimizeBox = false;
+            this.MinimumSize = new System.Drawing.Size(1343, 308);
             this.Name = "frmCerrarSesionLlamada";
-            this.Text = "frmCerrarSesionLlamada";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Cerrar Sesion Llamada";
             this.Load += new System.EventHandler(this.frmCerrarSesionLlamada_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

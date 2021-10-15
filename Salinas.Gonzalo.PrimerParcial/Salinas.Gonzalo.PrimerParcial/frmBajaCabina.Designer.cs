@@ -39,6 +39,8 @@ namespace Salinas.Gonzalo.PrimerParcial
             // 
             // txtIdentificadorCabina
             // 
+            this.txtIdentificadorCabina.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.txtIdentificadorCabina.Location = new System.Drawing.Point(435, 204);
             this.txtIdentificadorCabina.Name = "txtIdentificadorCabina";
             this.txtIdentificadorCabina.Size = new System.Drawing.Size(121, 23);
@@ -46,6 +48,7 @@ namespace Salinas.Gonzalo.PrimerParcial
             // 
             // lblIdentificadorCabina
             // 
+            this.lblIdentificadorCabina.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.lblIdentificadorCabina.AutoSize = true;
             this.lblIdentificadorCabina.Location = new System.Drawing.Point(299, 207);
             this.lblIdentificadorCabina.Name = "lblIdentificadorCabina";
@@ -55,7 +58,8 @@ namespace Salinas.Gonzalo.PrimerParcial
             // 
             // lBoxListaCabinas
             // 
-            this.lBoxListaCabinas.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.lBoxListaCabinas.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lBoxListaCabinas.FormattingEnabled = true;
             this.lBoxListaCabinas.ItemHeight = 15;
@@ -88,6 +92,7 @@ namespace Salinas.Gonzalo.PrimerParcial
             // 
             // btnAYUDA
             // 
+            this.btnAYUDA.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.btnAYUDA.Location = new System.Drawing.Point(24, 172);
             this.btnAYUDA.Name = "btnAYUDA";
             this.btnAYUDA.Size = new System.Drawing.Size(55, 23);
@@ -107,10 +112,10 @@ namespace Salinas.Gonzalo.PrimerParcial
             this.Controls.Add(this.lBoxListaCabinas);
             this.Controls.Add(this.btnvolverMenuPrincipal);
             this.Controls.Add(this.btnBajaCabina);
-            this.MaximizeBox = false;
-            this.MinimizeBox = false;
+            this.MinimumSize = new System.Drawing.Size(942, 309);
             this.Name = "frmBajaCabina";
-            this.Text = "frmBajaCabina";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Baja de Cabina";
             this.Load += new System.EventHandler(this.frmBajaCabina_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

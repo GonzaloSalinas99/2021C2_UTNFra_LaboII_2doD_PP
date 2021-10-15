@@ -56,6 +56,7 @@ namespace Salinas.Gonzalo.PrimerParcial
             // 
             // btnVolver
             // 
+            this.btnVolver.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.btnVolver.Location = new System.Drawing.Point(44, 432);
             this.btnVolver.Name = "btnVolver";
             this.btnVolver.Size = new System.Drawing.Size(121, 46);
@@ -66,6 +67,7 @@ namespace Salinas.Gonzalo.PrimerParcial
             // 
             // btnAgregarComputadora
             // 
+            this.btnAgregarComputadora.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnAgregarComputadora.Location = new System.Drawing.Point(294, 432);
             this.btnAgregarComputadora.Name = "btnAgregarComputadora";
             this.btnAgregarComputadora.Size = new System.Drawing.Size(121, 46);
@@ -76,6 +78,8 @@ namespace Salinas.Gonzalo.PrimerParcial
             // 
             // gBoxPerifericos
             // 
+            this.gBoxPerifericos.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.gBoxPerifericos.Controls.Add(this.cBoxAuriculares);
             this.gBoxPerifericos.Controls.Add(this.cBoxMicrofono);
             this.gBoxPerifericos.Controls.Add(this.cBoxCamara);
@@ -88,6 +92,7 @@ namespace Salinas.Gonzalo.PrimerParcial
             // 
             // cBoxAuriculares
             // 
+            this.cBoxAuriculares.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.cBoxAuriculares.AutoSize = true;
             this.cBoxAuriculares.Location = new System.Drawing.Point(265, 33);
             this.cBoxAuriculares.Name = "cBoxAuriculares";
@@ -98,6 +103,7 @@ namespace Salinas.Gonzalo.PrimerParcial
             // 
             // cBoxMicrofono
             // 
+            this.cBoxMicrofono.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.cBoxMicrofono.AutoSize = true;
             this.cBoxMicrofono.Location = new System.Drawing.Point(157, 33);
             this.cBoxMicrofono.Name = "cBoxMicrofono";
@@ -118,6 +124,8 @@ namespace Salinas.Gonzalo.PrimerParcial
             // 
             // gBoxJuegos
             // 
+            this.gBoxJuegos.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.gBoxJuegos.Controls.Add(this.cBoxAgeofEmpires);
             this.gBoxJuegos.Controls.Add(this.cBoxMU);
             this.gBoxJuegos.Controls.Add(this.cBoxCounterStrike);
@@ -130,6 +138,7 @@ namespace Salinas.Gonzalo.PrimerParcial
             // 
             // cBoxAgeofEmpires
             // 
+            this.cBoxAgeofEmpires.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.cBoxAgeofEmpires.AutoSize = true;
             this.cBoxAgeofEmpires.Location = new System.Drawing.Point(259, 33);
             this.cBoxAgeofEmpires.Name = "cBoxAgeofEmpires";
@@ -140,6 +149,7 @@ namespace Salinas.Gonzalo.PrimerParcial
             // 
             // cBoxMU
             // 
+            this.cBoxMU.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.cBoxMU.AutoSize = true;
             this.cBoxMU.Location = new System.Drawing.Point(157, 33);
             this.cBoxMU.Name = "cBoxMU";
@@ -160,6 +170,8 @@ namespace Salinas.Gonzalo.PrimerParcial
             // 
             // gBoxSoftware
             // 
+            this.gBoxSoftware.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.gBoxSoftware.Controls.Add(this.cBoxMiEncarta);
             this.gBoxSoftware.Controls.Add(this.cBoxAres);
             this.gBoxSoftware.Controls.Add(this.cBoxMessenger);
@@ -172,6 +184,7 @@ namespace Salinas.Gonzalo.PrimerParcial
             // 
             // cBoxMiEncarta
             // 
+            this.cBoxMiEncarta.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.cBoxMiEncarta.AutoSize = true;
             this.cBoxMiEncarta.Location = new System.Drawing.Point(265, 32);
             this.cBoxMiEncarta.Name = "cBoxMiEncarta";
@@ -182,6 +195,7 @@ namespace Salinas.Gonzalo.PrimerParcial
             // 
             // cBoxAres
             // 
+            this.cBoxAres.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.cBoxAres.AutoSize = true;
             this.cBoxAres.Location = new System.Drawing.Point(157, 32);
             this.cBoxAres.Name = "cBoxAres";
@@ -202,6 +216,8 @@ namespace Salinas.Gonzalo.PrimerParcial
             // 
             // gBoxHadware
             // 
+            this.gBoxHadware.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.gBoxHadware.Controls.Add(this.cBoxCpuGamer);
             this.gBoxHadware.Controls.Add(this.cBoxUsb);
             this.gBoxHadware.Controls.Add(this.cBoxPlacaVideo);
@@ -214,6 +230,7 @@ namespace Salinas.Gonzalo.PrimerParcial
             // 
             // cBoxCpuGamer
             // 
+            this.cBoxCpuGamer.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.cBoxCpuGamer.AutoSize = true;
             this.cBoxCpuGamer.Location = new System.Drawing.Point(265, 35);
             this.cBoxCpuGamer.Name = "cBoxCpuGamer";
@@ -224,6 +241,7 @@ namespace Salinas.Gonzalo.PrimerParcial
             // 
             // cBoxUsb
             // 
+            this.cBoxUsb.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.cBoxUsb.AutoSize = true;
             this.cBoxUsb.Location = new System.Drawing.Point(157, 35);
             this.cBoxUsb.Name = "cBoxUsb";
@@ -244,6 +262,7 @@ namespace Salinas.Gonzalo.PrimerParcial
             // 
             // btnAYUDA
             // 
+            this.btnAYUDA.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.btnAYUDA.Location = new System.Drawing.Point(44, 357);
             this.btnAYUDA.Name = "btnAYUDA";
             this.btnAYUDA.Size = new System.Drawing.Size(54, 23);
@@ -264,10 +283,10 @@ namespace Salinas.Gonzalo.PrimerParcial
             this.Controls.Add(this.gBoxPerifericos);
             this.Controls.Add(this.gBoxJuegos);
             this.Controls.Add(this.gBoxSoftware);
-            this.MaximizeBox = false;
-            this.MinimizeBox = false;
+            this.MinimumSize = new System.Drawing.Size(482, 529);
             this.Name = "frmAltaComputadora";
-            this.Text = "frmAltaComputadora";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Alta Computadora";
             this.gBoxPerifericos.ResumeLayout(false);
             this.gBoxPerifericos.PerformLayout();
             this.gBoxJuegos.ResumeLayout(false);

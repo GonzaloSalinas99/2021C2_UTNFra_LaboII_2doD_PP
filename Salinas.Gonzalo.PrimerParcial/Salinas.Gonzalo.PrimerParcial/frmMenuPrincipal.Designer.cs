@@ -66,6 +66,7 @@ namespace Salinas.Gonzalo.PrimerParcial
             // 
             // lblInformacion
             // 
+            this.lblInformacion.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.lblInformacion.AutoSize = true;
             this.lblInformacion.Location = new System.Drawing.Point(26, 321);
             this.lblInformacion.Name = "lblInformacion";
@@ -74,6 +75,7 @@ namespace Salinas.Gonzalo.PrimerParcial
             // 
             // btnAgregarClienteCabina
             // 
+            this.btnAgregarClienteCabina.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.btnAgregarClienteCabina.DialogResult = System.Windows.Forms.DialogResult.OK;
             this.btnAgregarClienteCabina.Location = new System.Drawing.Point(191, 141);
             this.btnAgregarClienteCabina.Name = "btnAgregarClienteCabina";
@@ -85,6 +87,7 @@ namespace Salinas.Gonzalo.PrimerParcial
             // 
             // lblAgregarClienteCabina
             // 
+            this.lblAgregarClienteCabina.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.lblAgregarClienteCabina.AutoSize = true;
             this.lblAgregarClienteCabina.Location = new System.Drawing.Point(15, 149);
             this.lblAgregarClienteCabina.Name = "lblAgregarClienteCabina";
@@ -94,6 +97,7 @@ namespace Salinas.Gonzalo.PrimerParcial
             // 
             // btnAgregarClienteComputadora
             // 
+            this.btnAgregarClienteComputadora.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnAgregarClienteComputadora.Location = new System.Drawing.Point(706, 141);
             this.btnAgregarClienteComputadora.Name = "btnAgregarClienteComputadora";
             this.btnAgregarClienteComputadora.Size = new System.Drawing.Size(75, 23);
@@ -104,6 +108,7 @@ namespace Salinas.Gonzalo.PrimerParcial
             // 
             // lblAgregarClienteComputadora
             // 
+            this.lblAgregarClienteComputadora.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.lblAgregarClienteComputadora.AutoSize = true;
             this.lblAgregarClienteComputadora.Location = new System.Drawing.Point(544, 145);
             this.lblAgregarClienteComputadora.Name = "lblAgregarClienteComputadora";
@@ -113,6 +118,7 @@ namespace Salinas.Gonzalo.PrimerParcial
             // 
             // btnMostrarClientesEnEspera
             // 
+            this.btnMostrarClientesEnEspera.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.btnMostrarClientesEnEspera.Location = new System.Drawing.Point(315, 114);
             this.btnMostrarClientesEnEspera.Name = "btnMostrarClientesEnEspera";
             this.btnMostrarClientesEnEspera.Size = new System.Drawing.Size(167, 50);
@@ -123,6 +129,7 @@ namespace Salinas.Gonzalo.PrimerParcial
             // 
             // btnCrearSesionLlamada
             // 
+            this.btnCrearSesionLlamada.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.btnCrearSesionLlamada.Location = new System.Drawing.Point(191, 181);
             this.btnCrearSesionLlamada.Name = "btnCrearSesionLlamada";
             this.btnCrearSesionLlamada.Size = new System.Drawing.Size(75, 23);
@@ -133,6 +140,7 @@ namespace Salinas.Gonzalo.PrimerParcial
             // 
             // btnCrearSesionConexion
             // 
+            this.btnCrearSesionConexion.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnCrearSesionConexion.Location = new System.Drawing.Point(706, 181);
             this.btnCrearSesionConexion.Name = "btnCrearSesionConexion";
             this.btnCrearSesionConexion.Size = new System.Drawing.Size(75, 23);
@@ -143,6 +151,7 @@ namespace Salinas.Gonzalo.PrimerParcial
             // 
             // btnCerrarSesionLlamada
             // 
+            this.btnCerrarSesionLlamada.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.btnCerrarSesionLlamada.Location = new System.Drawing.Point(191, 222);
             this.btnCerrarSesionLlamada.Name = "btnCerrarSesionLlamada";
             this.btnCerrarSesionLlamada.Size = new System.Drawing.Size(75, 23);
@@ -153,6 +162,7 @@ namespace Salinas.Gonzalo.PrimerParcial
             // 
             // btnCerrarSesionConexion
             // 
+            this.btnCerrarSesionConexion.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnCerrarSesionConexion.Location = new System.Drawing.Point(706, 218);
             this.btnCerrarSesionConexion.Name = "btnCerrarSesionConexion";
             this.btnCerrarSesionConexion.Size = new System.Drawing.Size(75, 23);
@@ -164,6 +174,8 @@ namespace Salinas.Gonzalo.PrimerParcial
             // 
             // txtNombrePuesto
             // 
+            this.txtNombrePuesto.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.txtNombrePuesto.Location = new System.Drawing.Point(315, 12);
             this.txtNombrePuesto.Name = "txtNombrePuesto";
             this.txtNombrePuesto.Size = new System.Drawing.Size(167, 23);
@@ -171,6 +183,7 @@ namespace Salinas.Gonzalo.PrimerParcial
             // 
             // lblCrearSesionLlamada
             // 
+            this.lblCrearSesionLlamada.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.lblCrearSesionLlamada.AutoSize = true;
             this.lblCrearSesionLlamada.Location = new System.Drawing.Point(15, 189);
             this.lblCrearSesionLlamada.Name = "lblCrearSesionLlamada";
@@ -180,6 +193,7 @@ namespace Salinas.Gonzalo.PrimerParcial
             // 
             // lblCrearSesionConexion
             // 
+            this.lblCrearSesionConexion.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.lblCrearSesionConexion.AutoSize = true;
             this.lblCrearSesionConexion.Location = new System.Drawing.Point(544, 185);
             this.lblCrearSesionConexion.Name = "lblCrearSesionConexion";
@@ -189,6 +203,7 @@ namespace Salinas.Gonzalo.PrimerParcial
             // 
             // lblCerrarSesionLlamada
             // 
+            this.lblCerrarSesionLlamada.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.lblCerrarSesionLlamada.AutoSize = true;
             this.lblCerrarSesionLlamada.Location = new System.Drawing.Point(16, 226);
             this.lblCerrarSesionLlamada.Name = "lblCerrarSesionLlamada";
@@ -198,6 +213,7 @@ namespace Salinas.Gonzalo.PrimerParcial
             // 
             // lblCerrarSesionConexion
             // 
+            this.lblCerrarSesionConexion.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.lblCerrarSesionConexion.AutoSize = true;
             this.lblCerrarSesionConexion.Location = new System.Drawing.Point(544, 226);
             this.lblCerrarSesionConexion.Name = "lblCerrarSesionConexion";
@@ -207,6 +223,8 @@ namespace Salinas.Gonzalo.PrimerParcial
             // 
             // btnMostrarEstadisticas
             // 
+            this.btnMostrarEstadisticas.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.btnMostrarEstadisticas.Location = new System.Drawing.Point(315, 195);
             this.btnMostrarEstadisticas.Name = "btnMostrarEstadisticas";
             this.btnMostrarEstadisticas.Size = new System.Drawing.Size(167, 50);
@@ -217,6 +235,8 @@ namespace Salinas.Gonzalo.PrimerParcial
             // 
             // btnMostrarPuestos
             // 
+            this.btnMostrarPuestos.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.btnMostrarPuestos.Location = new System.Drawing.Point(315, 41);
             this.btnMostrarPuestos.Name = "btnMostrarPuestos";
             this.btnMostrarPuestos.Size = new System.Drawing.Size(167, 31);
@@ -267,6 +287,7 @@ namespace Salinas.Gonzalo.PrimerParcial
             // 
             // btnBorrarComputadora
             // 
+            this.btnBorrarComputadora.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnBorrarComputadora.Location = new System.Drawing.Point(706, 45);
             this.btnBorrarComputadora.Name = "btnBorrarComputadora";
             this.btnBorrarComputadora.Size = new System.Drawing.Size(75, 23);
@@ -277,6 +298,7 @@ namespace Salinas.Gonzalo.PrimerParcial
             // 
             // btnModificarComputadora
             // 
+            this.btnModificarComputadora.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnModificarComputadora.Location = new System.Drawing.Point(625, 45);
             this.btnModificarComputadora.Name = "btnModificarComputadora";
             this.btnModificarComputadora.Size = new System.Drawing.Size(75, 23);
@@ -287,6 +309,7 @@ namespace Salinas.Gonzalo.PrimerParcial
             // 
             // btnAgregarComputadora
             // 
+            this.btnAgregarComputadora.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnAgregarComputadora.DialogResult = System.Windows.Forms.DialogResult.OK;
             this.btnAgregarComputadora.Location = new System.Drawing.Point(544, 45);
             this.btnAgregarComputadora.Name = "btnAgregarComputadora";
@@ -298,6 +321,7 @@ namespace Salinas.Gonzalo.PrimerParcial
             // 
             // lblComputadoras
             // 
+            this.lblComputadoras.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lblComputadoras.AutoSize = true;
             this.lblComputadoras.Location = new System.Drawing.Point(617, 16);
             this.lblComputadoras.Name = "lblComputadoras";
@@ -309,6 +333,7 @@ namespace Salinas.Gonzalo.PrimerParcial
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScroll = true;
             this.ClientSize = new System.Drawing.Size(805, 381);
             this.Controls.Add(this.btnBorrarComputadora);
             this.Controls.Add(this.btnModificarComputadora);
@@ -335,9 +360,9 @@ namespace Salinas.Gonzalo.PrimerParcial
             this.Controls.Add(this.lblAgregarClienteCabina);
             this.Controls.Add(this.btnAgregarClienteCabina);
             this.Controls.Add(this.lblInformacion);
-            this.MaximizeBox = false;
-            this.MinimizeBox = false;
+            this.MinimumSize = new System.Drawing.Size(821, 420);
             this.Name = "frmMenuPrincipal";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Menu Principal";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmMenuPrincipal_FormClosing);
             this.Load += new System.EventHandler(this.Form1_Load);

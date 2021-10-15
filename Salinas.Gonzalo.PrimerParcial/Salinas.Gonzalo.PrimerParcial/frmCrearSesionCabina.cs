@@ -80,7 +80,10 @@ namespace Salinas.Gonzalo.PrimerParcial
 
 
         }
-
+        /// <summary>
+        /// Ingresa los datos del cliente y de la cabina al listBox.
+        /// </summary>
+        /// <param name="control"></param>
         private void ActualizarListasClienteCabina(Controlador control)
         {
             foreach (Puesto puesto in control.ListaPuestos)
@@ -98,16 +101,27 @@ namespace Salinas.Gonzalo.PrimerParcial
                 }
             }
         }
+        /// <summary>
+        /// Propuedad DevolverControlador de lectura. Retorna el controlador local.
+        /// </summary>
         public Controlador DevolverControlador
         {
             get { return this.control; }
         }
-
+        /// <summary>
+        /// Cierra el formulario.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnVolverMenuPrincipal_Click(object sender, EventArgs e)
         {
             this.Close();
         }
-
+        /// <summary>
+        /// Indica al usuario los pasos que tiene que hacer para crear la sesion correctamente.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnAYUDA_Click(object sender, EventArgs e)
         {
 

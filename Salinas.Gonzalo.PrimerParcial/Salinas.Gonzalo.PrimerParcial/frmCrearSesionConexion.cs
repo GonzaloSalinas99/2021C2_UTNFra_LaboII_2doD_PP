@@ -12,34 +12,33 @@ namespace Salinas.Gonzalo.PrimerParcial
 {
     public partial class frmCrearSesionConexion : Form
     {
+        /// <summary>
+        /// Variable donde se van a guardar las acciones realizadas en el formulario.
+        /// </summary>
         Controlador control;
+        /// <summary>
+        /// Constructor de CerrarSesionConexion
+        /// </summary>
+        /// <param name="controlador">controlador a asignar a la variable local control</param>
         public frmCrearSesionConexion(Controlador controlador)
         {
             InitializeComponent();
             control = controlador;
         }
-
+        /// <summary>
+        /// Cargo los datos al listBox.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void frmSesionConexion_Load(object sender, EventArgs e)
         {
-            foreach (Puesto puesto in control.ListaPuestos)
-            {
-                if (puesto is Computadora && puesto.EstadoPuesto == Enumerados.EstadoPuesto.SinUso)
-                {
-                    Computadora aux = (Computadora)puesto;
-                    lBoxComputadora.Items.Add(aux.ToString());
-                }
-            }
-
-
-
-            foreach (ClienteComputadora cliente in control.ListaClienteComputadora)
-            {
-                if (cliente is ClienteComputadora && cliente.EstadoCliente == Enumerados.EstadoCliente.Esperando)
-                {
-                    lBoxClientes.Items.Add(cliente.ToString());
-                }
-            }
+            ActualizarLista(control);
         }
+        /// <summary>
+        /// Crea la sesion entre el cliente y computadora.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnCrearSesionConexion_Click_1(object sender, EventArgs e)
         {
             if(ValidadorDeInformacion.ValidarStringTexto(txtDocumentoCliente.Text) && ValidadorDeInformacion.ValidarStringTexto(txtIdentificadorComputadora.Text))
@@ -75,7 +74,10 @@ namespace Salinas.Gonzalo.PrimerParcial
             }
         }
 
-
+        /// <summary>
+        /// Ingresa los datos de cliente y computadora al listBox.
+        /// </summary>
+        /// <param name="control"></param>
         private void ActualizarLista(Controlador control)
         {
             foreach (Puesto puesto in control.ListaPuestos)
@@ -93,17 +95,27 @@ namespace Salinas.Gonzalo.PrimerParcial
                 }
             }
         }
-
+        /// <summary>
+        /// Propiedad DevolverControlador de lectura. Retorna el controlador local.
+        /// </summary>
         public Controlador DevolverControlador
         {
             get { return this.control; }
         }
-
+        /// <summary>
+        /// Cierra el formulario.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnVolverMenuPrincipal_Click(object sender, EventArgs e)
         {
             this.Close();
         }
-
+        /// <summary>
+        /// Indica al usuario los pasos que tiene que hacer para crear la sesion correctamente.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnAYUDA_Click(object sender, EventArgs e)
         {
 

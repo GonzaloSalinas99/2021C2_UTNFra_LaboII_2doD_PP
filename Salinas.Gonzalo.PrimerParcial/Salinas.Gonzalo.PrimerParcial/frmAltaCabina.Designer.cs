@@ -58,6 +58,8 @@ namespace Salinas.Gonzalo.PrimerParcial
             // 
             // txtMarcaTelefono
             // 
+            this.txtMarcaTelefono.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.txtMarcaTelefono.Location = new System.Drawing.Point(183, 27);
             this.txtMarcaTelefono.Name = "txtMarcaTelefono";
             this.txtMarcaTelefono.Size = new System.Drawing.Size(121, 23);
@@ -65,6 +67,8 @@ namespace Salinas.Gonzalo.PrimerParcial
             // 
             // cmbTipoTelefono
             // 
+            this.cmbTipoTelefono.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.cmbTipoTelefono.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbTipoTelefono.FormattingEnabled = true;
             this.cmbTipoTelefono.Location = new System.Drawing.Point(183, 73);
@@ -74,6 +78,7 @@ namespace Salinas.Gonzalo.PrimerParcial
             // 
             // btnAgregarCabina
             // 
+            this.btnAgregarCabina.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnAgregarCabina.Location = new System.Drawing.Point(376, 120);
             this.btnAgregarCabina.Name = "btnAgregarCabina";
             this.btnAgregarCabina.Size = new System.Drawing.Size(97, 23);
@@ -84,6 +89,7 @@ namespace Salinas.Gonzalo.PrimerParcial
             // 
             // btnvolverMenuPrincipal
             // 
+            this.btnvolverMenuPrincipal.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.btnvolverMenuPrincipal.Location = new System.Drawing.Point(12, 120);
             this.btnvolverMenuPrincipal.Name = "btnvolverMenuPrincipal";
             this.btnvolverMenuPrincipal.Size = new System.Drawing.Size(97, 23);
@@ -94,6 +100,7 @@ namespace Salinas.Gonzalo.PrimerParcial
             // 
             // btnAYUDA
             // 
+            this.btnAYUDA.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnAYUDA.ForeColor = System.Drawing.SystemColors.ControlText;
             this.btnAYUDA.Location = new System.Drawing.Point(418, 12);
             this.btnAYUDA.Name = "btnAYUDA";
@@ -115,9 +122,9 @@ namespace Salinas.Gonzalo.PrimerParcial
             this.Controls.Add(this.txtMarcaTelefono);
             this.Controls.Add(this.lblTipoTelefono);
             this.Controls.Add(this.lblMarcaTelefono);
-            this.MaximizeBox = false;
-            this.MinimizeBox = false;
+            this.MinimumSize = new System.Drawing.Size(501, 194);
             this.Name = "frmAltaCabina";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Agregar Cabina";
             this.Load += new System.EventHandler(this.AltaCabina_Load);
             this.ResumeLayout(false);

@@ -104,8 +104,8 @@ namespace Salinas.Gonzalo.PrimerParcial
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "frmLogin";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Login Administrador";
-            this.Load += new System.EventHandler(this.frmLogin_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

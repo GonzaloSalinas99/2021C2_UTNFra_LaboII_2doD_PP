@@ -39,13 +39,16 @@ namespace Salinas.Gonzalo.PrimerParcial
             // 
             // txtIdentificadorCabina
             // 
+            this.txtIdentificadorCabina.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.txtIdentificadorCabina.Location = new System.Drawing.Point(563, 241);
             this.txtIdentificadorCabina.Name = "txtIdentificadorCabina";
-            this.txtIdentificadorCabina.Size = new System.Drawing.Size(150, 23);
+            this.txtIdentificadorCabina.Size = new System.Drawing.Size(199, 23);
             this.txtIdentificadorCabina.TabIndex = 28;
             // 
             // lblIdentificadorComputadora
             // 
+            this.lblIdentificadorComputadora.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.lblIdentificadorComputadora.AutoSize = true;
             this.lblIdentificadorComputadora.Location = new System.Drawing.Point(381, 244);
             this.lblIdentificadorComputadora.Name = "lblIdentificadorComputadora";
@@ -55,13 +58,14 @@ namespace Salinas.Gonzalo.PrimerParcial
             // 
             // lBoxListaComputadora
             // 
-            this.lBoxListaComputadora.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.lBoxListaComputadora.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lBoxListaComputadora.FormattingEnabled = true;
             this.lBoxListaComputadora.ItemHeight = 15;
             this.lBoxListaComputadora.Location = new System.Drawing.Point(25, 24);
             this.lBoxListaComputadora.Name = "lBoxListaComputadora";
-            this.lBoxListaComputadora.Size = new System.Drawing.Size(1231, 154);
+            this.lBoxListaComputadora.Size = new System.Drawing.Size(1280, 154);
             this.lBoxListaComputadora.TabIndex = 26;
             // 
             // btnvolverMenuPrincipal
@@ -78,7 +82,7 @@ namespace Salinas.Gonzalo.PrimerParcial
             // btnBajaComputadora
             // 
             this.btnBajaComputadora.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnBajaComputadora.Location = new System.Drawing.Point(1130, 226);
+            this.btnBajaComputadora.Location = new System.Drawing.Point(1179, 226);
             this.btnBajaComputadora.Name = "btnBajaComputadora";
             this.btnBajaComputadora.Size = new System.Drawing.Size(126, 38);
             this.btnBajaComputadora.TabIndex = 24;
@@ -88,6 +92,7 @@ namespace Salinas.Gonzalo.PrimerParcial
             // 
             // btnAYUDA
             // 
+            this.btnAYUDA.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.btnAYUDA.Location = new System.Drawing.Point(25, 185);
             this.btnAYUDA.Name = "btnAYUDA";
             this.btnAYUDA.Size = new System.Drawing.Size(53, 23);
@@ -100,17 +105,17 @@ namespace Salinas.Gonzalo.PrimerParcial
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1292, 276);
+            this.ClientSize = new System.Drawing.Size(1341, 276);
             this.Controls.Add(this.btnAYUDA);
             this.Controls.Add(this.txtIdentificadorCabina);
             this.Controls.Add(this.lblIdentificadorComputadora);
             this.Controls.Add(this.lBoxListaComputadora);
             this.Controls.Add(this.btnvolverMenuPrincipal);
             this.Controls.Add(this.btnBajaComputadora);
-            this.MaximizeBox = false;
-            this.MinimizeBox = false;
+            this.MinimumSize = new System.Drawing.Size(1357, 315);
             this.Name = "frmBajaComputadora";
-            this.Text = "frmBajaComputadora";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Baja Computadora";
             this.Load += new System.EventHandler(this.frmBajaComputadora_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

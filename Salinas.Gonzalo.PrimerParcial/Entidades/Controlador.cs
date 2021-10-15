@@ -9,6 +9,7 @@ namespace Entidades
 {
     public sealed class Controlador
     {
+
         private List<Sesion> listaSesiones;
         private List<Puesto> listaPuestos;
         private Queue <ClienteCabina>listaClienteCabinas;
@@ -443,5 +444,6 @@ namespace Entidades
             return !(control == cliente);
         }
 
+     
     }
 }

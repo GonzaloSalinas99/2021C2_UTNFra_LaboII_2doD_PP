@@ -107,6 +107,8 @@ namespace Salinas.Gonzalo.PrimerParcial
             // 
             // txtNombre
             // 
+            this.txtNombre.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.txtNombre.Location = new System.Drawing.Point(240, 40);
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(121, 23);
@@ -114,6 +116,8 @@ namespace Salinas.Gonzalo.PrimerParcial
             // 
             // txtApellido
             // 
+            this.txtApellido.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.txtApellido.Location = new System.Drawing.Point(240, 86);
             this.txtApellido.Name = "txtApellido";
             this.txtApellido.Size = new System.Drawing.Size(121, 23);
@@ -121,6 +125,8 @@ namespace Salinas.Gonzalo.PrimerParcial
             // 
             // txtDni
             // 
+            this.txtDni.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.txtDni.Location = new System.Drawing.Point(240, 132);
             this.txtDni.Name = "txtDni";
             this.txtDni.Size = new System.Drawing.Size(121, 23);
@@ -128,6 +134,8 @@ namespace Salinas.Gonzalo.PrimerParcial
             // 
             // txtEdad
             // 
+            this.txtEdad.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.txtEdad.Location = new System.Drawing.Point(240, 183);
             this.txtEdad.Name = "txtEdad";
             this.txtEdad.Size = new System.Drawing.Size(121, 23);
@@ -135,6 +143,8 @@ namespace Salinas.Gonzalo.PrimerParcial
             // 
             // txtCodigoPais
             // 
+            this.txtCodigoPais.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.txtCodigoPais.Location = new System.Drawing.Point(240, 300);
             this.txtCodigoPais.Name = "txtCodigoPais";
             this.txtCodigoPais.Size = new System.Drawing.Size(121, 23);
@@ -142,6 +152,8 @@ namespace Salinas.Gonzalo.PrimerParcial
             // 
             // cmbTipoTelefono
             // 
+            this.cmbTipoTelefono.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.cmbTipoTelefono.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbTipoTelefono.FormattingEnabled = true;
             this.cmbTipoTelefono.Location = new System.Drawing.Point(240, 232);
@@ -151,6 +163,7 @@ namespace Salinas.Gonzalo.PrimerParcial
             // 
             // btnAgregarCliente
             // 
+            this.btnAgregarCliente.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnAgregarCliente.DialogResult = System.Windows.Forms.DialogResult.OK;
             this.btnAgregarCliente.Location = new System.Drawing.Point(240, 473);
             this.btnAgregarCliente.Name = "btnAgregarCliente";
@@ -162,6 +175,7 @@ namespace Salinas.Gonzalo.PrimerParcial
             // 
             // btnVolver
             // 
+            this.btnVolver.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.btnVolver.DialogResult = System.Windows.Forms.DialogResult.OK;
             this.btnVolver.Location = new System.Drawing.Point(32, 473);
             this.btnVolver.Name = "btnVolver";
@@ -173,6 +187,8 @@ namespace Salinas.Gonzalo.PrimerParcial
             // 
             // txtCodigoArea
             // 
+            this.txtCodigoArea.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.txtCodigoArea.Location = new System.Drawing.Point(240, 329);
             this.txtCodigoArea.Name = "txtCodigoArea";
             this.txtCodigoArea.Size = new System.Drawing.Size(121, 23);
@@ -180,6 +196,8 @@ namespace Salinas.Gonzalo.PrimerParcial
             // 
             // txtNumeroTelefono
             // 
+            this.txtNumeroTelefono.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.txtNumeroTelefono.Location = new System.Drawing.Point(240, 358);
             this.txtNumeroTelefono.Name = "txtNumeroTelefono";
             this.txtNumeroTelefono.Size = new System.Drawing.Size(121, 23);
@@ -214,6 +232,7 @@ namespace Salinas.Gonzalo.PrimerParcial
             // 
             // btnAYUDA
             // 
+            this.btnAYUDA.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.btnAYUDA.Location = new System.Drawing.Point(32, 409);
             this.btnAYUDA.Name = "btnAYUDA";
             this.btnAYUDA.Size = new System.Drawing.Size(56, 23);
@@ -247,9 +266,9 @@ namespace Salinas.Gonzalo.PrimerParcial
             this.Controls.Add(this.lblDni);
             this.Controls.Add(this.lblApellido);
             this.Controls.Add(this.lblNombre);
-            this.MaximizeBox = false;
-            this.MinimizeBox = false;
+            this.MinimumSize = new System.Drawing.Size(405, 570);
             this.Name = "frmAltaClienteCabina";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Crear Cliente Cabina";
             this.Load += new System.EventHandler(this.frmClienteCabina_Load);
             this.ResumeLayout(false);

@@ -60,10 +60,9 @@ namespace Salinas.Gonzalo.PrimerParcial
             // 
             // lblIdentificadorCabina
             // 
-            this.lblIdentificadorCabina.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblIdentificadorCabina.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.lblIdentificadorCabina.AutoSize = true;
-            this.lblIdentificadorCabina.Location = new System.Drawing.Point(408, 410);
+            this.lblIdentificadorCabina.Location = new System.Drawing.Point(564, 403);
             this.lblIdentificadorCabina.Name = "lblIdentificadorCabina";
             this.lblIdentificadorCabina.Size = new System.Drawing.Size(151, 15);
             this.lblIdentificadorCabina.TabIndex = 15;
@@ -71,10 +70,9 @@ namespace Salinas.Gonzalo.PrimerParcial
             // 
             // lblDocumentoCliente
             // 
-            this.lblDocumentoCliente.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblDocumentoCliente.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.lblDocumentoCliente.AutoSize = true;
-            this.lblDocumentoCliente.Location = new System.Drawing.Point(408, 365);
+            this.lblDocumentoCliente.Location = new System.Drawing.Point(564, 366);
             this.lblDocumentoCliente.Name = "lblDocumentoCliente";
             this.lblDocumentoCliente.Size = new System.Drawing.Size(110, 15);
             this.lblDocumentoCliente.TabIndex = 14;
@@ -82,27 +80,28 @@ namespace Salinas.Gonzalo.PrimerParcial
             // 
             // txtIdentificadorComputadora
             // 
-            this.txtIdentificadorComputadora.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.txtIdentificadorComputadora.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtIdentificadorComputadora.Location = new System.Drawing.Point(593, 402);
+            this.txtIdentificadorComputadora.Location = new System.Drawing.Point(749, 400);
             this.txtIdentificadorComputadora.Name = "txtIdentificadorComputadora";
             this.txtIdentificadorComputadora.Size = new System.Drawing.Size(237, 23);
             this.txtIdentificadorComputadora.TabIndex = 13;
             // 
             // txtDocumentoCliente
             // 
-            this.txtDocumentoCliente.Location = new System.Drawing.Point(593, 365);
+            this.txtDocumentoCliente.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtDocumentoCliente.Location = new System.Drawing.Point(749, 363);
             this.txtDocumentoCliente.Name = "txtDocumentoCliente";
             this.txtDocumentoCliente.Size = new System.Drawing.Size(237, 23);
             this.txtDocumentoCliente.TabIndex = 12;
             // 
             // btnCrearSesionConexion
             // 
-            this.btnCrearSesionConexion.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnCrearSesionConexion.Location = new System.Drawing.Point(1162, 380);
+            this.btnCrearSesionConexion.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnCrearSesionConexion.Location = new System.Drawing.Point(1347, 382);
             this.btnCrearSesionConexion.Name = "btnCrearSesionConexion";
-            this.btnCrearSesionConexion.Size = new System.Drawing.Size(192, 43);
+            this.btnCrearSesionConexion.Size = new System.Drawing.Size(198, 43);
             this.btnCrearSesionConexion.TabIndex = 11;
             this.btnCrearSesionConexion.Text = "Crear Sesion";
             this.btnCrearSesionConexion.UseVisualStyleBackColor = true;
@@ -110,33 +109,33 @@ namespace Salinas.Gonzalo.PrimerParcial
             // 
             // lBoxComputadora
             // 
-            this.lBoxComputadora.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.lBoxComputadora.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lBoxComputadora.FormattingEnabled = true;
             this.lBoxComputadora.ItemHeight = 15;
             this.lBoxComputadora.Location = new System.Drawing.Point(19, 139);
             this.lBoxComputadora.Name = "lBoxComputadora";
-            this.lBoxComputadora.Size = new System.Drawing.Size(1335, 139);
+            this.lBoxComputadora.Size = new System.Drawing.Size(1526, 139);
             this.lBoxComputadora.TabIndex = 10;
             // 
             // lBoxClientes
             // 
-            this.lBoxClientes.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.lBoxClientes.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lBoxClientes.FormattingEnabled = true;
             this.lBoxClientes.ItemHeight = 15;
             this.lBoxClientes.Location = new System.Drawing.Point(19, 12);
             this.lBoxClientes.Name = "lBoxClientes";
-            this.lBoxClientes.Size = new System.Drawing.Size(1335, 109);
+            this.lBoxClientes.Size = new System.Drawing.Size(1526, 109);
             this.lBoxClientes.TabIndex = 9;
             // 
             // btnVolverMenuPrincipal
             // 
-            this.btnVolverMenuPrincipal.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnVolverMenuPrincipal.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.btnVolverMenuPrincipal.Location = new System.Drawing.Point(19, 380);
             this.btnVolverMenuPrincipal.Name = "btnVolverMenuPrincipal";
-            this.btnVolverMenuPrincipal.Size = new System.Drawing.Size(181, 43);
+            this.btnVolverMenuPrincipal.Size = new System.Drawing.Size(198, 43);
             this.btnVolverMenuPrincipal.TabIndex = 18;
             this.btnVolverMenuPrincipal.Text = "Volver";
             this.btnVolverMenuPrincipal.UseVisualStyleBackColor = true;
@@ -144,6 +143,7 @@ namespace Salinas.Gonzalo.PrimerParcial
             // 
             // btnAYUDA
             // 
+            this.btnAYUDA.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.btnAYUDA.Location = new System.Drawing.Point(19, 285);
             this.btnAYUDA.Name = "btnAYUDA";
             this.btnAYUDA.Size = new System.Drawing.Size(57, 23);
@@ -156,7 +156,7 @@ namespace Salinas.Gonzalo.PrimerParcial
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1366, 435);
+            this.ClientSize = new System.Drawing.Size(1557, 435);
             this.Controls.Add(this.btnAYUDA);
             this.Controls.Add(this.btnVolverMenuPrincipal);
             this.Controls.Add(this.lblCabinaEncontrada);
@@ -168,9 +168,9 @@ namespace Salinas.Gonzalo.PrimerParcial
             this.Controls.Add(this.btnCrearSesionConexion);
             this.Controls.Add(this.lBoxComputadora);
             this.Controls.Add(this.lBoxClientes);
-            this.MaximizeBox = false;
-            this.MinimizeBox = false;
+            this.MinimumSize = new System.Drawing.Size(1573, 474);
             this.Name = "frmCrearSesionConexion";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Iniciar Sesion Conexion";
             this.Load += new System.EventHandler(this.frmSesionConexion_Load);
             this.ResumeLayout(false);

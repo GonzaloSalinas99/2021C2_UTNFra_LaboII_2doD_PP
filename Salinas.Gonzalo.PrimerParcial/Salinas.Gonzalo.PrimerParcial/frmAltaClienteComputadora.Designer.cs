@@ -59,6 +59,8 @@ namespace Salinas.Gonzalo.PrimerParcial
             // 
             // txtEdad
             // 
+            this.txtEdad.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.txtEdad.Location = new System.Drawing.Point(232, 173);
             this.txtEdad.Name = "txtEdad";
             this.txtEdad.Size = new System.Drawing.Size(121, 23);
@@ -66,6 +68,8 @@ namespace Salinas.Gonzalo.PrimerParcial
             // 
             // txtDni
             // 
+            this.txtDni.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.txtDni.Location = new System.Drawing.Point(232, 122);
             this.txtDni.Name = "txtDni";
             this.txtDni.Size = new System.Drawing.Size(121, 23);
@@ -73,6 +77,8 @@ namespace Salinas.Gonzalo.PrimerParcial
             // 
             // txtApellido
             // 
+            this.txtApellido.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.txtApellido.Location = new System.Drawing.Point(232, 76);
             this.txtApellido.Name = "txtApellido";
             this.txtApellido.Size = new System.Drawing.Size(121, 23);
@@ -80,6 +86,8 @@ namespace Salinas.Gonzalo.PrimerParcial
             // 
             // txtNombre
             // 
+            this.txtNombre.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.txtNombre.Location = new System.Drawing.Point(232, 30);
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(121, 23);
@@ -123,6 +131,8 @@ namespace Salinas.Gonzalo.PrimerParcial
             // 
             // gBoxSoftware
             // 
+            this.gBoxSoftware.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.gBoxSoftware.Controls.Add(this.cBoxMiEncarta);
             this.gBoxSoftware.Controls.Add(this.cBoxAres);
             this.gBoxSoftware.Controls.Add(this.cBoxMessenger);
@@ -135,6 +145,7 @@ namespace Salinas.Gonzalo.PrimerParcial
             // 
             // cBoxMiEncarta
             // 
+            this.cBoxMiEncarta.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.cBoxMiEncarta.AutoSize = true;
             this.cBoxMiEncarta.Location = new System.Drawing.Point(208, 23);
             this.cBoxMiEncarta.Name = "cBoxMiEncarta";
@@ -145,6 +156,7 @@ namespace Salinas.Gonzalo.PrimerParcial
             // 
             // cBoxAres
             // 
+            this.cBoxAres.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.cBoxAres.AutoSize = true;
             this.cBoxAres.Location = new System.Drawing.Point(109, 23);
             this.cBoxAres.Name = "cBoxAres";
@@ -165,6 +177,8 @@ namespace Salinas.Gonzalo.PrimerParcial
             // 
             // gBoxJuegos
             // 
+            this.gBoxJuegos.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.gBoxJuegos.Controls.Add(this.cBoxAgeofEmpires);
             this.gBoxJuegos.Controls.Add(this.cBoxMU);
             this.gBoxJuegos.Controls.Add(this.cBoxCounterStrike);
@@ -177,6 +191,7 @@ namespace Salinas.Gonzalo.PrimerParcial
             // 
             // cBoxAgeofEmpires
             // 
+            this.cBoxAgeofEmpires.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.cBoxAgeofEmpires.AutoSize = true;
             this.cBoxAgeofEmpires.Location = new System.Drawing.Point(208, 23);
             this.cBoxAgeofEmpires.Name = "cBoxAgeofEmpires";
@@ -187,6 +202,7 @@ namespace Salinas.Gonzalo.PrimerParcial
             // 
             // cBoxMU
             // 
+            this.cBoxMU.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.cBoxMU.AutoSize = true;
             this.cBoxMU.Location = new System.Drawing.Point(109, 23);
             this.cBoxMU.Name = "cBoxMU";
@@ -207,6 +223,8 @@ namespace Salinas.Gonzalo.PrimerParcial
             // 
             // gBoxPerifericos
             // 
+            this.gBoxPerifericos.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.gBoxPerifericos.Controls.Add(this.cBoxAuriculares);
             this.gBoxPerifericos.Controls.Add(this.cBoxMicrofono);
             this.gBoxPerifericos.Controls.Add(this.cBoxCamara);
@@ -219,6 +237,7 @@ namespace Salinas.Gonzalo.PrimerParcial
             // 
             // cBoxAuriculares
             // 
+            this.cBoxAuriculares.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.cBoxAuriculares.AutoSize = true;
             this.cBoxAuriculares.Location = new System.Drawing.Point(208, 22);
             this.cBoxAuriculares.Name = "cBoxAuriculares";
@@ -229,6 +248,7 @@ namespace Salinas.Gonzalo.PrimerParcial
             // 
             // cBoxMicrofono
             // 
+            this.cBoxMicrofono.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.cBoxMicrofono.AutoSize = true;
             this.cBoxMicrofono.Location = new System.Drawing.Point(109, 23);
             this.cBoxMicrofono.Name = "cBoxMicrofono";
@@ -249,6 +269,7 @@ namespace Salinas.Gonzalo.PrimerParcial
             // 
             // btnAgregarCliente
             // 
+            this.btnAgregarCliente.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnAgregarCliente.Location = new System.Drawing.Point(232, 538);
             this.btnAgregarCliente.Name = "btnAgregarCliente";
             this.btnAgregarCliente.Size = new System.Drawing.Size(121, 46);
@@ -259,6 +280,7 @@ namespace Salinas.Gonzalo.PrimerParcial
             // 
             // btnVolver
             // 
+            this.btnVolver.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.btnVolver.Location = new System.Drawing.Point(24, 538);
             this.btnVolver.Name = "btnVolver";
             this.btnVolver.Size = new System.Drawing.Size(121, 46);
@@ -269,6 +291,7 @@ namespace Salinas.Gonzalo.PrimerParcial
             // 
             // btnAYUDA
             // 
+            this.btnAYUDA.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.btnAYUDA.Location = new System.Drawing.Point(24, 464);
             this.btnAYUDA.Name = "btnAYUDA";
             this.btnAYUDA.Size = new System.Drawing.Size(59, 23);
@@ -296,9 +319,9 @@ namespace Salinas.Gonzalo.PrimerParcial
             this.Controls.Add(this.lblDni);
             this.Controls.Add(this.lblApellido);
             this.Controls.Add(this.lblNombre);
-            this.MaximizeBox = false;
-            this.MinimizeBox = false;
+            this.MinimumSize = new System.Drawing.Size(392, 635);
             this.Name = "frmAltaClienteComputadora";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Crear Cliente Computadora";
             this.gBoxSoftware.ResumeLayout(false);
             this.gBoxSoftware.PerformLayout();

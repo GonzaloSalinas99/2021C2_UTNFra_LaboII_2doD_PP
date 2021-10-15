@@ -13,11 +13,18 @@ namespace Salinas.Gonzalo.PrimerParcial
 {
     public partial class frmLogin : Form
     {
+        /// <summary>
+        /// Contructor de Login.
+        /// </summary>
         public frmLogin()
         {
             InitializeComponent();
         }
-
+        /// <summary>
+        /// Loguea al usuario.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         public void btnIngresarAdministrador_Click(object sender, EventArgs e)
         {
             frmMenuPrincipal menuPrincipal = new frmMenuPrincipal();
@@ -35,15 +42,13 @@ namespace Salinas.Gonzalo.PrimerParcial
                 menuPrincipal.Show();
                 this.Hide();
             }
-            
-            
         }
 
-        private void frmLogin_Load(object sender, EventArgs e)
-        {
-
-        }
-
+        /// <summary>
+        /// Indica al usuario que pasos tiene que hacer para loguearse correctamente.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void button1_Click(object sender, EventArgs e)
         {
             MessageBox.Show("Ingrese el nombre y apellido, luego presione el boton Login para logearse e ingresar al programa","Ayuda",MessageBoxButtons.OK,MessageBoxIcon.Information);

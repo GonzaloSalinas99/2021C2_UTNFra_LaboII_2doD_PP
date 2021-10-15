@@ -44,9 +44,9 @@ namespace Salinas.Gonzalo.PrimerParcial
             // btnvolverMenuPrincipal
             // 
             this.btnvolverMenuPrincipal.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnvolverMenuPrincipal.Location = new System.Drawing.Point(12, 247);
+            this.btnvolverMenuPrincipal.Location = new System.Drawing.Point(12, 250);
             this.btnvolverMenuPrincipal.Name = "btnvolverMenuPrincipal";
-            this.btnvolverMenuPrincipal.Size = new System.Drawing.Size(97, 38);
+            this.btnvolverMenuPrincipal.Size = new System.Drawing.Size(156, 38);
             this.btnvolverMenuPrincipal.TabIndex = 11;
             this.btnvolverMenuPrincipal.Text = "Volver";
             this.btnvolverMenuPrincipal.UseVisualStyleBackColor = true;
@@ -55,9 +55,9 @@ namespace Salinas.Gonzalo.PrimerParcial
             // btnModificarCabina
             // 
             this.btnModificarCabina.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnModificarCabina.Location = new System.Drawing.Point(978, 247);
+            this.btnModificarCabina.Location = new System.Drawing.Point(919, 247);
             this.btnModificarCabina.Name = "btnModificarCabina";
-            this.btnModificarCabina.Size = new System.Drawing.Size(97, 41);
+            this.btnModificarCabina.Size = new System.Drawing.Size(156, 41);
             this.btnModificarCabina.TabIndex = 10;
             this.btnModificarCabina.Text = "Modificar Cabina";
             this.btnModificarCabina.UseVisualStyleBackColor = true;
@@ -65,6 +65,7 @@ namespace Salinas.Gonzalo.PrimerParcial
             // 
             // cmbTipoTelefono
             // 
+            this.cmbTipoTelefono.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.cmbTipoTelefono.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbTipoTelefono.FormattingEnabled = true;
             this.cmbTipoTelefono.Location = new System.Drawing.Point(812, 200);
@@ -74,6 +75,7 @@ namespace Salinas.Gonzalo.PrimerParcial
             // 
             // txtMarcaTelefono
             // 
+            this.txtMarcaTelefono.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.txtMarcaTelefono.Location = new System.Drawing.Point(547, 200);
             this.txtMarcaTelefono.Name = "txtMarcaTelefono";
             this.txtMarcaTelefono.Size = new System.Drawing.Size(121, 23);
@@ -81,6 +83,7 @@ namespace Salinas.Gonzalo.PrimerParcial
             // 
             // lblTipoTelefono
             // 
+            this.lblTipoTelefono.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.lblTipoTelefono.AutoSize = true;
             this.lblTipoTelefono.Location = new System.Drawing.Point(696, 203);
             this.lblTipoTelefono.Name = "lblTipoTelefono";
@@ -90,6 +93,7 @@ namespace Salinas.Gonzalo.PrimerParcial
             // 
             // lblMarcaTelefono
             // 
+            this.lblMarcaTelefono.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.lblMarcaTelefono.AutoSize = true;
             this.lblMarcaTelefono.Location = new System.Drawing.Point(441, 203);
             this.lblMarcaTelefono.Name = "lblMarcaTelefono";
@@ -99,7 +103,8 @@ namespace Salinas.Gonzalo.PrimerParcial
             // 
             // lBoxListaCabinas
             // 
-            this.lBoxListaCabinas.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.lBoxListaCabinas.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lBoxListaCabinas.FormattingEnabled = true;
             this.lBoxListaCabinas.ItemHeight = 15;
@@ -110,6 +115,7 @@ namespace Salinas.Gonzalo.PrimerParcial
             // 
             // txtIdentificadorCabina
             // 
+            this.txtIdentificadorCabina.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.txtIdentificadorCabina.Location = new System.Drawing.Point(291, 200);
             this.txtIdentificadorCabina.Name = "txtIdentificadorCabina";
             this.txtIdentificadorCabina.Size = new System.Drawing.Size(121, 23);
@@ -117,6 +123,7 @@ namespace Salinas.Gonzalo.PrimerParcial
             // 
             // lblIdentificadorCabina
             // 
+            this.lblIdentificadorCabina.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.lblIdentificadorCabina.AutoSize = true;
             this.lblIdentificadorCabina.Location = new System.Drawing.Point(155, 203);
             this.lblIdentificadorCabina.Name = "lblIdentificadorCabina";
@@ -126,6 +133,7 @@ namespace Salinas.Gonzalo.PrimerParcial
             // 
             // btnAyuda
             // 
+            this.btnAyuda.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.btnAyuda.Location = new System.Drawing.Point(12, 172);
             this.btnAyuda.Name = "btnAyuda";
             this.btnAyuda.Size = new System.Drawing.Size(56, 23);
@@ -149,10 +157,10 @@ namespace Salinas.Gonzalo.PrimerParcial
             this.Controls.Add(this.txtMarcaTelefono);
             this.Controls.Add(this.lblTipoTelefono);
             this.Controls.Add(this.lblMarcaTelefono);
-            this.MaximizeBox = false;
-            this.MinimizeBox = false;
+            this.MinimumSize = new System.Drawing.Size(1103, 339);
             this.Name = "frmModificarCabina";
-            this.Text = "frmModificarCabina";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Modificar Cabina";
             this.Load += new System.EventHandler(this.frmModificarCabina_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

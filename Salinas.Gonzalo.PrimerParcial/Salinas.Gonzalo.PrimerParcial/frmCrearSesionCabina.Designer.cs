@@ -44,7 +44,8 @@ namespace Salinas.Gonzalo.PrimerParcial
             // 
             // lBoxClientes
             // 
-            this.lBoxClientes.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.lBoxClientes.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lBoxClientes.FormattingEnabled = true;
             this.lBoxClientes.ItemHeight = 15;
@@ -55,7 +56,7 @@ namespace Salinas.Gonzalo.PrimerParcial
             // 
             // lBoxCabinas
             // 
-            this.lBoxCabinas.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.lBoxCabinas.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lBoxCabinas.FormattingEnabled = true;
             this.lBoxCabinas.ItemHeight = 15;
@@ -66,8 +67,7 @@ namespace Salinas.Gonzalo.PrimerParcial
             // 
             // btnCrearSesionLlamada
             // 
-            this.btnCrearSesionLlamada.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnCrearSesionLlamada.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnCrearSesionLlamada.Location = new System.Drawing.Point(1047, 318);
             this.btnCrearSesionLlamada.Name = "btnCrearSesionLlamada";
             this.btnCrearSesionLlamada.Size = new System.Drawing.Size(105, 43);
@@ -78,6 +78,8 @@ namespace Salinas.Gonzalo.PrimerParcial
             // 
             // txtDocumentoCliente
             // 
+            this.txtDocumentoCliente.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.txtDocumentoCliente.Location = new System.Drawing.Point(560, 307);
             this.txtDocumentoCliente.Name = "txtDocumentoCliente";
             this.txtDocumentoCliente.Size = new System.Drawing.Size(124, 23);
@@ -85,7 +87,7 @@ namespace Salinas.Gonzalo.PrimerParcial
             // 
             // txtIdentificadorCabina
             // 
-            this.txtIdentificadorCabina.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.txtIdentificadorCabina.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtIdentificadorCabina.Location = new System.Drawing.Point(560, 338);
             this.txtIdentificadorCabina.Name = "txtIdentificadorCabina";
@@ -94,7 +96,7 @@ namespace Salinas.Gonzalo.PrimerParcial
             // 
             // lblDocumentoCliente
             // 
-            this.lblDocumentoCliente.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.lblDocumentoCliente.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lblDocumentoCliente.AutoSize = true;
             this.lblDocumentoCliente.Location = new System.Drawing.Point(408, 315);
@@ -105,8 +107,7 @@ namespace Salinas.Gonzalo.PrimerParcial
             // 
             // lblIdentificadorCabina
             // 
-            this.lblIdentificadorCabina.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblIdentificadorCabina.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.lblIdentificadorCabina.AutoSize = true;
             this.lblIdentificadorCabina.Location = new System.Drawing.Point(408, 346);
             this.lblIdentificadorCabina.Name = "lblIdentificadorCabina";
@@ -132,8 +133,7 @@ namespace Salinas.Gonzalo.PrimerParcial
             // 
             // btnVolverMenuPrincipal
             // 
-            this.btnVolverMenuPrincipal.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnVolverMenuPrincipal.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.btnVolverMenuPrincipal.Location = new System.Drawing.Point(12, 318);
             this.btnVolverMenuPrincipal.Name = "btnVolverMenuPrincipal";
             this.btnVolverMenuPrincipal.Size = new System.Drawing.Size(105, 43);
@@ -144,6 +144,7 @@ namespace Salinas.Gonzalo.PrimerParcial
             // 
             // btnAYUDA
             // 
+            this.btnAYUDA.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.btnAYUDA.Location = new System.Drawing.Point(12, 262);
             this.btnAYUDA.Name = "btnAYUDA";
             this.btnAYUDA.Size = new System.Drawing.Size(57, 23);
@@ -168,9 +169,9 @@ namespace Salinas.Gonzalo.PrimerParcial
             this.Controls.Add(this.btnCrearSesionLlamada);
             this.Controls.Add(this.lBoxCabinas);
             this.Controls.Add(this.lBoxClientes);
-            this.MaximizeBox = false;
-            this.MinimizeBox = false;
+            this.MinimumSize = new System.Drawing.Size(1180, 412);
             this.Name = "frmSesionLlamada";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Iniciar Sesion Llamada";
             this.Load += new System.EventHandler(this.frmSesionLlamada_Load);
             this.ResumeLayout(false);

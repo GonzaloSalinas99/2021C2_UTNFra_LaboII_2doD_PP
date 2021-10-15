@@ -111,5 +111,7 @@ namespace Salinas.Gonzalo.PrimerParcial
                 "Luego presione el boton AgregarCliente para agregar al cliente a la lista de clientes con computadora. Volver lo regresara al menu principal", "Ayuda", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
         }
+
+
     }
 }
