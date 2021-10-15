@@ -8,6 +8,15 @@ namespace Entidades
 {
     public static class ValidadorDeInformacion
     {
+        public static bool ValidarNumero(string cadenaAValidar)
+        {
+            int auxiliar;
+            if(cadenaAValidar is not null && cadenaAValidar != "" && int.TryParse(cadenaAValidar,out auxiliar))
+            {
+                return true;
+            }
+            return false;
+        }
         /// <summary>
         /// Valida que la cadena no sea null ni este vacio
         /// </summary>
@@ -15,7 +24,7 @@ namespace Entidades
         /// <returns>True si esta correcta, false si no lo esta</returns>
         public static bool ValidarStringTexto(string cadenaAValidar)
         {
-            if(cadenaAValidar is null || cadenaAValidar == "")
+            if(cadenaAValidar is null && cadenaAValidar == "")
             {
                 return false;
             }

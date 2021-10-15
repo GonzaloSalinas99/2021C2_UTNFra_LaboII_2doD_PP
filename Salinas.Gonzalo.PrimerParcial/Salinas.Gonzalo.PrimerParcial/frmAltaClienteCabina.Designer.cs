@@ -1,7 +1,7 @@
 ﻿
 namespace Salinas.Gonzalo.PrimerParcial
 {
-    partial class frmClienteCabina
+    partial class frmAltaClienteCabina
     {
         /// <summary>
         /// Required designer variable.
@@ -34,15 +34,21 @@ namespace Salinas.Gonzalo.PrimerParcial
             this.lblDni = new System.Windows.Forms.Label();
             this.lblEdad = new System.Windows.Forms.Label();
             this.lblTipoTelefono = new System.Windows.Forms.Label();
-            this.lblNumero = new System.Windows.Forms.Label();
+            this.lblCodigoPais = new System.Windows.Forms.Label();
             this.txtNombre = new System.Windows.Forms.TextBox();
             this.txtApellido = new System.Windows.Forms.TextBox();
             this.txtDni = new System.Windows.Forms.TextBox();
             this.txtEdad = new System.Windows.Forms.TextBox();
-            this.txtNumeroTelefono = new System.Windows.Forms.TextBox();
+            this.txtCodigoPais = new System.Windows.Forms.TextBox();
             this.cmbTipoTelefono = new System.Windows.Forms.ComboBox();
             this.btnAgregarCliente = new System.Windows.Forms.Button();
             this.btnVolver = new System.Windows.Forms.Button();
+            this.txtCodigoArea = new System.Windows.Forms.TextBox();
+            this.txtNumeroTelefono = new System.Windows.Forms.TextBox();
+            this.lblCodigoArea = new System.Windows.Forms.Label();
+            this.lblNumeroTelefono = new System.Windows.Forms.Label();
+            this.lblTituloNumeroTelefono = new System.Windows.Forms.Label();
+            this.btnAYUDA = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lblNombre
@@ -90,14 +96,14 @@ namespace Salinas.Gonzalo.PrimerParcial
             this.lblTipoTelefono.TabIndex = 0;
             this.lblTipoTelefono.Text = "Tipo de Telefono";
             // 
-            // lblNumero
+            // lblCodigoPais
             // 
-            this.lblNumero.AutoSize = true;
-            this.lblNumero.Location = new System.Drawing.Point(32, 293);
-            this.lblNumero.Name = "lblNumero";
-            this.lblNumero.Size = new System.Drawing.Size(99, 15);
-            this.lblNumero.TabIndex = 0;
-            this.lblNumero.Text = "Numero Telefono";
+            this.lblCodigoPais.AutoSize = true;
+            this.lblCodigoPais.Location = new System.Drawing.Point(32, 308);
+            this.lblCodigoPais.Name = "lblCodigoPais";
+            this.lblCodigoPais.Size = new System.Drawing.Size(70, 15);
+            this.lblCodigoPais.TabIndex = 0;
+            this.lblCodigoPais.Text = "Codigo Pais";
             // 
             // txtNombre
             // 
@@ -127,12 +133,12 @@ namespace Salinas.Gonzalo.PrimerParcial
             this.txtEdad.Size = new System.Drawing.Size(121, 23);
             this.txtEdad.TabIndex = 4;
             // 
-            // txtNumeroTelefono
+            // txtCodigoPais
             // 
-            this.txtNumeroTelefono.Location = new System.Drawing.Point(240, 285);
-            this.txtNumeroTelefono.Name = "txtNumeroTelefono";
-            this.txtNumeroTelefono.Size = new System.Drawing.Size(121, 23);
-            this.txtNumeroTelefono.TabIndex = 6;
+            this.txtCodigoPais.Location = new System.Drawing.Point(240, 300);
+            this.txtCodigoPais.Name = "txtCodigoPais";
+            this.txtCodigoPais.Size = new System.Drawing.Size(121, 23);
+            this.txtCodigoPais.TabIndex = 6;
             // 
             // cmbTipoTelefono
             // 
@@ -146,7 +152,7 @@ namespace Salinas.Gonzalo.PrimerParcial
             // btnAgregarCliente
             // 
             this.btnAgregarCliente.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this.btnAgregarCliente.Location = new System.Drawing.Point(240, 356);
+            this.btnAgregarCliente.Location = new System.Drawing.Point(240, 473);
             this.btnAgregarCliente.Name = "btnAgregarCliente";
             this.btnAgregarCliente.Size = new System.Drawing.Size(121, 46);
             this.btnAgregarCliente.TabIndex = 7;
@@ -157,7 +163,7 @@ namespace Salinas.Gonzalo.PrimerParcial
             // btnVolver
             // 
             this.btnVolver.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this.btnVolver.Location = new System.Drawing.Point(12, 356);
+            this.btnVolver.Location = new System.Drawing.Point(32, 473);
             this.btnVolver.Name = "btnVolver";
             this.btnVolver.Size = new System.Drawing.Size(121, 46);
             this.btnVolver.TabIndex = 8;
@@ -165,20 +171,77 @@ namespace Salinas.Gonzalo.PrimerParcial
             this.btnVolver.UseVisualStyleBackColor = true;
             this.btnVolver.Click += new System.EventHandler(this.btnVolver_Click);
             // 
-            // frmClienteCabina
+            // txtCodigoArea
+            // 
+            this.txtCodigoArea.Location = new System.Drawing.Point(240, 329);
+            this.txtCodigoArea.Name = "txtCodigoArea";
+            this.txtCodigoArea.Size = new System.Drawing.Size(121, 23);
+            this.txtCodigoArea.TabIndex = 9;
+            // 
+            // txtNumeroTelefono
+            // 
+            this.txtNumeroTelefono.Location = new System.Drawing.Point(240, 358);
+            this.txtNumeroTelefono.Name = "txtNumeroTelefono";
+            this.txtNumeroTelefono.Size = new System.Drawing.Size(121, 23);
+            this.txtNumeroTelefono.TabIndex = 10;
+            // 
+            // lblCodigoArea
+            // 
+            this.lblCodigoArea.AutoSize = true;
+            this.lblCodigoArea.Location = new System.Drawing.Point(32, 337);
+            this.lblCodigoArea.Name = "lblCodigoArea";
+            this.lblCodigoArea.Size = new System.Drawing.Size(73, 15);
+            this.lblCodigoArea.TabIndex = 11;
+            this.lblCodigoArea.Text = "Codigo Area";
+            // 
+            // lblNumeroTelefono
+            // 
+            this.lblNumeroTelefono.AutoSize = true;
+            this.lblNumeroTelefono.Location = new System.Drawing.Point(32, 366);
+            this.lblNumeroTelefono.Name = "lblNumeroTelefono";
+            this.lblNumeroTelefono.Size = new System.Drawing.Size(99, 15);
+            this.lblNumeroTelefono.TabIndex = 12;
+            this.lblNumeroTelefono.Text = "Numero Telefono";
+            // 
+            // lblTituloNumeroTelefono
+            // 
+            this.lblTituloNumeroTelefono.AutoSize = true;
+            this.lblTituloNumeroTelefono.Location = new System.Drawing.Point(131, 281);
+            this.lblTituloNumeroTelefono.Name = "lblTituloNumeroTelefono";
+            this.lblTituloNumeroTelefono.Size = new System.Drawing.Size(99, 15);
+            this.lblTituloNumeroTelefono.TabIndex = 13;
+            this.lblTituloNumeroTelefono.Text = "Numero Telefono";
+            // 
+            // btnAYUDA
+            // 
+            this.btnAYUDA.Location = new System.Drawing.Point(32, 409);
+            this.btnAYUDA.Name = "btnAYUDA";
+            this.btnAYUDA.Size = new System.Drawing.Size(56, 23);
+            this.btnAYUDA.TabIndex = 14;
+            this.btnAYUDA.Text = "AYUDA";
+            this.btnAYUDA.UseVisualStyleBackColor = true;
+            this.btnAYUDA.Click += new System.EventHandler(this.btnAYUDA_Click);
+            // 
+            // frmAltaClienteCabina
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(389, 414);
+            this.ClientSize = new System.Drawing.Size(389, 531);
+            this.Controls.Add(this.btnAYUDA);
+            this.Controls.Add(this.lblTituloNumeroTelefono);
+            this.Controls.Add(this.lblNumeroTelefono);
+            this.Controls.Add(this.lblCodigoArea);
+            this.Controls.Add(this.txtNumeroTelefono);
+            this.Controls.Add(this.txtCodigoArea);
             this.Controls.Add(this.btnVolver);
             this.Controls.Add(this.btnAgregarCliente);
             this.Controls.Add(this.cmbTipoTelefono);
-            this.Controls.Add(this.txtNumeroTelefono);
+            this.Controls.Add(this.txtCodigoPais);
             this.Controls.Add(this.txtEdad);
             this.Controls.Add(this.txtDni);
             this.Controls.Add(this.txtApellido);
             this.Controls.Add(this.txtNombre);
-            this.Controls.Add(this.lblNumero);
+            this.Controls.Add(this.lblCodigoPais);
             this.Controls.Add(this.lblTipoTelefono);
             this.Controls.Add(this.lblEdad);
             this.Controls.Add(this.lblDni);
@@ -186,7 +249,7 @@ namespace Salinas.Gonzalo.PrimerParcial
             this.Controls.Add(this.lblNombre);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "frmClienteCabina";
+            this.Name = "frmAltaClienteCabina";
             this.Text = "Crear Cliente Cabina";
             this.Load += new System.EventHandler(this.frmClienteCabina_Load);
             this.ResumeLayout(false);
@@ -201,14 +264,20 @@ namespace Salinas.Gonzalo.PrimerParcial
         private System.Windows.Forms.Label lblDni;
         private System.Windows.Forms.Label lblEdad;
         private System.Windows.Forms.Label lblTipoTelefono;
-        private System.Windows.Forms.Label lblNumero;
+        private System.Windows.Forms.Label lblCodigoPais;
         private System.Windows.Forms.TextBox txtNombre;
         private System.Windows.Forms.TextBox txtApellido;
         private System.Windows.Forms.TextBox txtDni;
         private System.Windows.Forms.TextBox txtEdad;
-        private System.Windows.Forms.TextBox txtNumeroTelefono;
+        private System.Windows.Forms.TextBox txtCodigoPais;
         private System.Windows.Forms.ComboBox cmbTipoTelefono;
         public System.Windows.Forms.Button btnAgregarCliente;
         public System.Windows.Forms.Button btnVolver;
+        private System.Windows.Forms.TextBox txtCodigoArea;
+        private System.Windows.Forms.TextBox txtNumeroTelefono;
+        private System.Windows.Forms.Label lblCodigoArea;
+        private System.Windows.Forms.Label lblNumeroTelefono;
+        private System.Windows.Forms.Label lblTituloNumeroTelefono;
+        private System.Windows.Forms.Button btnAYUDA;
     }
 }

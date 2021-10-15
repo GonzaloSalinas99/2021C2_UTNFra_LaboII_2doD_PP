@@ -362,7 +362,50 @@ namespace Entidades
 
             return null;
         }
-
+        /// <summary>
+        /// Busca una sesion por su identificador
+        /// </summary>
+        /// <param name="controlador">controlador a buscar la lista de Sesiones</param>
+        /// <param name="identificador">Identificador a buscar</param>
+        /// <param name="tipoSesion">Tipo de sesion a buscar</param>
+        /// <returns>Retorna la sesion si coincide con el identificador y tipo de sesion</returns>
+        public Sesion BuscarSesionPorIdentificador(Controlador controlador,string identificador,string tipoSesion)
+        {
+            if(controlador is not null && ValidadorDeInformacion.ValidarStringTexto(identificador) && ValidadorDeInformacion.ValidarNumero(tipoSesion))
+            {
+                int valorIdentificador = int.Parse(identificador);
+                if (tipoSesion == "Llamada")
+                {
+                    foreach (Sesion sesion in controlador.ListaSesiones)
+                    {
+                        if (sesion is Llamada && sesion is not null)
+                        {
+                            if (sesion.IdSesion == valorIdentificador)
+                            {
+                                return (Llamada)sesion;
+                            }
+                        }
+                    }
+                }
+                else
+                {
+                    if(tipoSesion == "Conexion")
+                    {
+                        foreach (Sesion sesion in controlador.ListaSesiones)
+                        {
+                            if (sesion is Conexion && sesion is not null)
+                            {
+                                if (sesion.IdSesion == valorIdentificador)
+                                {
+                                    return (Conexion)sesion;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            return null;
+        }
         public static bool operator == (Controlador control, Cliente cliente)
         {
             if(control is not null && cliente.Equals(cliente))

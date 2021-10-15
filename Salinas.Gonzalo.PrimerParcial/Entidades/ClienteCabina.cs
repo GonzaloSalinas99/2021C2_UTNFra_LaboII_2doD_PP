@@ -23,8 +23,8 @@ namespace Entidades
         public ClienteCabina(string nombre, string apellido, string dni, string edad,TipoTelefono tipoTelefono,string numeroTelefono)
             :base(nombre,apellido,dni,edad)
         {
-            this.tipoTelefono = tipoTelefono;
-            this.numeroTelefono = numeroTelefono;
+            TipoTelefono = tipoTelefono;
+            NumeroTelefono = numeroTelefono;
 
         }
         /// <summary>
@@ -43,7 +43,7 @@ namespace Entidades
             get { return this.numeroTelefono; }
             set
             {
-                if (ValidadorDeInformacion.ValidarDocumento(value))
+                if (ValidadorDeInformacion.ValidarNumeroTelefono(value))
                 {
                     this.numeroTelefono = value;
                 } 

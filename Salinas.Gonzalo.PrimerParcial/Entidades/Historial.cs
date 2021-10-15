@@ -185,9 +185,9 @@ namespace Entidades
         {
             StringBuilder sb = new StringBuilder();
             sb.AppendLine("Ganancias del ciber.");
-            sb.AppendLine($"Ganancia de Llamadas{GananciaLlamadaLocal() + GananciaLlamadaLargaDistancia() + GananciaLlamadaInternacional()}");
-            sb.AppendLine($"Ganancia de Conexiones{GananciaConexion()}");
-            sb.AppendLine($"Ganancia Total: {GananciaLlamadaLocal() + GananciaLlamadaLargaDistancia() + GananciaLlamadaInternacional() + GananciaConexion()}");
+            sb.AppendLine($"Ganancia de Llamadas: ${GananciaLlamadaLocal() + GananciaLlamadaLargaDistancia() + GananciaLlamadaInternacional()}");
+            sb.AppendLine($"Ganancia de Conexiones: ${GananciaConexion()}");
+            sb.AppendLine($"Ganancia Total: ${GananciaLlamadaLocal() + GananciaLlamadaLargaDistancia() + GananciaLlamadaInternacional() + GananciaConexion()}");
             return sb.ToString();
         }
         /// <summary>
@@ -199,9 +199,9 @@ namespace Entidades
             double horasTotales = HorasTotales();
             StringBuilder sb = new StringBuilder();
 
-            sb.AppendLine($"Ganancia de Llamadas Locales{GananciaLlamadaLocal()}");
-            sb.AppendLine($"Ganancia de Llamadas Larga Distancia{GananciaLlamadaLargaDistancia()}");
-            sb.AppendLine($"Ganancia de Llamadas Internacionales{GananciaLlamadaInternacional()}");
+            sb.AppendLine($"Ganancia de Llamadas Locales: ${GananciaLlamadaLocal()}");
+            sb.AppendLine($"Ganancia de Llamadas Larga Distancia: ${GananciaLlamadaLargaDistancia()}");
+            sb.AppendLine($"Ganancia de Llamadas Internacionales: ${GananciaLlamadaInternacional()}");
             sb.AppendLine($"Horas Totales: {horasTotales/60}");
             return sb.ToString();
         }

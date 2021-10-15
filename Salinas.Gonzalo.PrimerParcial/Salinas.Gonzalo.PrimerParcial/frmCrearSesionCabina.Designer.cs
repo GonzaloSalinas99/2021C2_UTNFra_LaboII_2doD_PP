@@ -39,6 +39,7 @@ namespace Salinas.Gonzalo.PrimerParcial
             this.lblClienteEncontrado = new System.Windows.Forms.Label();
             this.lblCabinaEncontrada = new System.Windows.Forms.Label();
             this.btnVolverMenuPrincipal = new System.Windows.Forms.Button();
+            this.btnAYUDA = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lBoxClientes
@@ -67,7 +68,7 @@ namespace Salinas.Gonzalo.PrimerParcial
             // 
             this.btnCrearSesionLlamada.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnCrearSesionLlamada.Location = new System.Drawing.Point(1036, 276);
+            this.btnCrearSesionLlamada.Location = new System.Drawing.Point(1047, 318);
             this.btnCrearSesionLlamada.Name = "btnCrearSesionLlamada";
             this.btnCrearSesionLlamada.Size = new System.Drawing.Size(105, 43);
             this.btnCrearSesionLlamada.TabIndex = 2;
@@ -77,18 +78,18 @@ namespace Salinas.Gonzalo.PrimerParcial
             // 
             // txtDocumentoCliente
             // 
-            this.txtDocumentoCliente.Location = new System.Drawing.Point(571, 276);
+            this.txtDocumentoCliente.Location = new System.Drawing.Point(560, 307);
             this.txtDocumentoCliente.Name = "txtDocumentoCliente";
-            this.txtDocumentoCliente.Size = new System.Drawing.Size(126, 23);
+            this.txtDocumentoCliente.Size = new System.Drawing.Size(124, 23);
             this.txtDocumentoCliente.TabIndex = 3;
             // 
             // txtIdentificadorCabina
             // 
             this.txtIdentificadorCabina.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtIdentificadorCabina.Location = new System.Drawing.Point(571, 307);
+            this.txtIdentificadorCabina.Location = new System.Drawing.Point(560, 338);
             this.txtIdentificadorCabina.Name = "txtIdentificadorCabina";
-            this.txtIdentificadorCabina.Size = new System.Drawing.Size(129, 23);
+            this.txtIdentificadorCabina.Size = new System.Drawing.Size(127, 23);
             this.txtIdentificadorCabina.TabIndex = 4;
             // 
             // lblDocumentoCliente
@@ -96,7 +97,7 @@ namespace Salinas.Gonzalo.PrimerParcial
             this.lblDocumentoCliente.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lblDocumentoCliente.AutoSize = true;
-            this.lblDocumentoCliente.Location = new System.Drawing.Point(419, 284);
+            this.lblDocumentoCliente.Location = new System.Drawing.Point(408, 315);
             this.lblDocumentoCliente.Name = "lblDocumentoCliente";
             this.lblDocumentoCliente.Size = new System.Drawing.Size(110, 15);
             this.lblDocumentoCliente.TabIndex = 5;
@@ -107,7 +108,7 @@ namespace Salinas.Gonzalo.PrimerParcial
             this.lblIdentificadorCabina.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lblIdentificadorCabina.AutoSize = true;
-            this.lblIdentificadorCabina.Location = new System.Drawing.Point(419, 315);
+            this.lblIdentificadorCabina.Location = new System.Drawing.Point(408, 346);
             this.lblIdentificadorCabina.Name = "lblIdentificadorCabina";
             this.lblIdentificadorCabina.Size = new System.Drawing.Size(114, 15);
             this.lblIdentificadorCabina.TabIndex = 6;
@@ -133,7 +134,7 @@ namespace Salinas.Gonzalo.PrimerParcial
             // 
             this.btnVolverMenuPrincipal.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnVolverMenuPrincipal.Location = new System.Drawing.Point(25, 276);
+            this.btnVolverMenuPrincipal.Location = new System.Drawing.Point(12, 318);
             this.btnVolverMenuPrincipal.Name = "btnVolverMenuPrincipal";
             this.btnVolverMenuPrincipal.Size = new System.Drawing.Size(105, 43);
             this.btnVolverMenuPrincipal.TabIndex = 9;
@@ -141,11 +142,22 @@ namespace Salinas.Gonzalo.PrimerParcial
             this.btnVolverMenuPrincipal.UseVisualStyleBackColor = true;
             this.btnVolverMenuPrincipal.Click += new System.EventHandler(this.btnVolverMenuPrincipal_Click);
             // 
+            // btnAYUDA
+            // 
+            this.btnAYUDA.Location = new System.Drawing.Point(12, 262);
+            this.btnAYUDA.Name = "btnAYUDA";
+            this.btnAYUDA.Size = new System.Drawing.Size(57, 23);
+            this.btnAYUDA.TabIndex = 10;
+            this.btnAYUDA.Text = "AYUDA";
+            this.btnAYUDA.UseVisualStyleBackColor = true;
+            this.btnAYUDA.Click += new System.EventHandler(this.btnAYUDA_Click);
+            // 
             // frmSesionLlamada
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1164, 340);
+            this.ClientSize = new System.Drawing.Size(1164, 373);
+            this.Controls.Add(this.btnAYUDA);
             this.Controls.Add(this.btnVolverMenuPrincipal);
             this.Controls.Add(this.lblCabinaEncontrada);
             this.Controls.Add(this.lblClienteEncontrado);
@@ -178,5 +190,6 @@ namespace Salinas.Gonzalo.PrimerParcial
         private System.Windows.Forms.Label lblClienteEncontrado;
         private System.Windows.Forms.Label lblCabinaEncontrada;
         private System.Windows.Forms.Button btnVolverMenuPrincipal;
+        private System.Windows.Forms.Button btnAYUDA;
     }
 }

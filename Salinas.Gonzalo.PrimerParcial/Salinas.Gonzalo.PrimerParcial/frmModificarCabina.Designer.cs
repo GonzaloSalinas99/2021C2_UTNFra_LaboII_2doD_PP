@@ -38,6 +38,7 @@ namespace Salinas.Gonzalo.PrimerParcial
             this.lBoxListaCabinas = new System.Windows.Forms.ListBox();
             this.txtIdentificadorCabina = new System.Windows.Forms.TextBox();
             this.lblIdentificadorCabina = new System.Windows.Forms.Label();
+            this.btnAyuda = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnvolverMenuPrincipal
@@ -123,11 +124,22 @@ namespace Salinas.Gonzalo.PrimerParcial
             this.lblIdentificadorCabina.TabIndex = 13;
             this.lblIdentificadorCabina.Text = "Identificador de Cabina";
             // 
+            // btnAyuda
+            // 
+            this.btnAyuda.Location = new System.Drawing.Point(12, 172);
+            this.btnAyuda.Name = "btnAyuda";
+            this.btnAyuda.Size = new System.Drawing.Size(56, 23);
+            this.btnAyuda.TabIndex = 15;
+            this.btnAyuda.Text = "AYUDA";
+            this.btnAyuda.UseVisualStyleBackColor = true;
+            this.btnAyuda.Click += new System.EventHandler(this.btnAyuda_Click);
+            // 
             // frmModificarCabina
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1087, 300);
+            this.Controls.Add(this.btnAyuda);
             this.Controls.Add(this.txtIdentificadorCabina);
             this.Controls.Add(this.lblIdentificadorCabina);
             this.Controls.Add(this.lBoxListaCabinas);
@@ -158,5 +170,6 @@ namespace Salinas.Gonzalo.PrimerParcial
         private System.Windows.Forms.ListBox lBoxListaCabinas;
         private System.Windows.Forms.TextBox txtIdentificadorCabina;
         private System.Windows.Forms.Label lblIdentificadorCabina;
+        private System.Windows.Forms.Button btnAyuda;
     }
 }

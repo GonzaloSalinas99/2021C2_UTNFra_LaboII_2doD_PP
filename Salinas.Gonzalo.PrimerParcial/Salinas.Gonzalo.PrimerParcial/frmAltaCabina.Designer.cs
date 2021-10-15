@@ -35,6 +35,7 @@ namespace Salinas.Gonzalo.PrimerParcial
             this.cmbTipoTelefono = new System.Windows.Forms.ComboBox();
             this.btnAgregarCabina = new System.Windows.Forms.Button();
             this.btnvolverMenuPrincipal = new System.Windows.Forms.Button();
+            this.btnAYUDA = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lblMarcaTelefono
@@ -91,11 +92,23 @@ namespace Salinas.Gonzalo.PrimerParcial
             this.btnvolverMenuPrincipal.UseVisualStyleBackColor = true;
             this.btnvolverMenuPrincipal.Click += new System.EventHandler(this.btnvolverMenuPrincipal_Click);
             // 
+            // btnAYUDA
+            // 
+            this.btnAYUDA.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.btnAYUDA.Location = new System.Drawing.Point(418, 12);
+            this.btnAYUDA.Name = "btnAYUDA";
+            this.btnAYUDA.Size = new System.Drawing.Size(55, 23);
+            this.btnAYUDA.TabIndex = 6;
+            this.btnAYUDA.Text = "AYUDA";
+            this.btnAYUDA.UseVisualStyleBackColor = true;
+            this.btnAYUDA.Click += new System.EventHandler(this.btnAYUDA_Click);
+            // 
             // frmAltaCabina
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(485, 155);
+            this.Controls.Add(this.btnAYUDA);
             this.Controls.Add(this.btnvolverMenuPrincipal);
             this.Controls.Add(this.btnAgregarCabina);
             this.Controls.Add(this.cmbTipoTelefono);
@@ -120,5 +133,6 @@ namespace Salinas.Gonzalo.PrimerParcial
         private System.Windows.Forms.ComboBox cmbTipoTelefono;
         private System.Windows.Forms.Button btnAgregarCabina;
         private System.Windows.Forms.Button btnvolverMenuPrincipal;
+        private System.Windows.Forms.Button btnAYUDA;
     }
 }

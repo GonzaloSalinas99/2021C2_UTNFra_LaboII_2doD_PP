@@ -1,7 +1,7 @@
 ﻿
 namespace Salinas.Gonzalo.PrimerParcial
 {
-    partial class frmClienteComputadora
+    partial class frmAltaClienteComputadora
     {
         /// <summary>
         /// Required designer variable.
@@ -51,6 +51,7 @@ namespace Salinas.Gonzalo.PrimerParcial
             this.cBoxCamara = new System.Windows.Forms.CheckBox();
             this.btnAgregarCliente = new System.Windows.Forms.Button();
             this.btnVolver = new System.Windows.Forms.Button();
+            this.btnAYUDA = new System.Windows.Forms.Button();
             this.gBoxSoftware.SuspendLayout();
             this.gBoxJuegos.SuspendLayout();
             this.gBoxPerifericos.SuspendLayout();
@@ -125,7 +126,7 @@ namespace Salinas.Gonzalo.PrimerParcial
             this.gBoxSoftware.Controls.Add(this.cBoxMiEncarta);
             this.gBoxSoftware.Controls.Add(this.cBoxAres);
             this.gBoxSoftware.Controls.Add(this.cBoxMessenger);
-            this.gBoxSoftware.Location = new System.Drawing.Point(24, 241);
+            this.gBoxSoftware.Location = new System.Drawing.Point(24, 227);
             this.gBoxSoftware.Name = "gBoxSoftware";
             this.gBoxSoftware.Size = new System.Drawing.Size(329, 73);
             this.gBoxSoftware.TabIndex = 13;
@@ -167,7 +168,7 @@ namespace Salinas.Gonzalo.PrimerParcial
             this.gBoxJuegos.Controls.Add(this.cBoxAgeofEmpires);
             this.gBoxJuegos.Controls.Add(this.cBoxMU);
             this.gBoxJuegos.Controls.Add(this.cBoxCounterStrike);
-            this.gBoxJuegos.Location = new System.Drawing.Point(24, 320);
+            this.gBoxJuegos.Location = new System.Drawing.Point(24, 306);
             this.gBoxJuegos.Name = "gBoxJuegos";
             this.gBoxJuegos.Size = new System.Drawing.Size(329, 73);
             this.gBoxJuegos.TabIndex = 14;
@@ -209,7 +210,7 @@ namespace Salinas.Gonzalo.PrimerParcial
             this.gBoxPerifericos.Controls.Add(this.cBoxAuriculares);
             this.gBoxPerifericos.Controls.Add(this.cBoxMicrofono);
             this.gBoxPerifericos.Controls.Add(this.cBoxCamara);
-            this.gBoxPerifericos.Location = new System.Drawing.Point(24, 399);
+            this.gBoxPerifericos.Location = new System.Drawing.Point(24, 385);
             this.gBoxPerifericos.Name = "gBoxPerifericos";
             this.gBoxPerifericos.Size = new System.Drawing.Size(329, 73);
             this.gBoxPerifericos.TabIndex = 15;
@@ -248,7 +249,7 @@ namespace Salinas.Gonzalo.PrimerParcial
             // 
             // btnAgregarCliente
             // 
-            this.btnAgregarCliente.Location = new System.Drawing.Point(232, 493);
+            this.btnAgregarCliente.Location = new System.Drawing.Point(232, 538);
             this.btnAgregarCliente.Name = "btnAgregarCliente";
             this.btnAgregarCliente.Size = new System.Drawing.Size(121, 46);
             this.btnAgregarCliente.TabIndex = 16;
@@ -258,7 +259,7 @@ namespace Salinas.Gonzalo.PrimerParcial
             // 
             // btnVolver
             // 
-            this.btnVolver.Location = new System.Drawing.Point(24, 493);
+            this.btnVolver.Location = new System.Drawing.Point(24, 538);
             this.btnVolver.Name = "btnVolver";
             this.btnVolver.Size = new System.Drawing.Size(121, 46);
             this.btnVolver.TabIndex = 17;
@@ -266,11 +267,22 @@ namespace Salinas.Gonzalo.PrimerParcial
             this.btnVolver.UseVisualStyleBackColor = true;
             this.btnVolver.Click += new System.EventHandler(this.btnVolver_Click);
             // 
-            // frmClienteComputadora
+            // btnAYUDA
+            // 
+            this.btnAYUDA.Location = new System.Drawing.Point(24, 464);
+            this.btnAYUDA.Name = "btnAYUDA";
+            this.btnAYUDA.Size = new System.Drawing.Size(59, 23);
+            this.btnAYUDA.TabIndex = 18;
+            this.btnAYUDA.Text = "AYUDA";
+            this.btnAYUDA.UseVisualStyleBackColor = true;
+            this.btnAYUDA.Click += new System.EventHandler(this.btnAYUDA_Click);
+            // 
+            // frmAltaClienteComputadora
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(376, 560);
+            this.ClientSize = new System.Drawing.Size(376, 596);
+            this.Controls.Add(this.btnAYUDA);
             this.Controls.Add(this.btnVolver);
             this.Controls.Add(this.btnAgregarCliente);
             this.Controls.Add(this.gBoxPerifericos);
@@ -286,9 +298,8 @@ namespace Salinas.Gonzalo.PrimerParcial
             this.Controls.Add(this.lblNombre);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "frmClienteComputadora";
+            this.Name = "frmAltaClienteComputadora";
             this.Text = "Crear Cliente Computadora";
-            this.Load += new System.EventHandler(this.frmClienteComputadora_Load);
             this.gBoxSoftware.ResumeLayout(false);
             this.gBoxSoftware.PerformLayout();
             this.gBoxJuegos.ResumeLayout(false);
@@ -324,5 +335,6 @@ namespace Salinas.Gonzalo.PrimerParcial
         private System.Windows.Forms.CheckBox cBoxCamara;
         private System.Windows.Forms.Button btnAgregarCliente;
         private System.Windows.Forms.Button btnVolver;
+        private System.Windows.Forms.Button btnAYUDA;
     }
 }

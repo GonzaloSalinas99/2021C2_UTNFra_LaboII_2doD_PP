@@ -50,6 +50,7 @@ namespace Salinas.Gonzalo.PrimerParcial
             this.lBoxListaComputadora = new System.Windows.Forms.ListBox();
             this.txtIdentificadorCabina = new System.Windows.Forms.TextBox();
             this.lblIdentificadorComputadora = new System.Windows.Forms.Label();
+            this.btnAYUDA = new System.Windows.Forms.Button();
             this.gBoxHadware.SuspendLayout();
             this.gBoxPerifericos.SuspendLayout();
             this.gBoxJuegos.SuspendLayout();
@@ -61,7 +62,7 @@ namespace Salinas.Gonzalo.PrimerParcial
             this.gBoxHadware.Controls.Add(this.cBoxCpuGamer);
             this.gBoxHadware.Controls.Add(this.cBoxUsb);
             this.gBoxHadware.Controls.Add(this.cBoxPlacaVideo);
-            this.gBoxHadware.Location = new System.Drawing.Point(29, 197);
+            this.gBoxHadware.Location = new System.Drawing.Point(29, 219);
             this.gBoxHadware.Name = "gBoxHadware";
             this.gBoxHadware.Size = new System.Drawing.Size(298, 73);
             this.gBoxHadware.TabIndex = 29;
@@ -100,7 +101,7 @@ namespace Salinas.Gonzalo.PrimerParcial
             // 
             // btnVolver
             // 
-            this.btnVolver.Location = new System.Drawing.Point(29, 302);
+            this.btnVolver.Location = new System.Drawing.Point(29, 325);
             this.btnVolver.Name = "btnVolver";
             this.btnVolver.Size = new System.Drawing.Size(121, 46);
             this.btnVolver.TabIndex = 28;
@@ -110,7 +111,7 @@ namespace Salinas.Gonzalo.PrimerParcial
             // 
             // btnModificarComputadora
             // 
-            this.btnModificarComputadora.Location = new System.Drawing.Point(1328, 302);
+            this.btnModificarComputadora.Location = new System.Drawing.Point(1328, 325);
             this.btnModificarComputadora.Name = "btnModificarComputadora";
             this.btnModificarComputadora.Size = new System.Drawing.Size(121, 46);
             this.btnModificarComputadora.TabIndex = 27;
@@ -125,7 +126,7 @@ namespace Salinas.Gonzalo.PrimerParcial
             this.gBoxPerifericos.Controls.Add(this.cBoxAuriculares);
             this.gBoxPerifericos.Controls.Add(this.cBoxMicrofono);
             this.gBoxPerifericos.Controls.Add(this.cBoxCamara);
-            this.gBoxPerifericos.Location = new System.Drawing.Point(1152, 197);
+            this.gBoxPerifericos.Location = new System.Drawing.Point(1152, 219);
             this.gBoxPerifericos.Name = "gBoxPerifericos";
             this.gBoxPerifericos.Size = new System.Drawing.Size(297, 73);
             this.gBoxPerifericos.TabIndex = 26;
@@ -167,7 +168,7 @@ namespace Salinas.Gonzalo.PrimerParcial
             this.gBoxJuegos.Controls.Add(this.cBoxAgeofEmpires);
             this.gBoxJuegos.Controls.Add(this.cBoxMU);
             this.gBoxJuegos.Controls.Add(this.cBoxCounterStrike);
-            this.gBoxJuegos.Location = new System.Drawing.Point(763, 197);
+            this.gBoxJuegos.Location = new System.Drawing.Point(768, 219);
             this.gBoxJuegos.Name = "gBoxJuegos";
             this.gBoxJuegos.Size = new System.Drawing.Size(317, 73);
             this.gBoxJuegos.TabIndex = 25;
@@ -209,7 +210,7 @@ namespace Salinas.Gonzalo.PrimerParcial
             this.gBoxSoftware.Controls.Add(this.cBoxMiEncarta);
             this.gBoxSoftware.Controls.Add(this.cBoxAres);
             this.gBoxSoftware.Controls.Add(this.cBoxMessenger);
-            this.gBoxSoftware.Location = new System.Drawing.Point(397, 197);
+            this.gBoxSoftware.Location = new System.Drawing.Point(397, 219);
             this.gBoxSoftware.Name = "gBoxSoftware";
             this.gBoxSoftware.Size = new System.Drawing.Size(297, 73);
             this.gBoxSoftware.TabIndex = 24;
@@ -259,7 +260,7 @@ namespace Salinas.Gonzalo.PrimerParcial
             // 
             // txtIdentificadorCabina
             // 
-            this.txtIdentificadorCabina.Location = new System.Drawing.Point(717, 325);
+            this.txtIdentificadorCabina.Location = new System.Drawing.Point(720, 342);
             this.txtIdentificadorCabina.Name = "txtIdentificadorCabina";
             this.txtIdentificadorCabina.Size = new System.Drawing.Size(151, 23);
             this.txtIdentificadorCabina.TabIndex = 31;
@@ -267,17 +268,28 @@ namespace Salinas.Gonzalo.PrimerParcial
             // lblIdentificadorComputadora
             // 
             this.lblIdentificadorComputadora.AutoSize = true;
-            this.lblIdentificadorComputadora.Location = new System.Drawing.Point(544, 333);
+            this.lblIdentificadorComputadora.Location = new System.Drawing.Point(547, 345);
             this.lblIdentificadorComputadora.Name = "lblIdentificadorComputadora";
             this.lblIdentificadorComputadora.Size = new System.Drawing.Size(167, 15);
             this.lblIdentificadorComputadora.TabIndex = 32;
             this.lblIdentificadorComputadora.Text = "Identificador de Computadora";
+            // 
+            // btnAYUDA
+            // 
+            this.btnAYUDA.Location = new System.Drawing.Point(29, 169);
+            this.btnAYUDA.Name = "btnAYUDA";
+            this.btnAYUDA.Size = new System.Drawing.Size(58, 23);
+            this.btnAYUDA.TabIndex = 33;
+            this.btnAYUDA.Text = "AYUDA";
+            this.btnAYUDA.UseVisualStyleBackColor = true;
+            this.btnAYUDA.Click += new System.EventHandler(this.btnAYUDA_Click);
             // 
             // frmModificarComputadora
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1480, 377);
+            this.Controls.Add(this.btnAYUDA);
             this.Controls.Add(this.lblIdentificadorComputadora);
             this.Controls.Add(this.txtIdentificadorCabina);
             this.Controls.Add(this.lBoxListaComputadora);
@@ -328,5 +340,6 @@ namespace Salinas.Gonzalo.PrimerParcial
         private System.Windows.Forms.ListBox lBoxListaComputadora;
         private System.Windows.Forms.TextBox txtIdentificadorCabina;
         private System.Windows.Forms.Label lblIdentificadorComputadora;
+        private System.Windows.Forms.Button btnAYUDA;
     }
 }

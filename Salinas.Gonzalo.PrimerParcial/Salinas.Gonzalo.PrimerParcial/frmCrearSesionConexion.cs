@@ -103,5 +103,13 @@ namespace Salinas.Gonzalo.PrimerParcial
         {
             this.Close();
         }
+
+        private void btnAYUDA_Click(object sender, EventArgs e)
+        {
+
+            MessageBox.Show("Lea tanto la lista de clientes, como la de computadoras. Ingrese el numero de documento e identificador de la computadora. SI O SI PARA CREAR LA SESION, EL CLIENTE Y LA COMPUTADORA TIENEN QUE TENER LAS MISMAS ESPECIFICACIONES(SOFTWARE,JUEGO,PERIFERICO). " +
+                "Luego presione el boton CrearSesion para crear la sesion entre el cliente y la computadora. Volver lo regresara al menu principal", "Ayuda", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+        }
     }
 }

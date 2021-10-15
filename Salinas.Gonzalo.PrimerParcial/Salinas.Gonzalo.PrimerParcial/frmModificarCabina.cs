@@ -93,5 +93,11 @@ namespace Salinas.Gonzalo.PrimerParcial
         {
             this.Close();
         }
+
+        private void btnAyuda_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Lea la lista de cabinas que se encuentran logueadas,ingrese el identificador de la cabina a modificar,la marca y el tipo del telefono que quiere cargarle" +
+                ", luego presione el boton ModificarCabina para modificarla. Volver lo regresara al menu principal", "Ayuda", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
     }
 }

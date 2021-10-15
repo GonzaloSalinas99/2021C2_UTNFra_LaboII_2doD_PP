@@ -102,5 +102,13 @@ namespace Salinas.Gonzalo.PrimerParcial
         {
             this.Close();
         }
+
+        private void btnAYUDA_Click(object sender, EventArgs e)
+        {
+
+            MessageBox.Show("Ingrese el identificador de la computadora y seleccione las especificaciones que va a modificar de la computadora, tanto como HADWARE,SOFTWARE,JUEGOS y PERIFERICOS" +
+                ". Luego presione el boton ModificarComputadora para modificar la computadora en la lista de computadoras. Volver lo regresara al menu principal", "Ayuda", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+        }
     }
 }

@@ -10,16 +10,28 @@ using System.Windows.Forms;
 using Entidades;
 namespace Salinas.Gonzalo.PrimerParcial
 {
-    public partial class frmClienteComputadora : Form
+    public partial class frmAltaClienteComputadora : Form
     {
+
+        /// <summary>
+        /// Variable donde se van a guardar las acciones realizadas en el formulario.
+        /// </summary>
         private Controlador control;
-        public frmClienteComputadora(Controlador controlador)
+        /// <summary>
+        /// Constructor de AltaClienteComputadora
+        /// </summary>
+        /// <param name="controlador">Controlador a asignar a la variable local control</param>
+        public frmAltaClienteComputadora(Controlador controlador)
         {
 
             InitializeComponent();
             this.control = controlador;
         }
-
+        /// <summary>
+        /// Da de alta a un cliente de tipo Computadora
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnAgregarCliente_Click(object sender, EventArgs e)
         {
             if (ValidadorDeInformacion.ValidarStringTexto(txtNombre.Text) == false || ValidadorDeInformacion.ValidarStringTexto(txtApellido.Text) == false ||
@@ -71,21 +83,33 @@ namespace Salinas.Gonzalo.PrimerParcial
                 this.Close();
             }
         }
-
+        /// <summary>
+        /// Propiedad DevolverControlador de lectura, retorna el controlador local.
+        /// </summary>
         public Controlador DevolverControlador
         {
             get { return this.control; }
         }
-
+        /// <summary>
+        /// Cierra el formulario.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnVolver_Click(object sender, EventArgs e)
         {
             this.Close();
         }
-
-        private void frmClienteComputadora_Load(object sender, EventArgs e)
+        /// <summary>
+        /// Indica al usuario que pasos tiene que hacer para que se de de alta al cliente correctamente.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnAYUDA_Click(object sender, EventArgs e)
         {
 
-        }
+            MessageBox.Show("Ingrese Nombre,Apellido,Dni y Edad, seleccione las especificaciones de la computadora que solicita, SOFTWARE, JUEGO, PERIFERICO. " +
+                "Luego presione el boton AgregarCliente para agregar al cliente a la lista de clientes con computadora. Volver lo regresara al menu principal", "Ayuda", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
+        }
     }
 }
