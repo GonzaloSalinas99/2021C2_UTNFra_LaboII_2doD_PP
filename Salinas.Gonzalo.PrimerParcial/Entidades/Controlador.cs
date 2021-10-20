@@ -7,6 +7,12 @@ using System.Threading.Tasks;
 using Entidades;
 namespace Entidades
 {
+    /// <summary>
+    /// Clase sellada Controlador, maneja las acciones que se van a realizar en los distintos formularios. 
+    /// Esta clase es la unica que no tiene sobrescrito el metodo Equals ni el GetHashCode, ya que no tiene ningun dato ni identificador como para devolver en el GetHashCode.
+    /// El Equals no se sobrescribe ya que esta clase es unica y no se va a tener que comparar con otra de su mismo tipo, ya que su unica funcion es controlar la interfaz de usuario e ir 
+    /// administrando las acciones que solicita el usuario.
+    /// </summary>
     public sealed class Controlador
     {
 
@@ -443,7 +449,5 @@ namespace Entidades
         {
             return !(control == cliente);
         }
-
-     
     }
 }

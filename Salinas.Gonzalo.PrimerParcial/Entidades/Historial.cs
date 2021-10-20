@@ -9,7 +9,7 @@ namespace Entidades
     public static class Historial
     {
         private static List<Sesion> listaSesiones;
-       
+        
         static Historial()
         {
             listaSesiones = new List<Sesion>();
@@ -18,7 +18,8 @@ namespace Entidades
         /// Propiedad Sesiones de lectura y asignacion del atributo listaSesiones
         /// </summary>
         public static List<Sesion> Sesiones
-        { get => listaSesiones;
+        {
+            get => listaSesiones;
             set => listaSesiones = value; 
         }
 

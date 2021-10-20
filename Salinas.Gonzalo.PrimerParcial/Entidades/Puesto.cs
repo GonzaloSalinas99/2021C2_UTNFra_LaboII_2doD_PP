@@ -101,5 +101,6 @@ namespace Entidades
         {
             return int.Parse(idPuesto);
         }
-    }
+
+       }
 }
