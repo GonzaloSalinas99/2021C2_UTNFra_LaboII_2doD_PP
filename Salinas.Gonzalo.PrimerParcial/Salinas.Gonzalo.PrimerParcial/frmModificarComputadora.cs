@@ -12,13 +12,24 @@ namespace Salinas.Gonzalo.PrimerParcial
 {
     public partial class frmModificarComputadora : Form
     {
+        /// <summary>
+        /// Variable donde se van a guardar las acciones realizadas en el formulario.
+        /// </summary>
         Controlador control;
+        /// <summary>
+        /// Constructor de ModificarComputadora
+        /// </summary>
+        /// <param name="controlador">controlador a asignar a la variable local control</param>
         public frmModificarComputadora(Controlador controlador)
         {
             InitializeComponent();
             control = controlador;
         }
-
+        /// <summary>
+        /// Modifica los datos de la cabina seleccionada.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnModificarComputadora_Click(object sender, EventArgs e)
         {
             if (ValidadorDeInformacion.ValidarStringTexto(txtIdentificadorCabina.Text))
@@ -67,21 +78,31 @@ namespace Salinas.Gonzalo.PrimerParcial
                     lBoxListaComputadora.Items.Clear();
                     ActualizarLista(control);
                 }
-            }
-        }
-
-
-        private void frmModificarComputadora_Load(object sender, EventArgs e)
-        {
-            foreach (Puesto puesto in control.ListaPuestos)
-            {
-                if (puesto is not null && puesto is Computadora)
+                else
                 {
-                    lBoxListaComputadora.Items.Add(puesto.ToString());
+                    MessageBox.Show("No se encontro la computadora por su identificador.");
+
                 }
             }
+            else
+            {
+                MessageBox.Show("Debe ingresar un identificador de computadora.");
+            }
         }
 
+        /// <summary>
+        /// Carga los datos al ListBox.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void frmModificarComputadora_Load(object sender, EventArgs e)
+        {
+            ActualizarLista(control);
+        }
+        /// <summary>
+        /// Ingresa los datos de las computadoras al ListBox
+        /// </summary>
+        /// <param name="control"></param>
         private void ActualizarLista(Controlador control)
         {
             foreach (Puesto puesto in control.ListaPuestos)
@@ -93,16 +114,27 @@ namespace Salinas.Gonzalo.PrimerParcial
             }
 
         }
+        /// <summary>
+        /// Propiedad DevolverControlador de lectura. Retorna el controlador local.
+        /// </summary>
         public Controlador DevolverControlador
         {
             get { return this.control; }
         }
-
+        /// <summary>
+        /// Cierra el formulario
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnVolver_Click(object sender, EventArgs e)
         {
             this.Close();
         }
-
+        /// <summary>
+        /// Indica al usuario que pasos tiene que hacer para modiflcar la computadora correctamente.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnAYUDA_Click(object sender, EventArgs e)
         {
 

@@ -32,10 +32,9 @@ namespace Salinas.Gonzalo.PrimerParcial
         /// <param name="e"></param>
         private void btnCerrarSesionConexion_Click(object sender, EventArgs e)
         {
-            string identificador = txtIdentificadorConexion.Text;
-            if (control.BuscarSesionPorIdentificador(control, identificador,"Conexion") is not null)
+            if (lBoxSesionConexion.SelectedItem != null)
             {
-                Conexion conexionAux= (Conexion)control.BuscarSesionPorIdentificador(control, identificador,"Conexion");
+                Conexion conexionAux = (Conexion)lBoxSesionConexion.SelectedItem;
                 MessageBox.Show(control.CerrarSesionConexion(conexionAux));
                 MessageBox.Show("Se cerro sesion correctamente");
                 lBoxSesionConexion.Items.Clear();
@@ -43,8 +42,10 @@ namespace Salinas.Gonzalo.PrimerParcial
             }
             else
             {
-                MessageBox.Show("Ocurrio un error al cerrar sesion");
+                MessageBox.Show("Debe seleccionar una sesion para poder cerrarla");
+
             }
+
         }
 
        /// <summary>
@@ -71,11 +72,12 @@ namespace Salinas.Gonzalo.PrimerParcial
         /// <param name="control"></param>
         private void ActualizarListasSesiones(Controlador control)
         {
-            foreach (Sesion sesion in control.ListaSesiones)
+
+            for (int i = 0; i < control.ListaSesiones.Count; i++)
             {
-                if (sesion is Conexion)
+                if (control.ListaSesiones[i] is Conexion)
                 {
-                    lBoxSesionConexion.Items.Add(sesion.ToString());
+                    lBoxSesionConexion.Items.Add(control.ListaSesiones[i]);
                 }
             }
 

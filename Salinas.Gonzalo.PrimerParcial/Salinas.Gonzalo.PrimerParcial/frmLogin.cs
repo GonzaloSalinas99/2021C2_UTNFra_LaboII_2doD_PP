@@ -53,5 +53,7 @@ namespace Salinas.Gonzalo.PrimerParcial
         {
             MessageBox.Show("Ingrese el nombre y apellido, luego presione el boton Login para logearse e ingresar al programa","Ayuda",MessageBoxButtons.OK,MessageBoxIcon.Information);
         }
+
+
     }
 }

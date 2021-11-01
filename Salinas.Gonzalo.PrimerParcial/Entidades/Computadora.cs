@@ -25,6 +25,7 @@ namespace Entidades
             this.idPuesto = "C0" + idSiguiente;
             idSiguiente++;
         }
+        
         /// <summary>
         /// Calcula el costo de la Sesion segun el tiempo de duracion
         /// </summary>
@@ -33,20 +34,30 @@ namespace Entidades
         public override double CalcularCosto(Sesion conexion)
         {
             double retorno = 0;
-            double costoFinal;
+
             int division;
-            if (conexion is Conexion && conexion.DuracionSesion > 0)
+            if (conexion is Conexion && conexion.CalcularDuracionSesion() > 0)
             {
-                division = conexion.DuracionSesion / 30;
-                if (conexion.DuracionSesion % 30 != 0)
+                division = conexion.CalcularDuracionSesion() / 30;
+                if (conexion.CalcularDuracionSesion() % 30 != 0)
                 {
                     division++;
                 }
                 retorno = division * 0.5;
             }
-            costoFinal = retorno * IVA;
 
-            return costoFinal + retorno ;
+            return retorno ;
+        }
+        /// <summary>
+        /// Calcula el costo final mas IVA
+        /// </summary>
+        /// <param name="conexion">Sesion a calcular el costo final</param>
+        /// <returns>Retorna el costo total a pagar con IVA incluido</returns>
+        public override double CalcularCostoFinalMasIva(Sesion conexion)
+        {
+            double costoTotal = CalcularCosto(conexion);
+            double costoFinal = costoTotal * IVA;
+            return costoFinal + costoTotal;
         }
         /// <summary>
         /// Propiedad Hadware de lectura y asignacion del atributo Lista Hadware
@@ -185,7 +196,7 @@ namespace Entidades
             sb.AppendLine($"Software: {Software}  ");
             sb.AppendLine($"Juegos: {Juegos}  ");
             sb.AppendLine($"Perifericos: {Perifericos} ");
-
+            sb.AppendLine("-----------------------------");
             return sb.ToString();
         }
 

@@ -23,54 +23,18 @@ namespace Salinas.Gonzalo.PrimerParcial
         public frmMenuPrincipal()
         {
             controlador = new Controlador();
-            controlador.AgregarPuesto(new Cabina("PHILIPS", Enumerados.TipoTelefono.Teclado));
-            controlador.AgregarPuesto(new Cabina("PHILIPS", Enumerados.TipoTelefono.ADisco));
-            controlador.AgregarPuesto(new Cabina("TELECOM", Enumerados.TipoTelefono.ADisco));
-            controlador.AgregarPuesto(new Cabina("SANYO", Enumerados.TipoTelefono.Teclado));
-            controlador.AgregarPuesto(new Cabina("TLC", Enumerados.TipoTelefono.Teclado));
-            Computadora c1 = new Computadora();
-            c1.Hadware = "CPU Gamer";
-            c1.Hadware = "Usb";
-            c1.Software = "Ares";
-            c1.Software = "Messenger";
-            c1.Juegos = "Age of Empires";
-            c1.Juegos = "Counter Strike";
-            c1.Perifericos = "Camara";
-            controlador.AgregarPuesto(c1);
-            Computadora c2 = new Computadora();
-            c2.Hadware = "Usb";
-            c2.Software = "Mi Encarta";
-            c2.Software = "Ares";
-            c2.Software = "Messenger";
-            c2.Juegos = "Age of Empires";
-            c2.Juegos = "Counter Strike";
-            c2.Perifericos = "Microfono";
-            c2.Perifericos = "Camara";
-            controlador.AgregarPuesto(c2);
-            Computadora c3 = new Computadora();
-            c3.Hadware = "Placa de video";
-            c3.Hadware = "CPU Gamer";
-            c3.Juegos = "Age of Empires";
-            c3.Juegos = "Counter Strike";
+            controlador.HardcodeoCabinas();
+            controlador.HardcodeoComputadoras();
+            controlador.HardcodeoClientesCabinas();
+            controlador.HardcodeoClientesComputadoras();
             
             
-            controlador.AgregarPuesto(c3);
-            ClienteCabina cliCab1 = new ClienteCabina("Gonzalo","Salinas","42038608","21",Enumerados.TipoTelefono.Teclado,"111112345678");
-            ClienteCabina cliCab2 = new ClienteCabina("Facundo","Cruz","40101010","23",Enumerados.TipoTelefono.Teclado,"121212345678");
-            ClienteCabina cliCab3 = new ClienteCabina("Eliana","Cuervo","40123123","21",Enumerados.TipoTelefono.ADisco,"541142414903");
-            ClienteCabina cliCab4 = new ClienteCabina("Hugo","Horacio","10123456","21",Enumerados.TipoTelefono.ADisco,"541220771022");
-            controlador.AgregarClienteCabina(cliCab1);
-            controlador.AgregarClienteCabina(cliCab2);
-            controlador.AgregarClienteCabina(cliCab3);
-            controlador.AgregarClienteCabina(cliCab4);
+            
             InitializeComponent();
         }
 
         public void Form1_Load(object sender, EventArgs e)
         {
-            
-            
-            
         }
         /// <summary>
         /// Timer para saber la fecha en la que estamos
@@ -208,33 +172,12 @@ namespace Salinas.Gonzalo.PrimerParcial
         /// <param name="e"></param>
         private void btnMostrarEstadisticas_Click(object sender, EventArgs e)
         {
-            StringBuilder puesto = new StringBuilder();
-            puesto.Append("Entidades.");
-            puesto.Append(txtNombrePuesto.Text);
-            List<Puesto> listaAux = Historial.OrdenarLista(puesto.ToString());
 
             MessageBox.Show(Historial.GananciaTotalClasificadasPorServicio());
             MessageBox.Show(Historial.LoMasPedidoPorClientesComputadora());
             MessageBox.Show(Historial.RecaudacionPorTipoDeLlamadaYHorasTotales());
         }
-        /// <summary>
-        /// Muestra por ventana, el puesto elegido a mostrar por el usuario
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void btnMostrarPuestos_Click(object sender, EventArgs e)
-        {
-            StringBuilder puestoABuscar = new StringBuilder();
-            puestoABuscar.Append(txtNombrePuesto.Text);
 
-            List<Puesto> listaAux = controlador.FiltroLista(puestoABuscar.ToString());
-            StringBuilder listaDePuesto = new StringBuilder();
-            foreach (Puesto puesto in listaAux)
-            {
-                listaDePuesto.AppendLine(puesto.ToString());
-            }
-            MessageBox.Show(listaDePuesto.ToString());
-        }
         /// <summary>
         /// Llama al formulario AltaCabina para agregar una cabina a la listaPuesto de controlador
         /// </summary>
@@ -310,6 +253,37 @@ namespace Salinas.Gonzalo.PrimerParcial
         {
             Application.Exit();
         }
+        /// <summary>
+        /// Muestra por ventana el listado de las computadoras cargadas.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
 
+        private void btnListarComputadoras_Click(object sender, EventArgs e)
+        {
+            List<Puesto> listaAux = controlador.FiltroLista("Computadora");
+            StringBuilder listaDePuesto = new StringBuilder();
+            foreach (Puesto puesto in listaAux)
+            {
+                listaDePuesto.AppendLine(puesto.ToString());
+            }
+            MessageBox.Show(listaDePuesto.ToString());
+        }
+
+        /// <summary>
+        /// Muestra por ventana el listado de las cabinas cargadas.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnListarCabinas_Click(object sender, EventArgs e)
+        {
+            List<Puesto> listaAux = controlador.FiltroLista("Cabina");
+            StringBuilder listaDePuesto = new StringBuilder();
+            foreach (Puesto puesto in listaAux)
+            {
+                listaDePuesto.AppendLine(puesto.ToString());
+            }
+            MessageBox.Show(listaDePuesto.ToString());
+        }
     }
 }

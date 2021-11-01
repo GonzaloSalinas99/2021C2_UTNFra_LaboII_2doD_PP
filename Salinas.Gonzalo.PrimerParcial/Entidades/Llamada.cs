@@ -9,7 +9,7 @@ namespace Entidades
     public class Llamada : Sesion
     {
         private string numero;
-        private Enumerados.TipoLlamada tipoLlamada;
+
         /// <summary>
         /// Constructor de Llamada
         /// </summary>
@@ -39,13 +39,6 @@ namespace Entidades
         public Enumerados.TipoLlamada TipoLlamada
         {
             get { return ValidarTipoLlamada(this.numero); }
-            set 
-            {
-                if(value == Enumerados.TipoLlamada.Local || value == Enumerados.TipoLlamada.LargaDistancia || value == Enumerados.TipoLlamada.Internacional || value == Enumerados.TipoLlamada.SinAsignar )
-                {
-                    this.tipoLlamada = value;
-                }
-            }
         }
         /// <summary>
         /// Valida el tipo de la llamada
@@ -97,7 +90,8 @@ namespace Entidades
             sb.AppendLine(base.ToString());
             sb.AppendLine($"Numero Telefono: {Numero}");
             sb.AppendLine($"Tipo de Llamada: {TipoLlamada}");
-            sb.AppendLine($"Costo Llamada: {costoSesion}");
+            sb.AppendLine($"Costo Llamada Total: {costoSesion}");
+            sb.AppendLine($"Costo Llamada Final Mas Iva: {this.Puesto.CalcularCostoFinalMasIva(this)}");
 
             return sb.ToString();
         }

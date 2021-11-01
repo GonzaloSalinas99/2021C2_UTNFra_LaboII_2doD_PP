@@ -137,27 +137,27 @@ namespace Entidades
             
             if(SoftwareCliente == "")
             {
-                sb.AppendLine($"Software Requerido: Sin Software Requerido.");
+                sb.AppendLine($"Software Requerido: Sin Software Requerido.  ");
             }
             else
             {
-                sb.AppendLine($"Software Requerido: {SoftwareCliente}");
+                sb.AppendLine($"Software Requerido: {SoftwareCliente}  ");
             }
             if (JuegosCliente == "")
             {
-                sb.AppendLine($"Juegos Requerido: Sin Juego Requerido.");
+                sb.AppendLine($"Juegos Requerido: Sin Juego Requerido.  ");
             }
             else
             {
-                sb.AppendLine($"Juego Requerido: {JuegosCliente}");
+                sb.AppendLine($"Juego Requerido: {JuegosCliente}  ");
             }
             if (PerifericosCliente == "")
             {
-                sb.AppendLine($"Periferico Requerido: Sin Periferico Requerido.");
+                sb.AppendLine($"Periferico Requerido: Sin Periferico Requerido.  ");
             }
             else
             {
-                sb.AppendLine($"Periferico Requerido: {PerifericosCliente}");
+                sb.AppendLine($"Periferico Requerido: {PerifericosCliente}  ");
             }
 
             return sb.ToString();

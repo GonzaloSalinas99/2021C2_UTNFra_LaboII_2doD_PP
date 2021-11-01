@@ -11,7 +11,7 @@ using Entidades;
 
 namespace Salinas.Gonzalo.PrimerParcial
 {
-    
+
     public partial class frmAltaClienteCabina : Form
     {
         /// <summary>
@@ -36,7 +36,7 @@ namespace Salinas.Gonzalo.PrimerParcial
         {
             cmbTipoTelefono.Items.Add("A Disco");
             cmbTipoTelefono.Items.Add("Teclado");
-            
+
         }
         /// <summary>
         /// Le da de alta a un cliente de tipo Telefono
@@ -45,24 +45,60 @@ namespace Salinas.Gonzalo.PrimerParcial
         /// <param name="e"></param>
         private void btnAgregarClienteCabina_Click(object sender, EventArgs e)
         {
-            if(ValidadorDeInformacion.ValidarStringTexto(txtNombre.Text) == false || ValidadorDeInformacion.ValidarStringTexto(txtApellido.Text) == false ||
-                ValidadorDeInformacion.ValidarDocumento(txtDni.Text) == false || ValidadorDeInformacion.ValidarEdad(txtEdad.Text) == false ||
-                ValidadorDeInformacion.ValidarNumero(txtCodigoPais.Text) == false ||
-                ValidadorDeInformacion.ValidarNumero(txtCodigoArea.Text)==false || ValidadorDeInformacion.ValidarNumero(txtNumeroTelefono.Text)==false)
+            string nombre = null;
+            string apellido = null;
+            string dni = null;
+            string edad = null;
+            StringBuilder numeroTelefono = new StringBuilder(null);
+            Enumerados.TipoTelefono tipo = Enumerados.TipoTelefono.SinAsignar;
+
+            if (ValidadorDeInformacion.ValidarStringTexto(txtNombre.Text) == false)
             {
-                MessageBox.Show("Ocurrio un error al guardar los datos", "Error de ingreso");
+                MessageBox.Show("Debe Ingresar Su Nombre.", "Error de ingreso");
             }
             else
             {
-                StringBuilder numeroTelefono = new StringBuilder();
-                numeroTelefono.Append($"{txtCodigoPais.Text}{txtCodigoArea.Text}{txtNumeroTelefono.Text}");
-                string nombre = txtNombre.Text;
-                string apellido = txtApellido.Text;
-                string dni = txtDni.Text;
-                string edad = txtEdad.Text;
-                Enumerados.TipoTelefono tipo;
-                
+                nombre = txtNombre.Text;
+            }
+            if (ValidadorDeInformacion.ValidarStringTexto(txtApellido.Text) == false)
+            {
+                MessageBox.Show("Debe Ingresar Su Apellido.", "Error de ingreso");
 
+            }
+            else
+            {
+                apellido = txtApellido.Text;
+            }
+            if (ValidadorDeInformacion.ValidarDocumento(txtDni.Text) == false)
+            {
+                MessageBox.Show("Error con el numero de documento. Asegurese de ingresar el numero y que tenga 8 digitos.", "Error de ingreso");
+
+            }
+            else
+            {
+                dni = txtDni.Text;
+            }
+
+            if (ValidadorDeInformacion.ValidarEdad(txtEdad.Text) == false)
+            {
+                MessageBox.Show("Error con la edad. Asegurese de ingresar la edad y que tenga entre 3 y 100 años.", "Error de ingreso");
+            }
+            else
+            {
+                edad = txtEdad.Text;
+            }
+            if((ValidadorDeInformacion.ValidarNumero(txtCodigoPais.Text) && ValidadorDeInformacion.ValidarCantidadCaracteresString(txtCodigoPais.Text,2))&& (ValidadorDeInformacion.ValidarNumero(txtCodigoArea.Text) && ValidadorDeInformacion.ValidarCantidadCaracteresString(txtCodigoArea.Text, 2)) 
+                && (ValidadorDeInformacion.ValidarNumero(txtNumeroTelefono.Text) && ValidadorDeInformacion.ValidarCantidadCaracteresString(txtNumeroTelefono.Text, 8)))
+            {
+                numeroTelefono.Append($"{txtCodigoPais.Text}{txtCodigoArea.Text}{txtNumeroTelefono.Text}");
+            }
+            else
+            {
+                MessageBox.Show($"Error con la numero telefonico. Asegurese de ingresar los numeros correctamente.{Environment.NewLine}Codigo de Pais son 2 digitos.{Environment.NewLine}Codigo de area son 2 digitos." +
+                    $"{Environment.NewLine}Numero de telefono son 8 digitos", "Error de ingreso");
+            }
+            if(cmbTipoTelefono.SelectedItem != null)
+            {
                 if (cmbTipoTelefono.SelectedItem.ToString() == "A Disco")
                 {
                     tipo = Enumerados.TipoTelefono.ADisco;
@@ -71,10 +107,19 @@ namespace Salinas.Gonzalo.PrimerParcial
                 {
                     tipo = Enumerados.TipoTelefono.Teclado;
                 }
-                
-                 ClienteCabina clienteCabina = new ClienteCabina(nombre, apellido, dni, edad, tipo, numeroTelefono.ToString());
-                
-                if(controlAux.AgregarClienteCabina(clienteCabina))
+            }
+            else
+            {
+                MessageBox.Show("Error con el tipo de telefono elegido. Asegurese de haber seleccionado un tipo de telefono.", "Error de ingreso");
+            }
+
+
+
+            if (nombre is not null && apellido is not null && dni is not null && edad is not null && numeroTelefono.Length > 0 && tipo != Enumerados.TipoTelefono.SinAsignar)
+            {
+                ClienteCabina clienteCabina = new ClienteCabina(nombre, apellido, dni, edad, tipo, numeroTelefono.ToString());
+
+                if (controlAux.AgregarClienteCabina(clienteCabina))
                 {
                     MessageBox.Show(clienteCabina.ToString());
                 }
@@ -84,7 +129,13 @@ namespace Salinas.Gonzalo.PrimerParcial
                 }
                 this.Close();
             }
+            else
+            {
+                MessageBox.Show("Error con todos los datos");
+            }
+                
             
+
         }
         /// <summary>
         /// Propiedad DevolverControlador de lectura, que retorna el controlador local.

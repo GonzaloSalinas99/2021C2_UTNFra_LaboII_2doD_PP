@@ -78,7 +78,7 @@ namespace Entidades
             sb.AppendLine($"ID: {IdPuesto}\n\t");
             sb.AppendLine($"Estado: {EstadoPuesto}\n\t");
             sb.AppendLine($"Uso minutos: {UsoMinutos}\n\t");
-            sb.AppendLine("---------------------------\t");
+            //sb.AppendLine("---------------------------\t");
             return sb.ToString();
         }
         /// <summary>
@@ -87,7 +87,17 @@ namespace Entidades
         /// <param name="sesion">Sesion a calcular su costo</param>
         /// <returns>Retorna costo total de la sesion</returns>
         public abstract double CalcularCosto(Sesion sesion);
-
+        /// <summary>
+        /// Calcula el costo final mas IVA.
+        /// </summary>
+        /// <param name="sesion">Sesion a calcular su costo final</param>
+        /// <returns>Costo final mas IVA</returns>
+        public abstract double CalcularCostoFinalMasIva(Sesion sesion);
+        /// <summary>
+        /// Verifica que el objeto sea de tipo Puesto.
+        /// </summary>
+        /// <param name="obj">Objeto a ser verificado</param>
+        /// <returns>True si es de tipo puesto o False si no lo es</returns>
         public override bool Equals(object obj)
         {
             if(obj is not null && obj is Puesto && this.GetType().Equals(obj.GetType()))
@@ -96,7 +106,10 @@ namespace Entidades
             }
             return false;
         }
-
+        /// <summary>
+        /// Devuelve el numero de ID del puesto.
+        /// </summary>
+        /// <returns>Retorna el numero de ID del puesto</returns>
         public override int GetHashCode()
         {
             return int.Parse(idPuesto);

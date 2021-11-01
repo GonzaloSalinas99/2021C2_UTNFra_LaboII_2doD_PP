@@ -41,46 +41,92 @@ namespace Salinas.Gonzalo.PrimerParcial
             }
             else
             {
-                string nombre = txtNombre.Text;
-                string apellido = txtApellido.Text;
-                string dni = txtDni.Text;
-                string edad = txtEdad.Text;
-
-                ClienteComputadora cliente = new ClienteComputadora(nombre, apellido, dni, edad);
-                foreach (Control item in gBoxSoftware.Controls)
+                string nombre = null;
+                string apellido = null;
+                string dni = null;
+                string edad = null;
+                if (ValidadorDeInformacion.ValidarStringTexto(txtNombre.Text) == false)
                 {
-                    if (item is CheckBox && ((CheckBox)item).Checked)
-                    {
-                        cliente.SoftwareCliente = ((CheckBox)item).Text;
-
-                    }
-                }
-
-                foreach (Control item in gBoxJuegos.Controls)
-                {
-                    if (item is CheckBox && ((CheckBox)item).Checked)
-                    {
-                        cliente.JuegosCliente = ((CheckBox)item).Text;
-                    }
-                }
-
-                foreach (Control item in gBoxPerifericos.Controls)
-                {
-                    if (item is CheckBox && ((CheckBox)item).Checked)
-                    {
-                        cliente.PerifericosCliente = ((CheckBox)item).Text;
-                    }
-                }
-
-                if(control.AgregarClienteComputadora(cliente))
-                {
-                    MessageBox.Show(cliente.ToString());
+                    MessageBox.Show("Debe Ingresar Su Nombre.", "Error de ingreso");
                 }
                 else
                 {
-                    MessageBox.Show("Ocurrio un error. No puede haber dos clientes con el mismo documento","Error de ingreso",MessageBoxButtons.OK,MessageBoxIcon.Error);
+                    nombre = txtNombre.Text;
                 }
-                this.Close();
+                if (ValidadorDeInformacion.ValidarStringTexto(txtApellido.Text) == false)
+                {
+                    MessageBox.Show("Debe Ingresar Su Apellido.", "Error de ingreso");
+
+                }
+                else
+                {
+                    apellido = txtApellido.Text;
+                }
+                if (ValidadorDeInformacion.ValidarDocumento(txtDni.Text) == false)
+                {
+                    MessageBox.Show("Error con el numero de documento. Asegurese de ingresar el numero y que tenga 8 digitos.", "Error de ingreso");
+
+                }
+                else
+                {
+                    dni = txtDni.Text;
+                }
+
+                if (ValidadorDeInformacion.ValidarEdad(txtEdad.Text) == false)
+                {
+                    MessageBox.Show("Error con la edad. Asegurese de ingresar la edad y que tenga entre 3 y 100 años.", "Error de ingreso");
+                }
+                else
+                {
+                    edad = txtEdad.Text;
+                }
+                if (nombre is not null && apellido is not null && dni is not null && edad is not null)
+                {
+                    ClienteComputadora cliente = new ClienteComputadora(nombre, apellido, dni, edad);
+
+                    foreach (Control item in gBoxSoftware.Controls)
+                    {
+                        if (item is CheckBox && ((CheckBox)item).Checked)
+                        {
+                            cliente.SoftwareCliente = ((CheckBox)item).Text;
+
+                        }
+                    }
+
+                    foreach (Control item in gBoxJuegos.Controls)
+                    {
+                        if (item is CheckBox && ((CheckBox)item).Checked)
+                        {
+                            cliente.JuegosCliente = ((CheckBox)item).Text;
+                        }
+                    }
+
+                    foreach (Control item in gBoxPerifericos.Controls)
+                    {
+                        if (item is CheckBox && ((CheckBox)item).Checked)
+                        {
+                            cliente.PerifericosCliente = ((CheckBox)item).Text;
+                        }
+                    }
+
+                    if (control.AgregarClienteComputadora(cliente))
+                    {
+                        MessageBox.Show(cliente.ToString());
+                    }
+                    else
+                    {
+                        MessageBox.Show("Ocurrio un error. No puede haber dos clientes con el mismo documento", "Error de ingreso", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                    this.Close();
+                }
+                else
+                {
+                    MessageBox.Show("Ocurrio un error. Asegurese de tener todos los campos con informacion.", "Error de ingreso", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                }
+
+
+                
             }
         }
         /// <summary>
@@ -111,7 +157,6 @@ namespace Salinas.Gonzalo.PrimerParcial
                 "Luego presione el boton AgregarCliente para agregar al cliente a la lista de clientes con computadora. Volver lo regresara al menu principal", "Ayuda", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
         }
-
 
     }
 }

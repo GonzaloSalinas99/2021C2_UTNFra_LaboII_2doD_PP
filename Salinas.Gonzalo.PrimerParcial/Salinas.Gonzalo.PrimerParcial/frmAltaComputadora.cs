@@ -67,13 +67,16 @@ namespace Salinas.Gonzalo.PrimerParcial
                     computadoraAuxiliar.Perifericos = ((CheckBox)item).Text;
                 }
             }
-            if (control.CorroborarCantidadPuestos(computadoraAuxiliar, 10) && control.AgregarPuesto(computadoraAuxiliar))
+            if (control.CorroborarCantidadPuestos(computadoraAuxiliar, 10) )
             {
-                MessageBox.Show("Se agrego la computadora correctamente");
+                if(control.AgregarPuesto(computadoraAuxiliar))
+                {
+                    MessageBox.Show("Se agrego la computadora correctamente");
+                }
             }
             else
             {
-                MessageBox.Show("No se pudo agregar la computadora");
+                MessageBox.Show("No se puede agregar la computadora porque llego al limite de cantidad de computadoras ( 10 )");
             }
         }
 

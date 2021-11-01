@@ -27,6 +27,7 @@ namespace Entidades
         }
 
 
+
         /// <summary>
         /// Propiedad Marca de lectura y asignacion del atributo marca
         /// </summary>
@@ -51,28 +52,37 @@ namespace Entidades
         public override double CalcularCosto(Sesion llamada)
         {
             double costoTotal=0;
-            double costoFinal;
+
             Llamada auxiliar;
-            if(llamada is Llamada && llamada.DuracionSesion >0)
+            if(llamada is Llamada && llamada.CalcularDuracionSesion() >0)
             {
                 auxiliar = (Llamada)llamada;
 
                 if(auxiliar.TipoLlamada == TipoLlamada.LargaDistancia)
                 {
-                    costoTotal = llamada.DuracionSesion * 2.50;
+                    costoTotal = llamada.CalcularDuracionSesion() * 2.50;
                 }
                 else if(auxiliar.TipoLlamada == TipoLlamada.Internacional)
                 {
-                    costoTotal = llamada.DuracionSesion * 5;
+                    costoTotal = llamada.CalcularDuracionSesion() * 5;
                 }
                 else
                 {
-                    costoTotal = llamada.DuracionSesion;
+                    costoTotal = llamada.CalcularDuracionSesion();
                 }
             }
-
-            costoFinal = costoTotal * IVA;
-            return costoFinal+costoTotal;
+            return costoTotal;
+        }
+        /// <summary>
+        /// Calcula el costo final sumandole el IVA
+        /// </summary>
+        /// <param name="llamada">Sesion a calcular su costo</param>
+        /// <returns>Retorna el precio total a pagar</returns>
+        public override double CalcularCostoFinalMasIva(Sesion llamada)
+        {
+            double costoTotal = CalcularCosto(llamada);
+            double costoFinal = costoTotal * IVA;
+            return costoFinal + costoTotal;
         }
         /// <summary>
         /// Escribe los datos de la cabina y el puesto

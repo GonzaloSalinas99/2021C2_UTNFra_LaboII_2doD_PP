@@ -9,7 +9,6 @@ namespace Entidades
         private int idSesion;
         private Puesto puesto;
         private Cliente cliente;
-        private int duracionSesion;
         protected double costoSesion;
         protected DateTime tiempoInicio;
         protected DateTime tiempoFinal;
@@ -27,14 +26,12 @@ namespace Entidades
             this.puesto = puesto;
             Puesto.EstadoPuesto = Enumerados.EstadoPuesto.EnUso;
             this.costoSesion = 0;
-            this.duracionSesion = 0;
             this.idSesion = idSiguiente;
             this.tiempoInicio = DateTime.Now;
             this.tiempoFinal = default(DateTime);
             
             idSiguiente++;
         }
-
         /// <summary>
         /// Propiedad IDSesion de lectura del atributo Id Sesion
         /// </summary>
@@ -74,16 +71,7 @@ namespace Entidades
             get { return this.tiempoFinal; }
             set { this.tiempoFinal = value; }
         }
-        /// <summary>
-        /// Propiedad Duracionsesion de lectura y asignacion del atributo Duracion Sesion
-        /// </summary>
-        public int DuracionSesion
-        {
-            get { return  CalcularDuracionSesion(); }
-            set {
-                this.DuracionSesion = value;
-                 }
-        }
+
         /// <summary>
         /// Calcula la duracion de la sesion
         /// </summary>
@@ -94,8 +82,11 @@ namespace Entidades
 
             return (int)var;
         }
-
+        /// <summary>
+        /// Propiedad Costo Sesion de lectura y asignacion del atributo CostoSesion.
+        /// </summary>
         public abstract double CostoSesion { get; set; }
+
         /// <summary>
         /// Escribe los datos de la Sesion
         /// </summary>
@@ -111,8 +102,7 @@ namespace Entidades
             if (this.TiempoFinal != DateTime.MinValue)
             {
                 sb.AppendLine($"Hora de final: {this.TiempoFinal}.");
-                sb.AppendLine($"Duracion Sesion: {this.DuracionSesion}.");
-                sb.AppendLine($"Costo Final Mas IVA: {this.CostoSesion}.");
+                sb.AppendLine($"Duracion Sesion: {this.CalcularDuracionSesion()}.");
             }
             sb.AppendLine($"Puesto:{Puesto.ToString()}");
             return sb.ToString();

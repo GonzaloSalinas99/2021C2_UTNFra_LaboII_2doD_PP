@@ -9,11 +9,16 @@ namespace Entidades
     public static class Historial
     {
         private static List<Sesion> listaSesiones;
-        
+        /// <summary>
+        /// Constructor estatico de la clase Historial.
+        /// </summary>
         static Historial()
         {
             listaSesiones = new List<Sesion>();
         }
+
+        
+
         /// <summary>
         /// Propiedad Sesiones de lectura y asignacion del atributo listaSesiones
         /// </summary>
@@ -173,7 +178,7 @@ namespace Entidades
             {
                 if(sesion is not null)
                 {
-                    duracionTotal += sesion.DuracionSesion;
+                    duracionTotal += sesion.CalcularDuracionSesion();
                 }
             }
             return duracionTotal;
@@ -365,7 +370,7 @@ namespace Entidades
         /// Calcula el periferico mas pedido
         /// </summary>
         /// <returns>Retorna el periferico mas pedido, si no hay ningun retorna un mensaje que no se eligieron perifericos</returns>
-
+        
         private static string PerifericoMasPedido()
         {
 

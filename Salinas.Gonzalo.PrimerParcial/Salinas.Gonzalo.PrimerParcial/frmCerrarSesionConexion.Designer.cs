@@ -30,10 +30,7 @@ namespace Salinas.Gonzalo.PrimerParcial
         private void InitializeComponent()
         {
             this.lBoxSesionConexion = new System.Windows.Forms.ListBox();
-            this.lblIdentificadorConexion = new System.Windows.Forms.Label();
-            this.txtIdentificadorConexion = new System.Windows.Forms.TextBox();
             this.btnCerrarSesionConexion = new System.Windows.Forms.Button();
-            this.lblInformacion = new System.Windows.Forms.Label();
             this.btnVolverMenuPrincipal = new System.Windows.Forms.Button();
             this.btnAYUDA = new System.Windows.Forms.Button();
             this.SuspendLayout();
@@ -50,25 +47,6 @@ namespace Salinas.Gonzalo.PrimerParcial
             this.lBoxSesionConexion.Size = new System.Drawing.Size(1293, 139);
             this.lBoxSesionConexion.TabIndex = 0;
             // 
-            // lblIdentificadorConexion
-            // 
-            this.lblIdentificadorConexion.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.lblIdentificadorConexion.AutoSize = true;
-            this.lblIdentificadorConexion.Location = new System.Drawing.Point(439, 254);
-            this.lblIdentificadorConexion.Name = "lblIdentificadorConexion";
-            this.lblIdentificadorConexion.Size = new System.Drawing.Size(144, 15);
-            this.lblIdentificadorConexion.TabIndex = 1;
-            this.lblIdentificadorConexion.Text = "Identificador de Conexion";
-            // 
-            // txtIdentificadorConexion
-            // 
-            this.txtIdentificadorConexion.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtIdentificadorConexion.Location = new System.Drawing.Point(610, 246);
-            this.txtIdentificadorConexion.Name = "txtIdentificadorConexion";
-            this.txtIdentificadorConexion.Size = new System.Drawing.Size(229, 23);
-            this.txtIdentificadorConexion.TabIndex = 2;
-            // 
             // btnCerrarSesionConexion
             // 
             this.btnCerrarSesionConexion.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
@@ -80,14 +58,6 @@ namespace Salinas.Gonzalo.PrimerParcial
             this.btnCerrarSesionConexion.Text = "Cerrar Conexion";
             this.btnCerrarSesionConexion.UseVisualStyleBackColor = true;
             this.btnCerrarSesionConexion.Click += new System.EventHandler(this.btnCerrarSesionConexion_Click);
-            // 
-            // lblInformacion
-            // 
-            this.lblInformacion.AutoSize = true;
-            this.lblInformacion.Location = new System.Drawing.Point(668, 244);
-            this.lblInformacion.Name = "lblInformacion";
-            this.lblInformacion.Size = new System.Drawing.Size(0, 15);
-            this.lblInformacion.TabIndex = 4;
             // 
             // btnVolverMenuPrincipal
             // 
@@ -118,10 +88,7 @@ namespace Salinas.Gonzalo.PrimerParcial
             this.ClientSize = new System.Drawing.Size(1349, 289);
             this.Controls.Add(this.btnAYUDA);
             this.Controls.Add(this.btnVolverMenuPrincipal);
-            this.Controls.Add(this.lblInformacion);
             this.Controls.Add(this.btnCerrarSesionConexion);
-            this.Controls.Add(this.txtIdentificadorConexion);
-            this.Controls.Add(this.lblIdentificadorConexion);
             this.Controls.Add(this.lBoxSesionConexion);
             this.MinimizeBox = false;
             this.MinimumSize = new System.Drawing.Size(1365, 328);
@@ -130,17 +97,13 @@ namespace Salinas.Gonzalo.PrimerParcial
             this.Text = "Cerrar Sesion Conexion";
             this.Load += new System.EventHandler(this.frmCerrarSesionConexion_Load);
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
 
         private System.Windows.Forms.ListBox lBoxSesionConexion;
-        private System.Windows.Forms.Label lblIdentificadorConexion;
-        private System.Windows.Forms.TextBox txtIdentificadorConexion;
         private System.Windows.Forms.Button btnCerrarSesionConexion;
-        private System.Windows.Forms.Label lblInformacion;
         private System.Windows.Forms.Button btnVolverMenuPrincipal;
         private System.Windows.Forms.Button btnAYUDA;
     }

@@ -32,6 +32,11 @@ namespace Salinas.Gonzalo.PrimerParcial
         /// <param name="e"></param>
         private void frmSesionConexion_Load(object sender, EventArgs e)
         {
+            cmbTiempoSesion.Items.Add("Libre");
+            cmbTiempoSesion.Items.Add("30");
+            cmbTiempoSesion.Items.Add("60");
+            cmbTiempoSesion.Items.Add("90");
+            cmbTiempoSesion.Items.Add("120");
             ActualizarLista(control);
         }
         /// <summary>
@@ -41,37 +46,54 @@ namespace Salinas.Gonzalo.PrimerParcial
         /// <param name="e"></param>
         private void btnCrearSesionConexion_Click_1(object sender, EventArgs e)
         {
-            if(ValidadorDeInformacion.ValidarStringTexto(txtDocumentoCliente.Text) && ValidadorDeInformacion.ValidarStringTexto(txtIdentificadorComputadora.Text))
+            if (lBoxClientes.SelectedItem != null && lBoxComputadora.SelectedItem != null && cmbTiempoSesion.SelectedItem != null)
             {
-                ClienteComputadora clienteAuxiliar;
-                Computadora computadoraAuxiliar;
-                string documento = txtDocumentoCliente.Text;
-                string identificador = txtIdentificadorComputadora.Text;
-                computadoraAuxiliar = (Computadora)control.BuscarPuestoPorIdentificador(identificador,"Computadora");
-                clienteAuxiliar =(ClienteComputadora)control.BuscarClienteDocumento(documento,"Computadora");
-                if (clienteAuxiliar is not null && clienteAuxiliar.Dni == documento && computadoraAuxiliar is not null && computadoraAuxiliar.IdPuesto == identificador)
+                ClienteComputadora clienteAuxiliar = (ClienteComputadora)lBoxClientes.SelectedItem;
+                Computadora computadoraAuxiliar = (Computadora)lBoxComputadora.SelectedItem;
+                if (control.ValidarPrimerClienteEnFila(clienteAuxiliar, "Computadora"))
                 {
-                    if (control.AbrirSesionConexion(clienteAuxiliar, computadoraAuxiliar))
+                    if(control.CompararClienteConComputadora(clienteAuxiliar,computadoraAuxiliar))
                     {
-                        MessageBox.Show("Se inicio la sesion correctamente", "Inicio Sesion");
-                        lBoxComputadora.Items.Clear();
-                        lBoxClientes.Items.Clear();
-                        ActualizarLista(control);
+                        if(cmbTiempoSesion.SelectedItem.ToString() == "Libre")
+                        {
+                            if (control.AbrirSesionConexion(clienteAuxiliar, computadoraAuxiliar))
+                            {
+                                control.ListaClienteComputadora.Dequeue();
+                                MessageBox.Show("Se inicio la sesion correctamente", "Inicio Sesion");
+                                lBoxComputadora.Items.Clear();
+                                lBoxClientes.Items.Clear();
+                                ActualizarLista(control);
+                            }
+                        }
+                        else
+                        {
+                            Conexion sesionAuxiliar = (Conexion)control.AbrirSesionConexion(clienteAuxiliar, computadoraAuxiliar, cmbTiempoSesion.SelectedItem.ToString());
+                            control.ListaClienteComputadora.Dequeue();
+                            lBoxClientes.Items.Clear();
+                            lBoxComputadora.Items.Clear();
+                            ActualizarLista(control);
+                            MessageBox.Show(control.CerrarSesionConexionConHorarioAsignado(sesionAuxiliar));
+
+                        }
+
                     }
                     else
                     {
-                        MessageBox.Show("Error con el identificador de la computadora. Reingrese el identificador", "Error de informacion");
+                        MessageBox.Show("Error con la asignacion de la computadora. No coincide las especificaciones del cliente con la de la computadora", "Error de informacion", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
+
                 }
                 else
                 {
-                    MessageBox.Show("Error con la asignacion de la computadora. Asegurese que el documento coincida con el primer cliente o que haya clientes cargados", "Error de informacion", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Error con la asignacion de la computadora. El cliente que usted selecciono no es el primero en la fila", "Error de informacion", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
+
             }
             else
             {
-                MessageBox.Show("Debe ingresar datos en todos los campos.");
+                MessageBox.Show("Error con la asignacion de la computadora. No selecciono item de la lista", "Error de informacion", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+
         }
 
         /// <summary>
@@ -84,14 +106,14 @@ namespace Salinas.Gonzalo.PrimerParcial
             {
                 if (puesto is Computadora && puesto.EstadoPuesto == Enumerados.EstadoPuesto.SinUso)
                 {
-                    lBoxComputadora.Items.Add(puesto.ToString());
+                    lBoxComputadora.Items.Add(puesto);
                 }
             }
             foreach (ClienteComputadora cliente in control.ListaClienteComputadora)
             {
                 if (cliente is ClienteComputadora && cliente.EstadoCliente == Enumerados.EstadoCliente.Esperando)
                 {
-                    lBoxClientes.Items.Add(cliente.ToString());
+                    lBoxClientes.Items.Add(cliente);
                 }
             }
         }
@@ -119,7 +141,7 @@ namespace Salinas.Gonzalo.PrimerParcial
         private void btnAYUDA_Click(object sender, EventArgs e)
         {
 
-            MessageBox.Show("Lea tanto la lista de clientes, como la de computadoras. Ingrese el numero de documento e identificador de la computadora. SI O SI PARA CREAR LA SESION, EL CLIENTE Y LA COMPUTADORA TIENEN QUE TENER LAS MISMAS ESPECIFICACIONES(SOFTWARE,JUEGO,PERIFERICO). " +
+            MessageBox.Show("Lea tanto la lista de clientes, como la de computadoras.  Seleccione el cliente que este primero en la lista de espera y luego la computadora a asignar. SI O SI PARA CREAR LA SESION, EL CLIENTE Y LA COMPUTADORA TIENEN QUE TENER LAS MISMAS ESPECIFICACIONES(SOFTWARE,JUEGO,PERIFERICO). " +
                 "Luego presione el boton CrearSesion para crear la sesion entre el cliente y la computadora. Volver lo regresara al menu principal", "Ayuda", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
         }

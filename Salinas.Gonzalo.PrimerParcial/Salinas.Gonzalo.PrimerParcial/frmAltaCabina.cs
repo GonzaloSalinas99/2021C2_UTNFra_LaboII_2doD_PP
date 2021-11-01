@@ -42,11 +42,12 @@ namespace Salinas.Gonzalo.PrimerParcial
         /// <param name="e"></param>
         private void btnAgregarCabina_Click(object sender, EventArgs e)
         {
+            Cabina cabinaAuxiliar = null;
             if(ValidadorDeInformacion.ValidarStringTexto(txtMarcaTelefono.Text) && ValidadorDeInformacion.ValidarStringTexto(cmbTipoTelefono.Text))
             {
                 string marcaTelefono = txtMarcaTelefono.Text;
                 Enumerados.TipoTelefono tipoTelefono;
-                if(cmbTipoTelefono.SelectedItem.ToString() == "A Disco")
+                if (cmbTipoTelefono.SelectedItem.ToString() == "A Disco")
                 {
                     tipoTelefono = Enumerados.TipoTelefono.ADisco;
                 }
@@ -54,15 +55,25 @@ namespace Salinas.Gonzalo.PrimerParcial
                 {
                     tipoTelefono = Enumerados.TipoTelefono.Teclado;
                 }
-                Cabina cabina = new Cabina(marcaTelefono, tipoTelefono);
-                if(control.CorroborarCantidadPuestos(cabina,5) && control.AgregarPuesto(cabina))
+                cabinaAuxiliar= new Cabina(marcaTelefono, tipoTelefono);
+                if (control.CorroborarCantidadPuestos(cabinaAuxiliar,5))
                 {
-                    MessageBox.Show("Se agrego la cabina correctamente");
+                    
+                    if(control.AgregarPuesto(cabinaAuxiliar))
+                    {
+                        MessageBox.Show("Se agrego correctamente la ca");
+
+                    }
                 }
                 else
                 {
-                    MessageBox.Show("No se pudo agregar la cabina");
+                    MessageBox.Show("No se puede agregar la cabina porque llego al limite de cantidad de cabina ( 5 )");
                 }
+            }
+            else
+            {
+                MessageBox.Show("Tiene que llenar todos los campos");
+
             }
         }
         /// <summary>

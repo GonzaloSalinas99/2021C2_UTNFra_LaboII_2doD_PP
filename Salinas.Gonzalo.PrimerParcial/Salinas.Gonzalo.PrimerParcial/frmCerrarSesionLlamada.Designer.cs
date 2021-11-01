@@ -30,9 +30,6 @@ namespace Salinas.Gonzalo.PrimerParcial
         private void InitializeComponent()
         {
             this.lBoxLlamadas = new System.Windows.Forms.ListBox();
-            this.txtIdentificadorLlamada = new System.Windows.Forms.TextBox();
-            this.lblIdentificadorLlamada = new System.Windows.Forms.Label();
-            this.lblInformacion = new System.Windows.Forms.Label();
             this.btnCerrarSesionLlamada = new System.Windows.Forms.Button();
             this.btnVolverMenuPrincipal = new System.Windows.Forms.Button();
             this.btnAYUDA = new System.Windows.Forms.Button();
@@ -49,33 +46,6 @@ namespace Salinas.Gonzalo.PrimerParcial
             this.lBoxLlamadas.Name = "lBoxLlamadas";
             this.lBoxLlamadas.Size = new System.Drawing.Size(1280, 139);
             this.lBoxLlamadas.TabIndex = 0;
-            // 
-            // txtIdentificadorLlamada
-            // 
-            this.txtIdentificadorLlamada.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtIdentificadorLlamada.Location = new System.Drawing.Point(647, 229);
-            this.txtIdentificadorLlamada.Name = "txtIdentificadorLlamada";
-            this.txtIdentificadorLlamada.Size = new System.Drawing.Size(138, 23);
-            this.txtIdentificadorLlamada.TabIndex = 1;
-            // 
-            // lblIdentificadorLlamada
-            // 
-            this.lblIdentificadorLlamada.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.lblIdentificadorLlamada.AutoSize = true;
-            this.lblIdentificadorLlamada.Location = new System.Drawing.Point(506, 232);
-            this.lblIdentificadorLlamada.Name = "lblIdentificadorLlamada";
-            this.lblIdentificadorLlamada.Size = new System.Drawing.Size(122, 15);
-            this.lblIdentificadorLlamada.TabIndex = 2;
-            this.lblIdentificadorLlamada.Text = "Identificador Llamada";
-            // 
-            // lblInformacion
-            // 
-            this.lblInformacion.AutoSize = true;
-            this.lblInformacion.Location = new System.Drawing.Point(451, 232);
-            this.lblInformacion.Name = "lblInformacion";
-            this.lblInformacion.Size = new System.Drawing.Size(0, 15);
-            this.lblInformacion.TabIndex = 3;
             // 
             // btnCerrarSesionLlamada
             // 
@@ -118,9 +88,6 @@ namespace Salinas.Gonzalo.PrimerParcial
             this.Controls.Add(this.btnAYUDA);
             this.Controls.Add(this.btnVolverMenuPrincipal);
             this.Controls.Add(this.btnCerrarSesionLlamada);
-            this.Controls.Add(this.lblInformacion);
-            this.Controls.Add(this.lblIdentificadorLlamada);
-            this.Controls.Add(this.txtIdentificadorLlamada);
             this.Controls.Add(this.lBoxLlamadas);
             this.MinimumSize = new System.Drawing.Size(1343, 308);
             this.Name = "frmCerrarSesionLlamada";
@@ -128,16 +95,12 @@ namespace Salinas.Gonzalo.PrimerParcial
             this.Text = "Cerrar Sesion Llamada";
             this.Load += new System.EventHandler(this.frmCerrarSesionLlamada_Load);
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
 
         private System.Windows.Forms.ListBox lBoxLlamadas;
-        private System.Windows.Forms.TextBox txtIdentificadorLlamada;
-        private System.Windows.Forms.Label lblIdentificadorLlamada;
-        private System.Windows.Forms.Label lblInformacion;
         private System.Windows.Forms.Button btnCerrarSesionLlamada;
         private System.Windows.Forms.Button btnVolverMenuPrincipal;
         private System.Windows.Forms.Button btnAYUDA;

@@ -31,15 +31,13 @@ namespace Salinas.Gonzalo.PrimerParcial
         {
             this.lblCabinaEncontrada = new System.Windows.Forms.Label();
             this.lblClienteEncontrado = new System.Windows.Forms.Label();
-            this.lblIdentificadorCabina = new System.Windows.Forms.Label();
-            this.lblDocumentoCliente = new System.Windows.Forms.Label();
-            this.txtIdentificadorComputadora = new System.Windows.Forms.TextBox();
-            this.txtDocumentoCliente = new System.Windows.Forms.TextBox();
             this.btnCrearSesionConexion = new System.Windows.Forms.Button();
             this.lBoxComputadora = new System.Windows.Forms.ListBox();
             this.lBoxClientes = new System.Windows.Forms.ListBox();
             this.btnVolverMenuPrincipal = new System.Windows.Forms.Button();
             this.btnAYUDA = new System.Windows.Forms.Button();
+            this.cmbTiempoSesion = new System.Windows.Forms.ComboBox();
+            this.lblHorarioSesion = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // lblCabinaEncontrada
@@ -57,44 +55,6 @@ namespace Salinas.Gonzalo.PrimerParcial
             this.lblClienteEncontrado.Name = "lblClienteEncontrado";
             this.lblClienteEncontrado.Size = new System.Drawing.Size(0, 15);
             this.lblClienteEncontrado.TabIndex = 16;
-            // 
-            // lblIdentificadorCabina
-            // 
-            this.lblIdentificadorCabina.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.lblIdentificadorCabina.AutoSize = true;
-            this.lblIdentificadorCabina.Location = new System.Drawing.Point(564, 403);
-            this.lblIdentificadorCabina.Name = "lblIdentificadorCabina";
-            this.lblIdentificadorCabina.Size = new System.Drawing.Size(151, 15);
-            this.lblIdentificadorCabina.TabIndex = 15;
-            this.lblIdentificadorCabina.Text = "Identificador Computadora";
-            // 
-            // lblDocumentoCliente
-            // 
-            this.lblDocumentoCliente.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.lblDocumentoCliente.AutoSize = true;
-            this.lblDocumentoCliente.Location = new System.Drawing.Point(564, 366);
-            this.lblDocumentoCliente.Name = "lblDocumentoCliente";
-            this.lblDocumentoCliente.Size = new System.Drawing.Size(110, 15);
-            this.lblDocumentoCliente.TabIndex = 14;
-            this.lblDocumentoCliente.Text = "Documento Cliente";
-            // 
-            // txtIdentificadorComputadora
-            // 
-            this.txtIdentificadorComputadora.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtIdentificadorComputadora.Location = new System.Drawing.Point(749, 400);
-            this.txtIdentificadorComputadora.Name = "txtIdentificadorComputadora";
-            this.txtIdentificadorComputadora.Size = new System.Drawing.Size(237, 23);
-            this.txtIdentificadorComputadora.TabIndex = 13;
-            // 
-            // txtDocumentoCliente
-            // 
-            this.txtDocumentoCliente.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtDocumentoCliente.Location = new System.Drawing.Point(749, 363);
-            this.txtDocumentoCliente.Name = "txtDocumentoCliente";
-            this.txtDocumentoCliente.Size = new System.Drawing.Size(237, 23);
-            this.txtDocumentoCliente.TabIndex = 12;
             // 
             // btnCrearSesionConexion
             // 
@@ -152,19 +112,37 @@ namespace Salinas.Gonzalo.PrimerParcial
             this.btnAYUDA.UseVisualStyleBackColor = true;
             this.btnAYUDA.Click += new System.EventHandler(this.btnAYUDA_Click);
             // 
+            // cmbTiempoSesion
+            // 
+            this.cmbTiempoSesion.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.cmbTiempoSesion.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbTiempoSesion.FormattingEnabled = true;
+            this.cmbTiempoSesion.Location = new System.Drawing.Point(775, 393);
+            this.cmbTiempoSesion.Name = "cmbTiempoSesion";
+            this.cmbTiempoSesion.Size = new System.Drawing.Size(161, 23);
+            this.cmbTiempoSesion.TabIndex = 20;
+            // 
+            // lblHorarioSesion
+            // 
+            this.lblHorarioSesion.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.lblHorarioSesion.AutoSize = true;
+            this.lblHorarioSesion.Location = new System.Drawing.Point(592, 396);
+            this.lblHorarioSesion.Name = "lblHorarioSesion";
+            this.lblHorarioSesion.Size = new System.Drawing.Size(177, 15);
+            this.lblHorarioSesion.TabIndex = 21;
+            this.lblHorarioSesion.Text = "Tiempo de la sesion en minutos.";
+            // 
             // frmCrearSesionConexion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1557, 435);
+            this.Controls.Add(this.lblHorarioSesion);
+            this.Controls.Add(this.cmbTiempoSesion);
             this.Controls.Add(this.btnAYUDA);
             this.Controls.Add(this.btnVolverMenuPrincipal);
             this.Controls.Add(this.lblCabinaEncontrada);
             this.Controls.Add(this.lblClienteEncontrado);
-            this.Controls.Add(this.lblIdentificadorCabina);
-            this.Controls.Add(this.lblDocumentoCliente);
-            this.Controls.Add(this.txtIdentificadorComputadora);
-            this.Controls.Add(this.txtDocumentoCliente);
             this.Controls.Add(this.btnCrearSesionConexion);
             this.Controls.Add(this.lBoxComputadora);
             this.Controls.Add(this.lBoxClientes);
@@ -182,14 +160,12 @@ namespace Salinas.Gonzalo.PrimerParcial
 
         private System.Windows.Forms.Label lblCabinaEncontrada;
         private System.Windows.Forms.Label lblClienteEncontrado;
-        private System.Windows.Forms.Label lblIdentificadorCabina;
-        private System.Windows.Forms.Label lblDocumentoCliente;
-        private System.Windows.Forms.TextBox txtIdentificadorComputadora;
-        private System.Windows.Forms.TextBox txtDocumentoCliente;
         private System.Windows.Forms.Button btnCrearSesionConexion;
         private System.Windows.Forms.ListBox lBoxComputadora;
         private System.Windows.Forms.ListBox lBoxClientes;
         private System.Windows.Forms.Button btnVolverMenuPrincipal;
         private System.Windows.Forms.Button btnAYUDA;
+        private System.Windows.Forms.ComboBox cmbTiempoSesion;
+        private System.Windows.Forms.Label lblHorarioSesion;
     }
 }

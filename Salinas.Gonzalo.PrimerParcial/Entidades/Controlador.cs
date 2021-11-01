@@ -21,6 +21,18 @@ namespace Entidades
         private Queue <ClienteCabina>listaClienteCabinas;
         private Queue<ClienteComputadora> listaClientesComputadoras;
         private DateTime fecha;
+
+        /// <summary>
+        /// Indexador de tipo Sesion de solo lectura.
+        /// </summary>
+        /// <param name="i">Posicion a retonar la informacion</param>
+        /// <returns>Retorna la informacion de la sesion segun la posicion pedida</returns>
+        public Sesion this [int i]
+        {
+            get { return listaSesiones[i]; }
+        }
+
+
         /// <summary>
         /// Propiedad ListaClienteComputadora de lectura y asignacion del atributo Lista Clientes Computadora
         /// </summary>
@@ -73,7 +85,7 @@ namespace Entidades
             fecha = default(DateTime);
         }
         /// <summary>
-        /// Agrega un cliente de tipo Cabina a la lista de clientes
+        /// Agrega un cliente de tipo Cabina a la lista de clientesCabinas
         /// </summary>
         /// <param name="cliente">Cliente a ser guardado</param>
         /// <returns>True si pudo agregar el cliente, False si no pudo</returns>
@@ -81,13 +93,16 @@ namespace Entidades
         {
             if(cliente is ClienteCabina && cliente is not null && this != cliente)
             {
-                listaClienteCabinas.Enqueue(cliente);
-                return true;
+                if(this != cliente)
+                {
+                    listaClienteCabinas.Enqueue(cliente);
+                    return true;
+                }
             }
             return false;
         }
         /// <summary>
-        /// Agrega un cliente de tipo Computadora a la lista de clientes
+        /// Agrega un cliente de tipo Computadora a la lista de clientesComputadoras
         /// </summary>
         /// <param name="cliente">Cliente a ser guardado</param>
         /// <returns>True si pudo agregar el cliente, False si no pudo</returns>
@@ -95,8 +110,11 @@ namespace Entidades
         {
             if (cliente is ClienteComputadora && cliente is not null && this != cliente)
             {
-                listaClientesComputadoras.Enqueue(cliente);
-                return true;
+                if(this != cliente)
+                {
+                    listaClientesComputadoras.Enqueue(cliente);
+                    return true;
+                }
             }
             return false;
         }
@@ -124,17 +142,22 @@ namespace Entidades
         public bool CorroborarCantidadPuestos(Puesto puestoACorroborar,int numeroLimite)
         {
             int contador = 0;
-            foreach (Puesto puesto in listaPuestos)
+            if(puestoACorroborar != null)
             {
-                if(puesto is not null && puesto.GetType() == puestoACorroborar.GetType())
+                foreach (Puesto puesto in listaPuestos)
                 {
-                    contador++;
+                    if (puesto is not null && puesto.GetType() == puestoACorroborar.GetType())
+                    {
+                        contador++;
+                    }
+                }
+                if (contador < numeroLimite)
+
+                {
+                    return true;
                 }
             }
-            if(contador<numeroLimite)
-            {
-                return true;
-            }
+            
             return false;
         }
         /// <summary>
@@ -149,8 +172,8 @@ namespace Entidades
             if (cliente is ClienteCabina && cabina is Cabina)
             {
                 if(cliente.EstadoCliente == Enumerados.EstadoCliente.Esperando 
-                    && cabina.EstadoPuesto == Enumerados.EstadoPuesto.SinUso
-                    && cabina.TipoTelefono == cliente.TipoTelefono)
+                    && cabina.EstadoPuesto == Enumerados.EstadoPuesto.SinUso)
+                    
                 {
                     Llamada nuevaLlamada = new Llamada(cliente.NumeroTelefono, cliente, cabina);
                     this.listaSesiones.Add(nuevaLlamada);
@@ -173,7 +196,7 @@ namespace Entidades
                 sesion.Cliente.EstadoCliente = Enumerados.EstadoCliente.Atendido;
                 sesion.TiempoFinal = DateTime.Now;
                 sesion.CostoSesion = sesion.Puesto.CalcularCosto(sesion);
-                sesion.Puesto.UsoMinutos = sesion.DuracionSesion;
+                sesion.Puesto.UsoMinutos = sesion.CalcularDuracionSesion();
                 foreach (Sesion item in this.listaSesiones)
                 {
                     if (sesion == item)
@@ -186,13 +209,15 @@ namespace Entidades
             }
             return "NO LO ENCONTRE";
         }
+
+
         /// <summary>
         /// Compara que un cliente tenga las mismas especificaciones que la computadora
         /// </summary>
         /// <param name="cliente">Cliente a ser comparado</param>
         /// <param name="computadora">Computadora a ser comparada</param>
         /// <returns>True si el cliente tiene las mismas especificaciones que la computadora, False si son diferentes</returns>
-        private bool CompararClienteConComputadora(ClienteComputadora cliente, Computadora computadora)
+        public bool CompararClienteConComputadora(ClienteComputadora cliente, Computadora computadora)
         {
             if (cliente is ClienteComputadora && computadora is Computadora)
             {
@@ -228,6 +253,59 @@ namespace Entidades
             return false;
         }
         /// <summary>
+        /// Sobrecarga del metodo AbrirSesionConexion, recibe un argumento para asignarle el tiempo a la sesion.
+        /// </summary>
+        /// <param name="cliente">Cliente a ser vinculado con la conexion</param>
+        /// <param name="computadora">Computadora a ser vinculada con la conexion</param>
+        /// <param name="tiempoUso">Tiempo de uso a ser asignado</param>
+        /// <returns>Retorna la conexion realizada en caso de exito, sino null.</returns>
+        public Sesion AbrirSesionConexion(ClienteComputadora cliente, Computadora computadora, string tiempoUso)
+        {
+            Conexion nuevaConexion = null;
+            if (cliente is ClienteComputadora && computadora is Computadora && (ValidadorDeInformacion.ValidarStringTexto(tiempoUso) && ValidadorDeInformacion.ValidarNumero(tiempoUso)))
+            {
+                if (cliente.EstadoCliente == Enumerados.EstadoCliente.Esperando
+                    && computadora.EstadoPuesto == Enumerados.EstadoPuesto.SinUso && CompararClienteConComputadora(cliente, computadora))
+                {
+                     nuevaConexion= new Conexion(computadora, cliente);
+                    
+                    DateTime horaFinalSesion = DateTime.Now;
+                    horaFinalSesion = horaFinalSesion.Add(new TimeSpan(0,0,int.Parse(tiempoUso)));
+                    nuevaConexion.TiempoFinal = horaFinalSesion;
+                    listaSesiones.Add(nuevaConexion);
+
+                }
+            }
+            return nuevaConexion;
+        }
+        /// <summary>
+        /// Cierra la sesion de la conexion.
+        /// </summary>
+        /// <param name="sesion">Sesion a ser finalizada</param>
+        /// <returns>Si pudo cerrar la sesion, retorna todos los datos, sino un mensaje que no encontro la sesion buscada.</returns>
+        public string CerrarSesionConexionConHorarioAsignado(Sesion sesion)
+        {
+            if (sesion.Puesto.EstadoPuesto == Enumerados.EstadoPuesto.EnUso
+                && sesion.Cliente.EstadoCliente == Enumerados.EstadoCliente.Asignado)
+            {
+                sesion.Puesto.EstadoPuesto = Enumerados.EstadoPuesto.SinUso;
+                sesion.Cliente.EstadoCliente = Enumerados.EstadoCliente.Atendido;
+                sesion.CostoSesion = sesion.Puesto.CalcularCosto(sesion);
+                sesion.Puesto.UsoMinutos = sesion.CalcularDuracionSesion();
+                foreach (Sesion item in this.listaSesiones)
+                {
+                    if (sesion == item)
+                    {
+                        Historial.Sesiones.Add(sesion);
+                        this.listaSesiones.Remove(sesion);
+                        return sesion.ToString();
+                    }
+                }
+            }
+            return "NO LO ENCONTRE";
+        }
+
+        /// <summary>
         /// Cierra la sesion de conexion
         /// </summary>
         /// <param name="sesion">Sesion a ser cerrada</param>
@@ -241,7 +319,7 @@ namespace Entidades
                 sesion.Cliente.EstadoCliente = Enumerados.EstadoCliente.Atendido;
                 sesion.TiempoFinal = DateTime.Now;
                 sesion.CostoSesion = sesion.Puesto.CalcularCosto(sesion);
-                sesion.Puesto.UsoMinutos = sesion.DuracionSesion;
+                sesion.Puesto.UsoMinutos = sesion.CalcularDuracionSesion();
                 foreach (Sesion sesionLista in ListaSesiones)
                 {
                     if (sesion == sesionLista)
@@ -254,6 +332,8 @@ namespace Entidades
             }
             return "NO LO ENCONTRE";
         }
+
+        
         /// <summary>
         /// Filtra una lista de puestos dependiendo el tipo de puesto pasado por parametro
         /// </summary>
@@ -328,91 +408,11 @@ namespace Entidades
         }
 
         /// <summary>
-        /// Busca un cliente por el numero de documento y el tipo del cliente
+        /// Verifica si el cliente esta en la lista de clientes
         /// </summary>
-        /// <param name="documento">Documento a buscar en las listas</param>
-        /// <param name="tipoCliente">Tipo de cliente a buscar</param>
-        /// <returns>Retorna el cliente buscado a travez del documento</returns>
-        public Cliente BuscarClienteDocumento(string documento,string tipoCliente)
-        {
-            if (ListaClienteComputadora.Count != 0 && tipoCliente == "Computadora")
-            {
-                ClienteComputadora aux = ListaClienteComputadora.Peek();
-                foreach (ClienteComputadora cliente in ListaClienteComputadora)
-                {
-                    if (cliente is ClienteComputadora && cliente is not null && cliente == aux)
-                    {
-                        if (cliente.Dni == documento && cliente.EstadoCliente == Enumerados.EstadoCliente.Esperando)
-                        {
-                            return cliente;
-                        }
-                    }
-                }
-            }
-            else
-            {
-                if(ListaClienteCabinas.Count != 0 && tipoCliente == "Cabina")
-                {
-                    ClienteCabina aux = ListaClienteCabinas.Peek();
-                    foreach (ClienteCabina cliente in ListaClienteCabinas)
-                    {
-                        if (cliente is Cliente && cliente is not null && cliente == aux)
-                        {
-                            if (cliente.Dni == documento && cliente.EstadoCliente == Enumerados.EstadoCliente.Esperando)
-                            {
-                                return cliente;
-                            }
-                        }
-                    }
-                }
-            }
-
-            return null;
-        }
-        /// <summary>
-        /// Busca una sesion por su identificador
-        /// </summary>
-        /// <param name="controlador">controlador a buscar la lista de Sesiones</param>
-        /// <param name="identificador">Identificador a buscar</param>
-        /// <param name="tipoSesion">Tipo de sesion a buscar</param>
-        /// <returns>Retorna la sesion si coincide con el identificador y tipo de sesion</returns>
-        public Sesion BuscarSesionPorIdentificador(Controlador controlador,string identificador,string tipoSesion)
-        {
-            if(controlador is not null && ValidadorDeInformacion.ValidarStringTexto(identificador) && ValidadorDeInformacion.ValidarNumero(tipoSesion))
-            {
-                int valorIdentificador = int.Parse(identificador);
-                if (tipoSesion == "Llamada")
-                {
-                    foreach (Sesion sesion in controlador.ListaSesiones)
-                    {
-                        if (sesion is Llamada && sesion is not null)
-                        {
-                            if (sesion.IdSesion == valorIdentificador)
-                            {
-                                return (Llamada)sesion;
-                            }
-                        }
-                    }
-                }
-                else
-                {
-                    if(tipoSesion == "Conexion")
-                    {
-                        foreach (Sesion sesion in controlador.ListaSesiones)
-                        {
-                            if (sesion is Conexion && sesion is not null)
-                            {
-                                if (sesion.IdSesion == valorIdentificador)
-                                {
-                                    return (Conexion)sesion;
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-            return null;
-        }
+        /// <param name="control">Controlador en donde se va a utilizar la lista de clientes a verificar</param>
+        /// <param name="cliente">Cliente a verificar si esta en la lista</param>
+        /// <returns>Retorna true si el cliente esta en la lista de clientes o False si no lo esta</returns>
         public static bool operator == (Controlador control, Cliente cliente)
         {
             if(control is not null && cliente.Equals(cliente))
@@ -444,10 +444,141 @@ namespace Entidades
             }
             return false;
         }
-
+        /// <summary>
+        /// Verifica si el cliente esta en la lista de clientes
+        /// </summary>
+        /// <param name="control">Controlador en donde se va a utilizar la lista de clientes a verificar</param>
+        /// <param name="cliente">Cliente a verificar si esta en la lista</param>
+        /// <returns>Retorna true si el cliente no esta en la lista o False si el cliente esta</returns>
         public static bool operator !=(Controlador control, Cliente cliente)
         {
             return !(control == cliente);
+        }
+        /// <summary>
+        /// Valida que el cliente elegido sea el primero en la lista de clientes
+        /// </summary>
+        /// <param name="cliente">Cliente a ser verificado si es el primero en la fila</param>
+        /// <param name="tipoCliente">Tipo de cliente, para recorrer la lista de clientes de computadoras o de cabinas</param>
+        /// <returns>Retorna True si el cliente es el primero en la lista o False si el cliente no es el primero.</returns>
+        public bool ValidarPrimerClienteEnFila(Cliente cliente,string tipoCliente)
+        {
+            if(!string.IsNullOrWhiteSpace(tipoCliente))
+            {
+                if(tipoCliente == "Cabina")
+                {
+                    if(cliente == listaClienteCabinas.Peek())
+                    {
+                        return true;
+                    }
+                }
+                else
+                {
+                    if(tipoCliente == "Computadora")
+                    {
+                        if(cliente == listaClientesComputadoras.Peek())
+                        {
+                            return true;
+                        }
+                    }
+                }
+            }
+            return false;
+
+        }
+        /// <summary>
+        /// Hardcodea los clientes de tipo cabina.
+        /// </summary>
+        public void HardcodeoClientesCabinas()
+        {
+            ClienteCabina cliCab1 = new ClienteCabina("Gonzalo", "Salinas", "42038608", "21", Enumerados.TipoTelefono.Teclado, "111112345678");
+            ClienteCabina cliCab2 = new ClienteCabina("Facundo", "Cruz", "40101010", "23", Enumerados.TipoTelefono.Teclado, "121212345678");
+            ClienteCabina cliCab3 = new ClienteCabina("Eliana", "Cuervo", "40123123", "21", Enumerados.TipoTelefono.ADisco, "541142414903");
+            ClienteCabina cliCab4 = new ClienteCabina("Hugo", "Horacio", "10123456", "21", Enumerados.TipoTelefono.ADisco, "541220771022");
+            AgregarClienteCabina(cliCab1);
+            AgregarClienteCabina(cliCab2);
+            AgregarClienteCabina(cliCab3);
+            AgregarClienteCabina(cliCab4);
+        }
+        /// <summary>
+        /// Hardcodea los clientes de tipo computadora.
+        /// </summary>
+        public void HardcodeoClientesComputadoras()
+        {
+            ClienteComputadora c1 = new ClienteComputadora("Quimey","Espinosa","12332112","23");
+            c1.SoftwareCliente = "Ares";
+            c1.SoftwareCliente = "Messenger";
+            c1.JuegosCliente = "Age of Empires";
+            c1.JuegosCliente = "Counter Strike";
+            c1.PerifericosCliente = "Camara";
+            ClienteComputadora c2 = new ClienteComputadora("Alejo","Carmona","98765432","43");
+            c2.SoftwareCliente = "Mi Encarta";
+            c2.SoftwareCliente = "Ares";
+            c2.SoftwareCliente = "Messenger";
+            c2.JuegosCliente = "Age of Empires";
+            c2.JuegosCliente = "Counter Strike";
+            c2.PerifericosCliente = "Microfono";
+            c2.PerifericosCliente = "Camara";
+
+            ClienteComputadora c3 = new ClienteComputadora("Ignacio","Giampaolo","99887766","13");
+            c3.JuegosCliente = "Age of Empires";
+            c3.JuegosCliente = "Counter Strike";
+            ClienteComputadora c4 = new ClienteComputadora("Franco","Alvarez","11223344","12");
+            c4.SoftwareCliente = "Mi Encarta";
+            c4.SoftwareCliente = "Ares";
+            c4.SoftwareCliente = "Messenger";
+            c4.JuegosCliente = "Age of Empires";
+            c4.JuegosCliente = "Counter Strike";
+            c4.PerifericosCliente = "Microfono";
+            c4.PerifericosCliente = "Camara";
+
+            AgregarClienteComputadora(c1);
+            AgregarClienteComputadora(c2);
+            AgregarClienteComputadora(c3);
+            AgregarClienteComputadora(c4);
+        
+        }
+        /// <summary>
+        /// Hardcodea los puestos de tipo cabina.
+        /// </summary>
+        public void HardcodeoCabinas()
+        {
+            AgregarPuesto(new Cabina("PHILIPS", Enumerados.TipoTelefono.Teclado));
+            AgregarPuesto(new Cabina("PHILIPS", Enumerados.TipoTelefono.ADisco));
+            AgregarPuesto(new Cabina("TELECOM", Enumerados.TipoTelefono.ADisco));
+            AgregarPuesto(new Cabina("SANYO", Enumerados.TipoTelefono.Teclado));
+            AgregarPuesto(new Cabina("TLC", Enumerados.TipoTelefono.Teclado));
+
+        }
+        /// <summary>
+        /// Hardcodea los puestos de tipo computadora.
+        /// </summary>
+        public void HardcodeoComputadoras()
+        {
+            Computadora c1 = new Computadora();
+            c1.Hadware = "CPU Gamer";
+            c1.Hadware = "Usb";
+            c1.Software = "Ares";
+            c1.Software = "Messenger";
+            c1.Juegos = "Age of Empires";
+            c1.Juegos = "Counter Strike";
+            c1.Perifericos = "Camara";
+            AgregarPuesto(c1);
+            Computadora c2 = new Computadora();
+            c2.Hadware = "Usb";
+            c2.Software = "Mi Encarta";
+            c2.Software = "Ares";
+            c2.Software = "Messenger";
+            c2.Juegos = "Age of Empires";
+            c2.Juegos = "Counter Strike";
+            c2.Perifericos = "Microfono";
+            c2.Perifericos = "Camara";
+            AgregarPuesto(c2);
+            Computadora c3 = new Computadora();
+            c3.Hadware = "Placa de video";
+            c3.Hadware = "CPU Gamer";
+            c3.Juegos = "Age of Empires";
+            c3.Juegos = "Counter Strike";
+            AgregarPuesto(c3);
         }
     }
 }

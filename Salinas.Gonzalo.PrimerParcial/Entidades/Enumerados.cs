@@ -9,7 +9,7 @@ namespace Enumerados
     /// <summary>
     /// Enumerado de Tipo Telefono, dependiendo el telefono
     /// </summary>
-        public enum TipoTelefono { ADisco,Teclado}
+        public enum TipoTelefono { ADisco,Teclado,SinAsignar}
     /// <summary>
     /// Enumerado de Estado Cliente, estado en el que se encuentra el cliente
     /// </summary>

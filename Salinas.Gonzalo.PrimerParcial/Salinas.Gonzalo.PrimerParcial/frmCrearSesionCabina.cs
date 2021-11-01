@@ -43,41 +43,40 @@ namespace Salinas.Gonzalo.PrimerParcial
         /// <param name="e"></param>
         private void btnCrearSesionLlamada_Click(object sender, EventArgs e)
         {
-            if(ValidadorDeInformacion.ValidarStringTexto(txtDocumentoCliente.Text) && ValidadorDeInformacion.ValidarStringTexto(txtIdentificadorCabina.Text))
+            if(lBoxClientes.SelectedItem != null && lBoxCabinas.SelectedItem != null)
             {
-                ClienteCabina clienteAuxiliar;
-                Cabina cabinaAuxiliar;
-                string documento = txtDocumentoCliente.Text;
-                string identificador = txtIdentificadorCabina.Text;
-                cabinaAuxiliar = (Cabina)control.BuscarPuestoPorIdentificador(identificador,"Cabina");
-                clienteAuxiliar = (ClienteCabina)control.BuscarClienteDocumento(documento,"Cabina");
-
-
-                if (clienteAuxiliar is not null && clienteAuxiliar.Dni == documento && cabinaAuxiliar is not null && cabinaAuxiliar.IdPuesto == identificador)
+                ClienteCabina clienteAuxiliar = (ClienteCabina)lBoxClientes.SelectedItem;
+                Cabina cabinaAuxiliar = (Cabina)lBoxCabinas.SelectedItem;
+                if (control.ValidarPrimerClienteEnFila(clienteAuxiliar, "Cabina"))
                 {
-                    if (control.AbrirSesionLlamada(clienteAuxiliar, cabinaAuxiliar))
+                    if (clienteAuxiliar.TipoTelefono == cabinaAuxiliar.TipoTelefono)
                     {
-                        control.ListaClienteCabinas.Dequeue();
-                        MessageBox.Show("Se inicio la sesion correctamente", "Inicio Sesion");
-                        lBoxCabinas.Items.Clear();
-                        lBoxClientes.Items.Clear();
-                        ActualizarListasClienteCabina(control);
+                        if (control.AbrirSesionLlamada(clienteAuxiliar, cabinaAuxiliar))
+                        {
+                            control.ListaClienteCabinas.Dequeue();
+                            MessageBox.Show("Se inicio la sesion correctamente", "Inicio Sesion");
+                            lBoxCabinas.Items.Clear();
+                            lBoxClientes.Items.Clear();
+                            ActualizarListasClienteCabina(control);
+                        }
                     }
                     else
                     {
-                        MessageBox.Show("Error con el identificador de la cabina. Reingrese el identificador", "Error de informacion");
+                        MessageBox.Show("Error con la asignacion de cabina. Asegurese que el el tipo de telefono de la cabina coincida con el tipo de telefono elegido por el cliente", "Error de informacion");
+
                     }
+
                 }
                 else
                 {
-                    MessageBox.Show("Error con la asignacion de cabina. Asegurese que el documento coincida con el primer cliente o que haya clientes cargados", "Error de informacion");
+                    MessageBox.Show("Error con la asignacion de cabina. Asegurese que el cliente seleccionado sea el primero en la fila", "Error de informacion");
                 }
             }
             else
             {
-                MessageBox.Show("Debe ingresar datos en todos los campos.");
-            }
+                MessageBox.Show("No selecciono ningun item", "Error de informacion");
 
+            }
 
         }
         /// <summary>
@@ -125,7 +124,7 @@ namespace Salinas.Gonzalo.PrimerParcial
         private void btnAYUDA_Click(object sender, EventArgs e)
         {
 
-            MessageBox.Show("Lea tanto la lista de clientes, como la de computadoras. Ingrese el numero de documento e identificador de la cabina. SI O SI PARA CREAR LA SESION, EL CLIENTE Y LA CABINA TIENEN QUE TENER LAS MISMAS ESPECIFICACIONES(TIPO DE TELEFONO). " +
+            MessageBox.Show("Lea tanto la lista de clientes, como la de computadoras. Seleccione el cliente que este primero en la lista de espera y luego la cabina a asignar. SI O SI PARA CREAR LA SESION, EL CLIENTE Y LA CABINA TIENEN QUE TENER LAS MISMAS ESPECIFICACIONES(TIPO DE TELEFONO). " +
                 "Luego presione el boton CrearSesion para crear la sesion entre el cliente y la cabina. Volver lo regresara al menu principal", "Ayuda", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
         }

@@ -33,19 +33,21 @@ namespace Salinas.Gonzalo.PrimerParcial
         /// <param name="e"></param>
         private void btnCerrarSesionLlamada_Click(object sender, EventArgs e)
         {
-            string identificador = txtIdentificadorLlamada.Text;
-            if(control.BuscarSesionPorIdentificador(control,identificador,"Llamada") is not null)
+
+            if (lBoxLlamadas.SelectedItem != null)
             {
-                Llamada llamadaAux = (Llamada)control.BuscarSesionPorIdentificador(control, identificador,"Llamada");
-                MessageBox.Show(control.CerrarSesionTelefono(llamadaAux));
+                Llamada llamadaAuxiliar = (Llamada)lBoxLlamadas.SelectedItem;
+                MessageBox.Show(control.CerrarSesionTelefono(llamadaAuxiliar));
                 MessageBox.Show("Se cerro sesion correctamente");
                 lBoxLlamadas.Items.Clear();
                 ActualizarListasSesiones(control);
+
             }
             else
             {
-                MessageBox.Show("Ocurrio un error al cerrar sesion");
+                MessageBox.Show("Debe seleccionar una sesion para poder cerrarla.");
             }
+
 
         }
         /// <summary>
@@ -64,14 +66,14 @@ namespace Salinas.Gonzalo.PrimerParcial
         /// <param name="control"></param>
         private void ActualizarListasSesiones(Controlador control)
         {
-            foreach (Sesion sesion in control.ListaSesiones)
+            for (int i = 0; i < control.ListaSesiones.Count; i++)
             {
-                if (sesion is Llamada)
+                if (control.ListaSesiones[i] is Llamada)
                 {
-                    lBoxLlamadas.Items.Add(sesion);
+                    lBoxLlamadas.Items.Add(control.ListaSesiones[i]);
                 }
             }
-            
+
         }
         /// <summary>
         /// Propiedad DevolverControlador de lectura, retorna el controlador local.

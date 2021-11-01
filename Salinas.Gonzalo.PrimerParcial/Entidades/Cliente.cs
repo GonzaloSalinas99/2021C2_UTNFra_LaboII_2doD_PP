@@ -94,7 +94,12 @@ namespace Entidades
             sb.AppendLine($"Estado: {EstadoCliente}.   ");
             return sb.ToString();
         }
-
+        /// <summary>
+        /// Compara dos clientes por su documento.
+        /// </summary>
+        /// <param name="c1">Cliente a comparar</param>
+        /// <param name="c2">Cliente a comparar</param>
+        /// <returns>Retorna true si son iguales o False si son distintos</returns>
         public static bool operator ==(Cliente c1, Cliente c2)
         {
             if ((c1 is not null && c2 is not null) && (c1.GetHashCode() == c2.GetHashCode()) && (c1.Equals(c1) && c2.Equals(c2)))
@@ -103,11 +108,21 @@ namespace Entidades
             }
             return false;
         }
+        /// <summary>
+        /// Comparar dos clientes por su documento.
+        /// </summary>
+        /// <param name="c1">Cliente a comparar</param>
+        /// <param name="c2">Cliente a comparar</param>
+        /// <returns>True si son distintos o False si son iguales</returns>
         public static bool operator !=(Cliente c1, Cliente c2)
         {
             return !(c1 == c2);
         }
-
+        /// <summary>
+        /// Compara si el cliente es de tipo Cliente
+        /// </summary>
+        /// <param name="obj">Objeto a comparar</param>
+        /// <returns>Retorna True si el objeto es de tipo cliente o False si no lo es</returns>
         public override bool Equals(object obj)
         {
             if (obj is not null && obj is Cliente)
@@ -116,7 +131,10 @@ namespace Entidades
             }
             return false;
         }
-
+        /// <summary>
+        /// Retorna el numero de DNI del cliente
+        /// </summary>
+        /// <returns>Retorna el numero de documento de cliente</returns>
         public override int GetHashCode()
         {
             return int.Parse(Dni);

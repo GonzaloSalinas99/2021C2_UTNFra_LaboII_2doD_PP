@@ -8,10 +8,15 @@ namespace Entidades
 {
     public static class ValidadorDeInformacion
     {
+        /// <summary>
+        /// Valida que el parametro no sea un string vacio y si es un numero.
+        /// </summary>
+        /// <param name="cadenaAValidar">Cadena a validar</param>
+        /// <returns>True si no esta vacion el string y es un numero o False si no lo es</returns>
         public static bool ValidarNumero(string cadenaAValidar)
         {
             int auxiliar;
-            if(cadenaAValidar is not null && cadenaAValidar != "" && int.TryParse(cadenaAValidar,out auxiliar))
+            if(ValidarStringTexto(cadenaAValidar) &&  int.TryParse(cadenaAValidar,out auxiliar))
             {
                 return true;
             }
@@ -24,7 +29,7 @@ namespace Entidades
         /// <returns>True si esta correcta, false si no lo esta</returns>
         public static bool ValidarStringTexto(string cadenaAValidar)
         {
-            if(cadenaAValidar is null && cadenaAValidar == "")
+            if(String.IsNullOrWhiteSpace(cadenaAValidar))
             {
                 return false;
             }
@@ -38,7 +43,7 @@ namespace Entidades
         public static bool ValidarNumeroTelefono(string cadenaAValidar)
         {
             bool validador = true;
-            if (cadenaAValidar is not null && cadenaAValidar != "")
+            if (ValidarStringTexto(cadenaAValidar))
             {
                 char[] arrayTelefono = cadenaAValidar.ToCharArray();
                 if (arrayTelefono.Length ==12)
@@ -79,7 +84,7 @@ namespace Entidades
         public static bool ValidarDocumento(string cadenaAValidar)
         {
             bool validador = true;
-            if(cadenaAValidar is not null && cadenaAValidar != "")
+            if(ValidarStringTexto(cadenaAValidar))
             {
                 char[] arrayDocumento = cadenaAValidar.ToCharArray();
                 if(arrayDocumento.Length == 8)
@@ -118,12 +123,12 @@ namespace Entidades
         /// <returns>True si es una edad valida, false si no lo es</returns>
         public static bool ValidarEdad(string cadenaAValidar)
         {
-            if(cadenaAValidar is not null && cadenaAValidar != "")
+            if(ValidarStringTexto(cadenaAValidar))
             {
                 int edadAValidar;
                 if(int.TryParse(cadenaAValidar,out edadAValidar))
                 {
-                    if(edadAValidar>0 && edadAValidar<100)
+                    if(edadAValidar>3 && edadAValidar<100)
                     {
                         return true;
                     }
@@ -131,7 +136,20 @@ namespace Entidades
             }
             return false;
         }
-
+        /// <summary>
+        /// Valida que el string no este vacio y que tenga una determinada cantidad de caracteres
+        /// </summary>
+        /// <param name="cadenaAValidar">Cadena a validar</param>
+        /// <param name="cantidadCaracteresPermitidos">Cantidad de caracteres a comparar</param>
+        /// <returns>True si no esta vacio el string y cumple con la cantidad de caracteres pasados por parametros o False si no cumple con los requisitos</returns>
+        public static bool ValidarCantidadCaracteresString(string cadenaAValidar,int cantidadCaracteresPermitidos)
+        {
+            if(ValidarStringTexto(cadenaAValidar) && cadenaAValidar.Length == cantidadCaracteresPermitidos)
+            {
+                return true;
+            }
+            return false;
+        }
 
     }
 }
