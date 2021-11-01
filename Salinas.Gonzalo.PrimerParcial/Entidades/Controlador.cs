@@ -579,6 +579,24 @@ namespace Entidades
             c3.Juegos = "Age of Empires";
             c3.Juegos = "Counter Strike";
             AgregarPuesto(c3);
+
+            List<string> listadoSoftware = new List<string>();
+            listadoSoftware.Add("Mi Encarta");
+
+            List<string> listadoJuegos = new List<string>();
+            listadoJuegos.Add("Counter Strike");
+
+            List<string> listadoHadware = new List<string>();
+            listadoHadware.Add("Usb");
+
+            List<string> listadoPerifericos = new List<string>();
+            listadoPerifericos.Add("Camara");
+
+            Computadora c4 = new Computadora(listadoHadware,listadoSoftware,listadoJuegos,listadoPerifericos);
+
+            AgregarPuesto(c4);
+
+
         }
     }
 }

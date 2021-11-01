@@ -26,6 +26,14 @@ namespace Entidades
             idSiguiente++;
         }
         
+        public Computadora(List<string> listaHadware, List<string> listaSoftware, List<string> listaJuegos, List<string> listaPerifericos):this()
+        {
+            this.listaHadware = listaHadware;
+            this.listaSoftware = listaSoftware;
+            this.listaJuegos = listaJuegos;
+            this.listaPerifericos = listaPerifericos;
+        }
+
         /// <summary>
         /// Calcula el costo de la Sesion segun el tiempo de duracion
         /// </summary>
